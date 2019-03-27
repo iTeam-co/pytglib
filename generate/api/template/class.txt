@@ -1,0 +1,19 @@
+{notice}
+
+from ..utils import Object
+{imports}
+
+class {class_name}(Object):
+    """
+    {docstring}
+    """
+    ID = "{ID}"
+
+    def __init__(self{arguments}{extra}, **kwargs):
+        {has_extra}
+        {fields}
+
+    @staticmethod
+    def read(q: dict, *args) -> "{return_read}":
+        {read}
+        return {class_name}({return_arguments})
