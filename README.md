@@ -18,14 +18,13 @@ And you're ready to go!
 Here's a simple script that prints every update it receives from Telegram:
 
 ```
-from utils import setup_logging
 from telegram.client import Telegram
 
 # Change the values below
 api_id = 7
 api_hash = '123412341234123412341234'
 phone_number = '+12312312312'
-dbenc = 'any_value_just_change_me'
+dbenc = '32_hexademical_chars'
 
 # Initiate the client
 client = Telegram(api_id=api_id, api_hash=api_hash, phone=phone_number, database_encryption_key=dbenc)
