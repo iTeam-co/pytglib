@@ -74,7 +74,7 @@ class Function:
             AsyncResult
         """
 
-        return self.send(functions.GetMe())
+        return self.send(GetMe())
 
     def get_chats(
         self, offset_order: int = 0, offset_chat_id: int = 0, limit: int = 100
