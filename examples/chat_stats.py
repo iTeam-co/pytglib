@@ -6,6 +6,7 @@ import sys
 
 from telegram.client import Telegram
 
+
 def setup_logging(level=logging.INFO):
     root = logging.getLogger()
     root.setLevel(level)
@@ -30,7 +31,7 @@ def retreive_messages(telegram, chat_id, receive_limit):
     stats_data = {}
 
     while receive:
-        response = telegram.get_chat_history(
+        response = telegram.functions.get_chat_history(
             chat_id=chat_id,
             limit=1000,
             from_message_id=from_message_id,

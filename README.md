@@ -9,7 +9,7 @@ Installing the library is super easy. First, be sure to have Python3 installed i
 `apt install python3`
 
 Then, simply execute the installation script:
-`python3 setup.py`
+`python3 setup.py install` 
 
 And you're ready to go!
 
@@ -48,7 +48,7 @@ For more complex scripts, go to the Examples section below:
 
 # Documentation and examples
 
-The documentation is not complete at the moment, but you can see some examples in `examples` tree. Ofcourse we're doing our best to finish the documentation as soon as possible. 
+The documentation is not complete at the moment, but you can see some examples in `examples` tree. Of course, we're doing our best to finish the documentation as soon as possible. 
 By the way, there's an auto generated documentation [here](https://pytelegram.readthedocs.io); It can help to find out about types and functions of the library.
 
 # Bugs and questions

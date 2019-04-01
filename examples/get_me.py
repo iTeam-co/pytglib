@@ -18,6 +18,6 @@ if __name__ == '__main__':
     # you must call login method before others
     tg.login()
 
-    result = tg.get_me()
+    result = tg.functions.get_me()
     result.wait()
     print(result.update)

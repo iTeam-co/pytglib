@@ -1,8 +1,7 @@
 import logging
 import argparse
-
-from utils import setup_logging
 from telegram.client import Telegram
+from telegram.api.types import MessageText
 
 """
 It answers "pong" if receives "ping"
@@ -13,8 +12,6 @@ Usage:
 
 
 if __name__ == '__main__':
-    setup_logging(level=logging.INFO)
-
     parser = argparse.ArgumentParser()
     parser.add_argument('api_id', help='API id')  # https://my.telegram.org/apps
     parser.add_argument('api_hash', help='API hash')
@@ -32,12 +29,10 @@ if __name__ == '__main__':
 
     def new_message_handler(update):
         message_content = update.message.content
-        message_text = message_content.__dict__.get('text', {}).get('text', '').lower()
-
-        if message_content.ID == 'messageText' and message_text == 'ping':
+        if isinstance(message_content, MessageText) and message_content.text.lower() == "ping":
             chat_id = update.message.chat_id
             print(f'Ping has been received from {chat_id}')
-            tg.send_message(
+            tg.functions.send_message(
                 chat_id=chat_id,
                 text='pong',
             )

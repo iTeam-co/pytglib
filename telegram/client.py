@@ -14,13 +14,17 @@ from telegram import VERSION
 from telegram.utils import AsyncResult
 from telegram.tdjson import TDJson
 from telegram.worker import BaseWorker, SimpleWorker
-from telegram.api import functions, Object
+from telegram.api import Object
+from telegram.functions import Function
+from telegram.proxy import ProxyManager
 
 
 logger = logging.getLogger(__name__)
 
 
 MESSAGE_HANDLER_TYPE: str = 'updateNewMessage'
+RAW_UPDATE_HANDLER_TYPE: str = 'update'
+DELETE_MESSAGES_HANDLER_TYPE: str = 'updateDeleteMessages'
 
 
 class Telegram:
@@ -99,6 +103,9 @@ class Telegram:
         self._tdjson = TDJson(library_path=library_path, verbosity=tdlib_verbosity)
         self._run()
 
+        self.functions = Function(self)
+        self.proxy_manager = ProxyManager(self)
+
         if login:
             self.login()
 
@@ -111,74 +118,6 @@ class Telegram:
 
         if hasattr(self, '_tdjson'):
             self._tdjson.stop()
-
-    def send_message(self, chat_id: int, text: str) -> AsyncResult:
-        """
-        Sends a message to a chat. The chat must be in the tdlib's database.
-        If there is no chat in the DB, tdlib returns an error.
-        Chat is being saved to the database when the client receives a message or when you call the `get_chats` method.
-
-        Args:
-            chat_id
-            text
-
-        Returns:
-            AsyncResult
-            The update will be:
-                {
-                    '@type': 'message',
-                    'id': 1,
-                    'sender_user_id': 2,
-                    'chat_id': 3,
-                    ...
-                }
-        """
-        data = {
-            '@type': 'sendMessage',
-            'chat_id': chat_id,
-            'input_message_content': {
-                '@type': 'inputMessageText',
-                'text': {'@type': 'formattedText', 'text': text},
-            },
-        }
-
-        return self._send_data(data)
-
-    def get_chat(self, chat_id: int) -> AsyncResult:
-        """
-        This is offline request, if there is no chat in your database it will not be found
-        tdlib saves chat to the database when it receives a new message or when you call `get_chats` method.
-        """
-        data = {'@type': 'getChat', 'chat_id': chat_id}
-
-        return self._send_data(data)
-
-    def get_me(self) -> AsyncResult:
-        """
-        Requests information of the current user (getMe method)
-
-        https://core.telegram.org/tdlib/docs/classtd_1_1td__api_1_1get_me.html
-        """
-
-        return self.send(functions.GetMe())
-
-    def get_chats(
-        self, offset_order: int = 0, offset_chat_id: int = 0, limit: int = 100
-    ) -> AsyncResult:
-        return self.send(functions.GetChats(offset_order, offset_chat_id, limit))
-
-    def get_chat_history(
-        self,
-        chat_id: int,
-        limit: int = 1000,
-        from_message_id: int = 0,
-        offset: int = 0,
-        only_local: bool = False,
-    ):
-        return self.send(functions.GetChatHistory(chat_id, limit, from_message_id, offset, only_local))
-
-    def get_web_page_instant_view(self, url: str, force_full: bool = False):
-        return self.send(functions.GetWebPageInstantView(url, force_full))
 
     def call_method(self, method_name: str, params: Optional[Dict[str, Any]] = None):
         data = {'@type': method_name}
@@ -238,11 +177,46 @@ class Telegram:
         update_type: str = update.get('@type', 'unknown')
         for handler in self._update_handlers[update_type]:
             self._workers_queue.put((handler, update), timeout=self._queue_put_timeout)
+        for handler in self._update_handlers[RAW_UPDATE_HANDLER_TYPE]:
+            self._workers_queue.put((handler, update), timeout=self._queue_put_timeout)
 
     def add_message_handler(self, func: Callable) -> None:
+        """
+        Adds function to handle all incoming messages
+        Args:
+            func (:obj:`Callable`):
+                Message handler function
+        """
         self.add_update_handler(MESSAGE_HANDLER_TYPE, func)
 
+    def add_raw_update_handler(self, func: Callable) -> None:
+        """
+            Adds function to handle all incoming updates
+            Args:
+                func (:obj:`Callable`):
+                    Update handler function
+        """
+        self.add_update_handler(RAW_UPDATE_HANDLER_TYPE, func)
+
+    def add_delete_messages_handler(self, func: Callable) -> None:
+        """
+            Adds function to handle deleted messages
+            Args:
+                func (:obj:`Callable`):
+                    Deleted messages handler function
+        """
+        self.add_update_handler(DELETE_MESSAGES_HANDLER_TYPE, func)
+
     def add_update_handler(self, handler_type: str, func: Callable) -> None:
+        """
+            Adds function to handle custom type of updates
+            Args:
+                handler_type (:obj:`str`):
+                    Update type name
+                    For example updateNewMessage
+                func (:obj:`Callable`):
+                    Message handler function
+        """
         if func not in self._update_handlers[handler_type]:
             self._update_handlers[handler_type].append(func)
 
@@ -278,6 +252,11 @@ class Telegram:
         async_result.request = data
 
         return async_result
+
+    def execute(self, data: Object) -> Object:
+        data = json.loads(str(data))
+        result = self._tdjson.td_execute(data)
+        return Object.read(result)
 
     def idle(self, stop_signals=(signal.SIGINT, signal.SIGTERM, signal.SIGABRT)):
         """Blocks until one of the signals are received and stops"""
