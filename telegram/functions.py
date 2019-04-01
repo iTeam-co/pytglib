@@ -175,6 +175,7 @@ class Function:
     def send_chat_action(self, chat_id, action=ChatActionTyping()):
         """
             Sends a notification about user activity in a chat
+
             Args:
                 chat_id (:obj:`int`):
                     Chat identifier
@@ -214,6 +215,7 @@ class Function:
     def delete_messages(self, chat_id, message_ids, revoke=True):
         """
             Deletes messages
+
             Args:
                 chat_id (:obj:`int`):
                     Chat identifier
@@ -332,6 +334,7 @@ class Function:
     def leave_chat(self, chat_id):
         """
             Removes current user from chat members. Private and secret chats can't be left using this method
+
             Args:
                 chat_id (:obj:`int`):
                     Chat identifier
