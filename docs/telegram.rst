@@ -19,6 +19,22 @@ telegram.client module
     :undoc-members:
     :show-inheritance:
 
+telegram.functions module
+----------------------
+
+.. automodule:: telegram.functions
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+telegram.proxy module
+----------------------
+
+.. automodule:: telegram.proxy
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 telegram.tdjson module
 ----------------------
 

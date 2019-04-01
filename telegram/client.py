@@ -191,31 +191,31 @@ class Telegram:
 
     def add_raw_update_handler(self, func: Callable) -> None:
         """
-            Adds function to handle all incoming updates
-            Args:
-                func (:obj:`Callable`):
-                    Update handler function
+        Adds function to handle all incoming updates
+        Args:
+            func (:obj:`Callable`):
+                Update handler function
         """
         self.add_update_handler(RAW_UPDATE_HANDLER_TYPE, func)
 
     def add_delete_messages_handler(self, func: Callable) -> None:
         """
-            Adds function to handle deleted messages
-            Args:
-                func (:obj:`Callable`):
-                    Deleted messages handler function
+        Adds function to handle deleted messages
+        Args:
+            func (:obj:`Callable`):
+                Deleted messages handler function
         """
         self.add_update_handler(DELETE_MESSAGES_HANDLER_TYPE, func)
 
     def add_update_handler(self, handler_type: str, func: Callable) -> None:
         """
-            Adds function to handle custom type of updates
-            Args:
-                handler_type (:obj:`str`):
-                    Update type name
-                    For example updateNewMessage
-                func (:obj:`Callable`):
-                    Message handler function
+        Adds function to handle custom type of updates
+        Args:
+            handler_type (:obj:`str`):
+                Update type name
+                For example updateNewMessage
+            func (:obj:`Callable`):
+                Handler function
         """
         if func not in self._update_handlers[handler_type]:
             self._update_handlers[handler_type].append(func)

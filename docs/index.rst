@@ -53,7 +53,13 @@ For more complex scripts, go to the Examples section below:
 Examples
 ==========================
 
-You can find more examples in examples tree on github page `here`_
+You can find more examples in examples tree on GitHub page `here`_
+
+Documents
+===============
+
+Documents are available on `this page
+<https://pytelegram.readthedocs.io/en/latest/telegram.html>`_
 
 Bugs and questions
 ==================
@@ -63,9 +69,10 @@ contact any member of our team on Telegram:
 
 |https://telegram.me/Amir_H| |https://telegram.me/wsh25|
 
+
 .. _here: https://github.com/iTeam-co/Pyhton-Telegram
 
 .. |https://telegram.me/Amir_H| image:: https://img.shields.io/badge/💬_Telegram-Amir_H-blue.svg
    :target: https://telegram.me/Amir_H
 .. |https://telegram.me/wsh25| image:: https://img.shields.io/badge/💬_Telegram-WebShark25-blue.svg
-   :target: https://telegram.me/wsh25.com/ite
+   :target: https://telegram.me/wsh25
