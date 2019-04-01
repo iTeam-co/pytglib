@@ -1,10 +1,9 @@
-from telegram.client import Telegram
 from telegram.api.functions import AddProxy, RemoveProxy, PingProxy, EnableProxy, DisableProxy, GetProxies, GetProxyLink
 from telegram.api.types import Proxies, Proxy, ProxyTypeHttp, ProxyTypeMtproto, ProxyTypeSocks5, Ok, Seconds, Text
 
 
 class ProxyManager:
-    def __init__(self, client: Telegram):
+    def __init__(self, client):
         self.client = client
         self.send = client.send
         self.execute = client.execute

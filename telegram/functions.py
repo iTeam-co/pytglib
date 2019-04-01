@@ -1,11 +1,9 @@
-import telegram
-from telegram.client import *
 from telegram.api.functions import *
 from telegram.api.types import *
 
 
 class Function:
-    def __init__(self, client: Telegram):
+    def __init__(self, client):
         self.client = client
         self.send = client.send
         self.execute = client.execute
