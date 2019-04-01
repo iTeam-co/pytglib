@@ -9,7 +9,7 @@ class Function:
         self.execute = client.execute
 
     def send_message(self, chat_id: int, text: str, reply_to_message_id=0, disable_notification=False, from_background=False,
-                     markup=None, parse_mode=None, disable_web_page_preview=False, clear_draft=True) -> AsyncResult:
+                     markup=None, parse_mode=None, disable_web_page_preview=False, clear_draft=True):
         """
         Sends a message to a chat. The chat must be in the tdlib's database.
         If there is no chat in the DB, tdlib returns an error.
@@ -50,7 +50,7 @@ class Function:
 
         return self.send(data)
 
-    def get_chat(self, chat_id: int) -> AsyncResult:
+    def get_chat(self, chat_id: int):
         """
         This is offline request, if there is no chat in your database it will not be found
         tdlib saves chat to the database when it receives a new message or when you call `get_chats` method.
@@ -66,7 +66,7 @@ class Function:
 
         return self.send(data)
 
-    def get_me(self) -> AsyncResult:
+    def get_me(self):
         """
         Requests information of the current user (getMe method)
 
@@ -78,7 +78,7 @@ class Function:
 
     def get_chats(
         self, offset_order: int = 0, offset_chat_id: int = 0, limit: int = 100
-    ) -> AsyncResult:
+    ):
         """
             Returns an ordered list of chats. Chats are sorted by the pair (order, chat_id) in decreasing order.
 
@@ -257,7 +257,7 @@ class Function:
 
     def send_document(self, chat_id: int, document: str, caption=None, reply_to_message_id=0, disable_notification=False,
                      from_background=False,
-                     markup=None, parse_mode=None, disable_web_page_preview=False, clear_draft=True) -> AsyncResult:
+                     markup=None, parse_mode=None):
         """
         Sends a document to a chat. The chat must be in the tdlib's database.
         If there is no chat in the DB, tdlib returns an error.
