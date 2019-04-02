@@ -386,6 +386,15 @@ class Function:
         """
         return self.send(ImportContacts([Contact(phone_number, first_name, last_name, vcard, user_id)]))
 
+    def view_messages(self, chat_id, latest_message_id):
+        """
+        Marks the incomming messages as "READ"
+        
+        Returns:
+            AsyncResult
+        """
+        return self.send(ViewMessages(chat_id, [latest_message_id], True))
+        
     def get_contacts(self):
         """
         Returns all user contacts
