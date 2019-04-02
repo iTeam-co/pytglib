@@ -77,10 +77,11 @@ class Function:
         return self.send(GetMe())
 
     def get_chats(
-        self, offset_order: int = 0, offset_chat_id: int = 0, limit: int = 100
+        self, offset_order: int = 2**63 -1, offset_chat_id: int = 0, limit: int = 10000
     ):
         """
-            Returns an ordered list of chats. Chats are sorted by the pair (order, chat_id) in decreasing order.
+            Returns an ordered list of chats. Chats are sorted newest to oldest.
+            Don't send the values and it'll return full chats.
 
             offset_order (:obj:`int`):
                 Chat order to return chats from
