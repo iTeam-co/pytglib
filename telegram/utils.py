@@ -24,7 +24,6 @@ class AsyncResult:
 
         self.request: Optional[Dict[Any, Any]] = None
         self.error = False
-        self.error_info: Optional[Dict[Any, Any]] = None
         self.update: Object = None
 
     def __str__(self):
@@ -38,7 +37,7 @@ class AsyncResult:
         while True:
             if self.update or self.error:
                 if raise_exc and self.error:
-                    raise RuntimeError(f'Telegram error: {self.error_info}')
+                    raise self.update
                 return
             time.sleep(0.01)
             if timeout and time.time() - started_at > timeout:
@@ -49,6 +48,6 @@ class AsyncResult:
             self.update = types.Ok()
         elif update.get('@type') == 'error':
             self.error = True
-            self.error_info = update
+            self.update = Error(update["code"], update["message"])
         else:
             self.update = Object.read(update)
