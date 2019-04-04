@@ -48,6 +48,8 @@ class AsyncResult:
             self.update = types.Ok()
         elif update.get('@type') == 'error':
             self.error = True
-            self.update = Error(update["code"], update["message"])
+            self.error_info = update
+            self.update = False
+            #self.update = Error(update["code"], update["message"])
         else:
             self.update = Object.read(update)
