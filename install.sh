@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:deadsnakes/ppa
@@ -9,7 +9,7 @@ sudo apt-get upgrade
 
 sudo apt-get install alien libstdc++6 musl-dev libssl-dev openssl gcc clang zlib1g zlib1g-dev python3 python3-dev python3-apt python3.6 python3.6-dev
 
-ln -s /usr/lib/x86_64-linux-musl/libc.so /lib/libc.musl-x86_64.so.1
+sudo ln -s /usr/lib/x86_64-linux-musl/libc.so /lib/libc.musl-x86_64.so.1
 
 wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4.3_amd64.deb
 alien -i libssl1.1_1.1.0g-2ubuntu4.3_amd64.deb.deb
