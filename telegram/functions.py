@@ -50,6 +50,45 @@ class Function:
 
         return self.send(data)
 
+    def send_photo(self, chat_id: int, photo: str, caption="", reply_to_message_id=0, disable_notification=False,
+                     from_background=False, markup=None, parse_mode=None):
+
+
+        """
+        Sends a photo to a chat. The chat must be in the tdlib's database.
+        If there is no chat in the DB, tdlib returns an error.
+        Chat is being saved to the database when the client receives a message or when you call the `get_chats` method.
+
+        Args:
+            chat_id (:obj:`int`):
+                Target chat
+            photo (:obj:`str`):
+                Path of photo to send
+            caption (:obj:`str`):
+                Caption of message to send
+            reply_to_message_id (:obj:`int`):
+                Identifier of the message to reply to or 0
+            disable_notification (:obj:`bool`):
+                Pass true to disable notification for the message
+                Not supported in secret chats
+            from_background (:obj:`bool`):
+                Pass true if the message is sent from the background
+            markup (:class:`telegram.api.types.ReplyMarkup`):
+                Markup for replying to the message; for bots only
+            parse_mode (:obj:`str`):
+                Text parse mode
+                MarkDown, HTML or None
+
+        Returns:
+            AsyncResult
+        """
+
+        data = SendMessage(chat_id, disable_notification=disable_notification, from_background=from_background, reply_markup=markup,
+                           input_message_content=InputMessagePhoto(added_sticker_file_ids=[0], caption=FormattedText(caption, []), height=0, width=0, photo=InputFileLocal(photo),
+                                                                   thumbnail=InputThumbnail(height=0, width=0, thumbnail=InputFileLocal(photo)), ttl=0), reply_to_message_id=reply_to_message_id)
+
+        return self.send(data)
+
     def get_chat(self, chat_id: int):
         """
         This is offline request, if there is no chat in your database it will not be found
