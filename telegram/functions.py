@@ -411,9 +411,9 @@ class Function:
         Removes target user from chat (only if account is chat admin)
         
         Args:
-            chat_id (`obj`:int:):
+            chat_id (:obj:`int`):
                 Target chat id
-            user_id (`obj`:int:):
+            user_id (:obj:`int`):
                 User id to remove
         
         Returns:
