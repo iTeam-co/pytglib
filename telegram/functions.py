@@ -1,5 +1,6 @@
 from telegram.api.functions import *
 from telegram.api.types import *
+import time
 
 
 class Function:
@@ -404,7 +405,8 @@ class Function:
             Returns:
                 AsyncResult
         """
-        return self.send(GetSupergroupMembers(supergroup_id=chat_id, filter=filter, offset=offset, limit=limit))
+        supergroup_id = int(str(chat_id).replace("-100", ""))
+        return self.send(GetSupergroupMembers(supergroup_id=supergroup_id, filter=filter, offset=offset, limit=limit))
 
     def add_contact(self, phone_number, first_name, last_name, vcard="", user_id=0):
         """
@@ -445,7 +447,7 @@ class Function:
         """
         return self.send(GetContacts())
     
-    def kick_chat_member(self, chat_id, user_id):
+    def kick_chat_member(self, chat_id, user_id, until=int(time.time())):
         """
         Removes target user from chat (only if account is chat admin)
         
@@ -458,5 +460,5 @@ class Function:
         Returns:
             AsyncResult
         """
-        return self.send(SetChatMemberStatus(chat_id, user_id, ChatMemberStatusBanned(0)))
+        return self.send(SetChatMemberStatus(chat_id, user_id, ChatMemberStatusBanned(until)))
             
