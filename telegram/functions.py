@@ -458,5 +458,5 @@ class Function:
         Returns:
             AsyncResult
         """
-        return self.send(SetChatMemberStatus(chat_id, user_id, ChatMemberStatusBanned(0))
+        return self.send(SetChatMemberStatus(chat_id, user_id, ChatMemberStatusBanned(0)))
             
