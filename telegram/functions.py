@@ -369,8 +369,9 @@ class Function:
 
     def add_contact(self, phone_number, first_name, last_name, vcard="", user_id=0):
         """
-            Adds new contact or edits existing contact; contact's user identifiers are ignored
+        Adds new contact or edits existing contact; contact's user identifiers are ignored
 
+        Args:
             phone_number (:obj:`str`):
                 Phone number of the user
             first_name (:obj:`str`):
@@ -404,3 +405,19 @@ class Function:
             AsyncResult
         """
         return self.send(GetContacts())
+    
+    def kick_chat_member(self, chat_id, user_id):
+        """
+        Removes target user from chat (only if account is chat admin)
+        
+        Args:
+            chat_id (`obj`:int:):
+                Target chat id
+            user_id (`obj`:int:):
+                User id to remove
+        
+        Returns:
+            AsyncResult
+        """
+        return self.send(SetChatMemberStatus(chat_id, user_id, ChatMemberStatusBanned(0))
+            
