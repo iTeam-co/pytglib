@@ -404,7 +404,7 @@ class Function:
             Returns:
                 AsyncResult
         """
-        return self.send(GetSupergroupMembers(chat_id, filter, offset, limit))
+        return self.send(GetSupergroupMembers(supergroup_id=chat_id, filter=filter, offset=offset, limit=limit))
 
     def add_contact(self, phone_number, first_name, last_name, vcard="", user_id=0):
         """
