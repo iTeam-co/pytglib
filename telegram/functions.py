@@ -1,6 +1,5 @@
 from telegram.api.functions import *
 from telegram.api.types import *
-import time
 
 
 class Function:
@@ -48,6 +47,28 @@ class Function:
             msg_text = FormattedText(text, [])
         data = SendMessage(chat_id, reply_to_message_id, disable_notification, from_background, markup,
                            InputMessageText(msg_text, disable_web_page_preview, clear_draft))
+
+        return self.send(data)
+
+    def press_inline_button(self, chat_id: int, message_id: int, button_data: str):
+
+        """
+        Presses an Inline Button in the chat.
+
+        Args:
+            chat_id (:obj:`int`):
+                Target chat
+            message_id (:obj:`int`):
+                Message which the button is attached to
+            button_data (:obj:`str`):
+                Button data
+
+        Returns:
+            AsyncResult
+        """
+
+        button = CallbackQueryPayloadData(data=button_data)
+        data = GetCallbackQueryAnswer(chat_id, message_id, button)
 
         return self.send(data)
 
@@ -165,7 +186,7 @@ class Function:
             Returns:
                 AsyncResult
         """
-        return self.send(GetChatHistory(chat_id=chat_id, limit=limit, from_message_id=from_message_id, offset=offset, only_local=only_local))
+        return self.send(GetChatHistory(chat_id, limit, from_message_id, offset, only_local))
 
     def get_inline_query_results(self, bot_user_id, chat_id, query, offset, user_location=Location(0, 0)):
         """
@@ -405,14 +426,12 @@ class Function:
             Returns:
                 AsyncResult
         """
-        supergroup_id = int(str(chat_id).replace("-100", ""))
-        return self.send(GetSupergroupMembers(supergroup_id=supergroup_id, filter=filter, offset=offset, limit=limit))
+        return self.send(GetSupergroupMembers(chat_id, filter, offset, limit))
 
     def add_contact(self, phone_number, first_name, last_name, vcard="", user_id=0):
         """
-        Adds new contact or edits existing contact; contact's user identifiers are ignored
+            Adds new contact or edits existing contact; contact's user identifiers are ignored
 
-        Args:
             phone_number (:obj:`str`):
                 Phone number of the user
             first_name (:obj:`str`):
@@ -446,19 +465,3 @@ class Function:
             AsyncResult
         """
         return self.send(GetContacts())
-    
-    def kick_chat_member(self, chat_id, user_id, until=int(time.time())):
-        """
-        Removes target user from chat (only if account is chat admin)
-        
-        Args:
-            chat_id (:obj:`int`):
-                Target chat id
-            user_id (:obj:`int`):
-                User id to remove
-        
-        Returns:
-            AsyncResult
-        """
-        return self.send(SetChatMemberStatus(chat_id, user_id, ChatMemberStatusBanned(until)))
-            
