@@ -261,8 +261,8 @@ class Telegram:
     def idle(self, stop_signals=(signal.SIGINT, signal.SIGTERM, signal.SIGABRT)):
         """Blocks until one of the signals are received and stops"""
 
-        for sig in stop_signals:
-            signal.signal(sig, self._signal_handler)
+#        for sig in stop_signals:
+#            signal.signal(sig, self._signal_handler)
 
         self._is_enabled = True
 
