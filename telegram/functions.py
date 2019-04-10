@@ -186,7 +186,7 @@ class Function:
             Returns:
                 AsyncResult
         """
-        return self.send(GetChatHistory(chat_id, limit, from_message_id, offset, only_local))
+        return self.send(GetChatHistory(chat_id, limit=limit, from_message_id=from_message_id, offset=offset, only_local=only_local))
 
     def get_inline_query_results(self, bot_user_id, chat_id, query, offset, user_location=Location(0, 0)):
         """
