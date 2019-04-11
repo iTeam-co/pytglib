@@ -1,7 +1,7 @@
 import logging
 import argparse
-from telegram.client import Telegram
-from telegram.api.types import MessageText
+from pytglib.client import Telegram
+from pytglib.api.types import MessageText
 
 """
 It answers "pong" if receives "ping"

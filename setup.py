@@ -11,7 +11,7 @@ with open("README.md", "r") as fh:
 
 
 setuptools.setup(
-    name='pytelegram',
+    name='Pytglib',
     version='0.2',
     description='Python library to help you build your own Telegram clients',
     author='iTeam',
@@ -26,7 +26,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     package_data={
-        'telegram': [
+        'pytglib': [
             'lib/darwin/*',
             'lib/linux/*',
         ],

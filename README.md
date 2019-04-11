@@ -18,7 +18,7 @@ And you're ready to go!
 Here's a simple script that prints every update it receives from Telegram:
 
 ```
-from telegram.client import Telegram
+from pytglib.client import Telegram
 
 # Change the values below
 api_id = 7

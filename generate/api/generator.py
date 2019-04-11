@@ -4,7 +4,7 @@ import shutil
 import urllib.request
 
 HOME = "generate/api"
-DESTINATION = "telegram/api"
+DESTINATION = "pytglib/api"
 SECTION_RE = re.compile("---(\w+)---")
 COMBINATOR_RE = re.compile(r'^(\w+)\s(?:.*)=\s(\w+);$', re.MULTILINE)
 ARGS_RE = re.compile("(\w+):([\w<>]+)")
@@ -304,5 +304,5 @@ def start():
 
 if '__main__' == __name__:
     HOME = "."
-    DESTINATION = "../../telegram/api"
+    DESTINATION = "../../pytglib/api"
     start()

@@ -4,7 +4,7 @@ import argparse
 from collections import Counter
 import sys
 
-from telegram.client import Telegram
+from pytglib.client import Telegram
 
 
 def setup_logging(level=logging.INFO):

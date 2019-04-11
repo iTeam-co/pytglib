@@ -1,6 +1,6 @@
 import argparse
 
-from telegram.client import Telegram
+from pytglib.client import Telegram
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
