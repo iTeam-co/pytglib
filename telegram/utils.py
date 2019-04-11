@@ -37,7 +37,7 @@ class AsyncResult:
         while True:
             if self.update or self.error:
                 if raise_exc and self.error:
-                    raise self.update
+                    raise self.error_info
                 return
             time.sleep(0.01)
             if timeout and time.time() - started_at > timeout:
