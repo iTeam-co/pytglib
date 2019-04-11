@@ -23,7 +23,7 @@ Telegram:
 
 ::
 
-   from telegram.client import Telegram
+   from pytglib.client import Telegram
 
    # Change the values below
    api_id = 7
@@ -60,4 +60,4 @@ Documents
 ===============
 
 Documents are available on `this page
-<https://pytelegram.readthedocs.io/en/latest/telegram.html>`_
+<https://pytelegram.readthedocs.io/en/latest/pytglib.html>`_
