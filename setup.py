@@ -3,8 +3,8 @@ import setuptools
 from sys import argv
 from generate.api import generator
 
-if len(argv) > 1 and argv[1] in ["bdist_wheel", "install"]:
-    generator.start()
+# if len(argv) > 1 and argv[1] in ["bdist_wheel", "install"]:
+#     generator.start()
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
