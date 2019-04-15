@@ -8,7 +8,8 @@ class Function:
         self.send = client.send
         self.execute = client.execute
 
-    def send_message(self, chat_id: int, text: str, reply_to_message_id=0, disable_notification=False, from_background=False,
+    def send_message(self, chat_id: int, text: str, reply_to_message_id=0, disable_notification=False,
+                     from_background=False,
                      markup=None, parse_mode=None, disable_web_page_preview=False, clear_draft=True):
         """
         Sends a message to a chat. The chat must be in the tdlib's database.
@@ -50,6 +51,29 @@ class Function:
 
         return self.send(data)
 
+    def send_game(self, chat_id: int, bot_id: int, game_key: str):
+
+        """
+        Send a game into the chat requested.
+
+        Args:
+            chat_id (:obj:`int`):
+                Target chat
+            bot_id (:obj:`int`):
+                UserId of the bot
+            game_key (:obj:`str`):
+                Unique key of the game
+
+        Returns:
+           AsyncResult
+        """
+        
+        game_obj = InputMessageGame(bot_id, game_key)
+        data = SendMessage(chat_id, 0, False, False, None, game_obj)
+        
+        return self.send(data)
+        
+
     def press_inline_button(self, chat_id: int, message_id: int, button_data: str):
 
         """
@@ -73,8 +97,7 @@ class Function:
         return self.send(data)
 
     def send_photo(self, chat_id: int, photo: str, caption="", reply_to_message_id=0, disable_notification=False,
-                     from_background=False, markup=None, parse_mode=None):
-
+                   from_background=False, markup=None, parse_mode=None):
 
         """
         Sends a photo to a chat. The chat must be in the tdlib's database.
@@ -105,9 +128,15 @@ class Function:
             AsyncResult
         """
 
-        data = SendMessage(chat_id, disable_notification=disable_notification, from_background=from_background, reply_markup=markup,
-                           input_message_content=InputMessagePhoto(added_sticker_file_ids=[0], caption=FormattedText(caption, []), height=0, width=0, photo=InputFileLocal(photo),
-                                                                   thumbnail=InputThumbnail(height=0, width=0, thumbnail=InputFileLocal(photo)), ttl=0), reply_to_message_id=reply_to_message_id)
+        data = SendMessage(chat_id, disable_notification=disable_notification, from_background=from_background,
+                           reply_markup=markup,
+                           input_message_content=InputMessagePhoto(added_sticker_file_ids=[0],
+                                                                   caption=FormattedText(caption, []), height=0,
+                                                                   width=0, photo=InputFileLocal(photo),
+                                                                   thumbnail=InputThumbnail(height=0, width=0,
+                                                                                            thumbnail=InputFileLocal(
+                                                                                                photo)), ttl=0),
+                           reply_to_message_id=reply_to_message_id)
 
         return self.send(data)
 
@@ -138,7 +167,7 @@ class Function:
         return self.send(GetMe())
 
     def get_chats(
-        self, offset_order: int = 2**63 -1, offset_chat_id: int = 0, limit: int = 10000
+            self, offset_order: int = 2 ** 63 - 1, offset_chat_id: int = 0, limit: int = 10000
     ):
         """
             Returns an ordered list of chats. Chats are sorted newest to oldest.
@@ -158,12 +187,12 @@ class Function:
         return self.send(GetChats(offset_order, offset_chat_id, limit))
 
     def get_chat_history(
-        self,
-        chat_id: int,
-        limit: int = 1000,
-        from_message_id: int = 0,
-        offset: int = 0,
-        only_local: bool = False,
+            self,
+            chat_id: int,
+            limit: int = 1000,
+            from_message_id: int = 0,
+            offset: int = 0,
+            only_local: bool = False,
     ):
         """
             Returns messages in a chat. The messages are returned in a reverse chronological order (i.e., in order of decreasing message_id).
@@ -186,7 +215,8 @@ class Function:
             Returns:
                 AsyncResult
         """
-        return self.send(GetChatHistory(chat_id, limit=limit, from_message_id=from_message_id, offset=offset, only_local=only_local))
+        return self.send(
+            GetChatHistory(chat_id, limit=limit, from_message_id=from_message_id, offset=offset, only_local=only_local))
 
     def get_inline_query_results(self, bot_user_id, chat_id, query, offset, user_location=Location(0, 0)):
         """
@@ -249,7 +279,8 @@ class Function:
         """
         return self.send(SendChatAction(chat_id, action))
 
-    def forward_messages(self, chat_id, from_chat_id, message_ids, disable_notification=False, from_background=False, as_album=False):
+    def forward_messages(self, chat_id, from_chat_id, message_ids, disable_notification=False, from_background=False,
+                         as_album=False):
         """
         Forwards previously sent messages. Returns the forwarded messages in the same order as the message identifiers passed in message_ids.
         If a message can't be forwarded, null will be returned instead of the message
@@ -272,7 +303,8 @@ class Function:
         Returns:
             AsyncResult
         """
-        return self.send(ForwardMessages(chat_id, from_chat_id, message_ids, disable_notification, from_background, as_album))
+        return self.send(
+            ForwardMessages(chat_id, from_chat_id, message_ids, disable_notification, from_background, as_album))
 
     def delete_messages(self, chat_id, message_ids, revoke=True):
         """
@@ -319,9 +351,10 @@ class Function:
             msg_text = FormattedText(text, [])
         return self.send(EditMessageText(chat_id, message_id, markup, msg_text))
 
-    def send_document(self, chat_id: int, document: str, caption=None, reply_to_message_id=0, disable_notification=False,
-                     from_background=False,
-                     markup=None, parse_mode=None):
+    def send_document(self, chat_id: int, document: str, caption=None, reply_to_message_id=0,
+                      disable_notification=False,
+                      from_background=False,
+                      markup=None, parse_mode=None):
         """
         Sends a document to a chat. The chat must be in the tdlib's database.
         If there is no chat in the DB, tdlib returns an error.
@@ -451,12 +484,12 @@ class Function:
     def view_messages(self, chat_id, latest_message_id):
         """
         Marks the incomming messages as "READ"
-        
+
         Returns:
             AsyncResult
         """
         return self.send(ViewMessages(chat_id, [latest_message_id], True))
-        
+
     def get_contacts(self):
         """
         Returns all user contacts
