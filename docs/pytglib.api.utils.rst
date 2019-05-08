@@ -1,11 +1,11 @@
 pytglib.api.utils package
-==========================
+=========================
 
 Submodules
 ----------
 
 pytglib.api.utils.all\_types module
-------------------------------------
+-----------------------------------
 
 .. automodule:: pytglib.api.utils.all_types
     :members:
@@ -13,7 +13,7 @@ pytglib.api.utils.all\_types module
     :show-inheritance:
 
 pytglib.api.utils.object module
---------------------------------
+-------------------------------
 
 .. automodule:: pytglib.api.utils.object
     :members:

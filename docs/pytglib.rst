@@ -1,5 +1,5 @@
 pytglib package
-================
+===============
 
 Subpackages
 -----------
@@ -12,7 +12,7 @@ Submodules
 ----------
 
 pytglib.client module
-----------------------
+---------------------
 
 .. automodule:: pytglib.client
     :members:
@@ -20,7 +20,7 @@ pytglib.client module
     :show-inheritance:
 
 pytglib.functions module
-----------------------
+------------------------
 
 .. automodule:: pytglib.functions
     :members:
@@ -28,7 +28,7 @@ pytglib.functions module
     :show-inheritance:
 
 pytglib.proxy module
-----------------------
+--------------------
 
 .. automodule:: pytglib.proxy
     :members:
@@ -36,7 +36,7 @@ pytglib.proxy module
     :show-inheritance:
 
 pytglib.tdjson module
-----------------------
+---------------------
 
 .. automodule:: pytglib.tdjson
     :members:
@@ -44,7 +44,7 @@ pytglib.tdjson module
     :show-inheritance:
 
 pytglib.utils module
----------------------
+--------------------
 
 .. automodule:: pytglib.utils
     :members:
@@ -52,7 +52,7 @@ pytglib.utils module
     :show-inheritance:
 
 pytglib.worker module
-----------------------
+---------------------
 
 .. automodule:: pytglib.worker
     :members:
