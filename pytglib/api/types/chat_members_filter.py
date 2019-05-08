@@ -16,7 +16,7 @@ class ChatMembersFilter(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "ChatMembersFilterAdministrators or ChatMembersFilterMembers or ChatMembersFilterBanned or ChatMembersFilterRestricted or ChatMembersFilterBots":
+    def read(q: dict, *args) -> "ChatMembersFilterMembers or ChatMembersFilterAdministrators or ChatMembersFilterBanned or ChatMembersFilterRestricted or ChatMembersFilterBots":
         if q.get("@type"):
             return Object.read(q)
         return ChatMembersFilter()

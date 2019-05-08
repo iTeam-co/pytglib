@@ -16,7 +16,7 @@ class NotificationGroupType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "NotificationGroupTypeCalls or NotificationGroupTypeSecretChat or NotificationGroupTypeMessages or NotificationGroupTypeMentions":
+    def read(q: dict, *args) -> "NotificationGroupTypeMessages or NotificationGroupTypeMentions or NotificationGroupTypeSecretChat or NotificationGroupTypeCalls":
         if q.get("@type"):
             return Object.read(q)
         return NotificationGroupType()

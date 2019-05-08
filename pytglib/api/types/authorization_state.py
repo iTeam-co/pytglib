@@ -16,7 +16,7 @@ class AuthorizationState(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "AuthorizationStateReady or AuthorizationStateWaitTdlibParameters or AuthorizationStateWaitPhoneNumber or AuthorizationStateClosing or AuthorizationStateClosed or AuthorizationStateWaitPassword or AuthorizationStateWaitEncryptionKey or AuthorizationStateWaitCode or AuthorizationStateLoggingOut":
+    def read(q: dict, *args) -> "AuthorizationStateWaitCode or AuthorizationStateWaitEncryptionKey or AuthorizationStateReady or AuthorizationStateWaitPhoneNumber or AuthorizationStateWaitPassword or AuthorizationStateLoggingOut or AuthorizationStateClosing or AuthorizationStateClosed or AuthorizationStateWaitTdlibParameters":
         if q.get("@type"):
             return Object.read(q)
         return AuthorizationState()

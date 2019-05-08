@@ -16,7 +16,7 @@ class DeviceToken(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "DeviceTokenFirebaseCloudMessaging or DeviceTokenApplePush or DeviceTokenTizenPush or DeviceTokenWebPush or DeviceTokenMicrosoftPushVoIP or DeviceTokenMicrosoftPush or DeviceTokenBlackBerryPush or DeviceTokenApplePushVoIP or DeviceTokenSimplePush or DeviceTokenWindowsPush or DeviceTokenUbuntuPush":
+    def read(q: dict, *args) -> "DeviceTokenMicrosoftPushVoIP or DeviceTokenWindowsPush or DeviceTokenBlackBerryPush or DeviceTokenApplePushVoIP or DeviceTokenApplePush or DeviceTokenUbuntuPush or DeviceTokenMicrosoftPush or DeviceTokenFirebaseCloudMessaging or DeviceTokenSimplePush or DeviceTokenWebPush or DeviceTokenTizenPush":
         if q.get("@type"):
             return Object.read(q)
         return DeviceToken()

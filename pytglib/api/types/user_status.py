@@ -16,7 +16,7 @@ class UserStatus(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "UserStatusOffline or UserStatusOnline or UserStatusRecently or UserStatusLastWeek or UserStatusEmpty or UserStatusLastMonth":
+    def read(q: dict, *args) -> "UserStatusLastWeek or UserStatusLastMonth or UserStatusOffline or UserStatusRecently or UserStatusOnline or UserStatusEmpty":
         if q.get("@type"):
             return Object.read(q)
         return UserStatus()

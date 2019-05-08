@@ -16,7 +16,7 @@ class AuthenticationCodeType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "AuthenticationCodeTypeFlashCall or AuthenticationCodeTypeCall or AuthenticationCodeTypeTelegramMessage or AuthenticationCodeTypeSms":
+    def read(q: dict, *args) -> "AuthenticationCodeTypeFlashCall or AuthenticationCodeTypeSms or AuthenticationCodeTypeTelegramMessage or AuthenticationCodeTypeCall":
         if q.get("@type"):
             return Object.read(q)
         return AuthenticationCodeType()

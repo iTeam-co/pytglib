@@ -16,7 +16,7 @@ class InputInlineQueryResult(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "InputInlineQueryResultVoiceNote or InputInlineQueryResultGame or InputInlineQueryResultPhoto or InputInlineQueryResultDocument or InputInlineQueryResultVideo or InputInlineQueryResultAnimatedGif or InputInlineQueryResultArticle or InputInlineQueryResultContact or InputInlineQueryResultVenue or InputInlineQueryResultSticker or InputInlineQueryResultAnimatedMpeg4 or InputInlineQueryResultAudio or InputInlineQueryResultLocation":
+    def read(q: dict, *args) -> "InputInlineQueryResultArticle or InputInlineQueryResultAudio or InputInlineQueryResultDocument or InputInlineQueryResultContact or InputInlineQueryResultPhoto or InputInlineQueryResultGame or InputInlineQueryResultLocation or InputInlineQueryResultAnimatedMpeg4 or InputInlineQueryResultVideo or InputInlineQueryResultVoiceNote or InputInlineQueryResultSticker or InputInlineQueryResultVenue or InputInlineQueryResultAnimatedGif":
         if q.get("@type"):
             return Object.read(q)
         return InputInlineQueryResult()

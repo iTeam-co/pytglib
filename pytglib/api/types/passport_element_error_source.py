@@ -16,7 +16,7 @@ class PassportElementErrorSource(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "PassportElementErrorSourceTranslationFile or PassportElementErrorSourceFile or PassportElementErrorSourceFiles or PassportElementErrorSourceFrontSide or PassportElementErrorSourceUnspecified or PassportElementErrorSourceTranslationFiles or PassportElementErrorSourceSelfie or PassportElementErrorSourceReverseSide or PassportElementErrorSourceDataField":
+    def read(q: dict, *args) -> "PassportElementErrorSourceSelfie or PassportElementErrorSourceFrontSide or PassportElementErrorSourceFiles or PassportElementErrorSourceReverseSide or PassportElementErrorSourceUnspecified or PassportElementErrorSourceTranslationFile or PassportElementErrorSourceFile or PassportElementErrorSourceDataField or PassportElementErrorSourceTranslationFiles":
         if q.get("@type"):
             return Object.read(q)
         return PassportElementErrorSource()

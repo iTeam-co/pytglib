@@ -16,7 +16,7 @@ class TextParseMode(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "TextParseModeMarkdown or TextParseModeHTML":
+    def read(q: dict, *args) -> "TextParseModeHTML or TextParseModeMarkdown":
         if q.get("@type"):
             return Object.read(q)
         return TextParseMode()

@@ -16,7 +16,7 @@ class CheckChatUsernameResult(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "CheckChatUsernameResultUsernameOccupied or CheckChatUsernameResultOk or CheckChatUsernameResultUsernameInvalid or CheckChatUsernameResultPublicChatsTooMuch or CheckChatUsernameResultPublicGroupsUnavailable":
+    def read(q: dict, *args) -> "CheckChatUsernameResultUsernameInvalid or CheckChatUsernameResultUsernameOccupied or CheckChatUsernameResultOk or CheckChatUsernameResultPublicGroupsUnavailable or CheckChatUsernameResultPublicChatsTooMuch":
         if q.get("@type"):
             return Object.read(q)
         return CheckChatUsernameResult()

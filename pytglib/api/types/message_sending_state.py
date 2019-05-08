@@ -16,7 +16,7 @@ class MessageSendingState(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "MessageSendingStateFailed or MessageSendingStatePending":
+    def read(q: dict, *args) -> "MessageSendingStatePending or MessageSendingStateFailed":
         if q.get("@type"):
             return Object.read(q)
         return MessageSendingState()

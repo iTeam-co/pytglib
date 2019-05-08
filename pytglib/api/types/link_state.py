@@ -16,7 +16,7 @@ class LinkState(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "LinkStateNone or LinkStateKnowsPhoneNumber or LinkStateIsContact":
+    def read(q: dict, *args) -> "LinkStateIsContact or LinkStateNone or LinkStateKnowsPhoneNumber":
         if q.get("@type"):
             return Object.read(q)
         return LinkState()

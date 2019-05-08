@@ -16,7 +16,7 @@ class MaskPoint(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "MaskPointForehead or MaskPointMouth or MaskPointEyes or MaskPointChin":
+    def read(q: dict, *args) -> "MaskPointEyes or MaskPointMouth or MaskPointForehead or MaskPointChin":
         if q.get("@type"):
             return Object.read(q)
         return MaskPoint()

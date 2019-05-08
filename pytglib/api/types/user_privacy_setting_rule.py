@@ -16,7 +16,7 @@ class UserPrivacySettingRule(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "UserPrivacySettingRuleRestrictUsers or UserPrivacySettingRuleRestrictContacts or UserPrivacySettingRuleAllowAll or UserPrivacySettingRuleAllowUsers or UserPrivacySettingRuleAllowContacts or UserPrivacySettingRuleRestrictAll":
+    def read(q: dict, *args) -> "UserPrivacySettingRuleAllowContacts or UserPrivacySettingRuleRestrictUsers or UserPrivacySettingRuleAllowAll or UserPrivacySettingRuleRestrictContacts or UserPrivacySettingRuleAllowUsers or UserPrivacySettingRuleRestrictAll":
         if q.get("@type"):
             return Object.read(q)
         return UserPrivacySettingRule()

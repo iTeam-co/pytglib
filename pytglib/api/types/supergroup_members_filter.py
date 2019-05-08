@@ -16,7 +16,7 @@ class SupergroupMembersFilter(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "SupergroupMembersFilterAdministrators or SupergroupMembersFilterSearch or SupergroupMembersFilterBanned or SupergroupMembersFilterBots or SupergroupMembersFilterRestricted or SupergroupMembersFilterRecent":
+    def read(q: dict, *args) -> "SupergroupMembersFilterRestricted or SupergroupMembersFilterSearch or SupergroupMembersFilterRecent or SupergroupMembersFilterAdministrators or SupergroupMembersFilterBots or SupergroupMembersFilterBanned":
         if q.get("@type"):
             return Object.read(q)
         return SupergroupMembersFilter()

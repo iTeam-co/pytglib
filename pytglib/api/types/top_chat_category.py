@@ -16,7 +16,7 @@ class TopChatCategory(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "TopChatCategoryCalls or TopChatCategoryChannels or TopChatCategoryGroups or TopChatCategoryInlineBots or TopChatCategoryUsers or TopChatCategoryBots":
+    def read(q: dict, *args) -> "TopChatCategoryUsers or TopChatCategoryChannels or TopChatCategoryGroups or TopChatCategoryCalls or TopChatCategoryBots or TopChatCategoryInlineBots":
         if q.get("@type"):
             return Object.read(q)
         return TopChatCategory()

@@ -16,7 +16,7 @@ class PageBlockHorizontalAlignment(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "PageBlockHorizontalAlignmentLeft or PageBlockHorizontalAlignmentRight or PageBlockHorizontalAlignmentCenter":
+    def read(q: dict, *args) -> "PageBlockHorizontalAlignmentRight or PageBlockHorizontalAlignmentLeft or PageBlockHorizontalAlignmentCenter":
         if q.get("@type"):
             return Object.read(q)
         return PageBlockHorizontalAlignment()
