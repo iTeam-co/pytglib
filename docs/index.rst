@@ -54,7 +54,7 @@ Examples
 ==========================
 
 You can find more examples in examples tree on GitHub page `here
-<https://github.com/iTeam-co/Pyhton-Telegram>`_
+<https://github.com/iTeam-co/Python-Telegram>`_
 
 Documents
 ===============
