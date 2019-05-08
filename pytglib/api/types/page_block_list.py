@@ -5,16 +5,14 @@ from ..utils import Object
 
 class PageBlockList(Object):
     """
-    A list of texts 
+    A list of data blocks 
 
     Attributes:
         ID (:obj:`str`): ``PageBlockList``
 
     Args:
-        items (List of :class:`telegram.api.types.RichText`):
-            Texts 
-        is_ordered (:obj:`bool`):
-            True, if the items should be marked with numbers
+        items (List of :class:`telegram.api.types.pageBlockListItem`):
+            The items of the list
 
     Returns:
         PageBlock
@@ -24,13 +22,11 @@ class PageBlockList(Object):
     """
     ID = "pageBlockList"
 
-    def __init__(self, items, is_ordered, **kwargs):
+    def __init__(self, items, **kwargs):
         
-        self.items = items  # list of RichText
-        self.is_ordered = is_ordered  # bool
+        self.items = items  # list of pageBlockListItem
 
     @staticmethod
     def read(q: dict, *args) -> "PageBlockList":
         items = [Object.read(i) for i in q.get('items', [])]
-        is_ordered = q.get('is_ordered')
-        return PageBlockList(items, is_ordered)
+        return PageBlockList(items)

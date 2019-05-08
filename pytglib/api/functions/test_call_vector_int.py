@@ -5,7 +5,7 @@ from ..utils import Object
 
 class TestCallVectorInt(Object):
     """
-    Returns the received vector of numbers; for testing only 
+    Returns the received vector of numbers; for testing only. This is an offline method. Can be called before authorization 
 
     Attributes:
         ID (:obj:`str`): ``TestCallVectorInt``

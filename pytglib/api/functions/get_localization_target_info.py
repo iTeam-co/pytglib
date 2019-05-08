@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetLocalizationTargetInfo(Object):
     """
-    Returns information about the current localization target. This is an offline request if only_local is true 
+    Returns information about the current localization target. This is an offline request if only_local is true. Can be called before authorization 
 
     Attributes:
         ID (:obj:`str`): ``GetLocalizationTargetInfo``

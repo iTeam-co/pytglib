@@ -5,14 +5,14 @@ from ..utils import Object
 
 class EditCustomLanguagePackInfo(Object):
     """
-    Edits information about a custom language pack in the current localization target 
+    Edits information about a custom local language pack in the current localization target. Can be called before authorization 
 
     Attributes:
         ID (:obj:`str`): ``EditCustomLanguagePackInfo``
 
     Args:
         info (:class:`telegram.api.types.languagePackInfo`):
-            New information about the custom language pack
+            New information about the custom local language pack
 
     Returns:
         Ok

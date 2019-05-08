@@ -13,7 +13,7 @@ class PageBlockAnimation(Object):
     Args:
         animation (:class:`telegram.api.types.animation`):
             Animation file; may be null 
-        caption (:class:`telegram.api.types.RichText`):
+        caption (:class:`telegram.api.types.pageBlockCaption`):
             Animation caption 
         need_autoplay (:obj:`bool`):
             True, if the animation should be played automatically
@@ -29,7 +29,7 @@ class PageBlockAnimation(Object):
     def __init__(self, animation, caption, need_autoplay, **kwargs):
         
         self.animation = animation  # Animation
-        self.caption = caption  # RichText
+        self.caption = caption  # PageBlockCaption
         self.need_autoplay = need_autoplay  # bool
 
     @staticmethod

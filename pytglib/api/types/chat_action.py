@@ -16,7 +16,7 @@ class ChatAction(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "ChatActionStartPlayingGame or ChatActionCancel or ChatActionUploadingVideo or ChatActionRecordingVideoNote or ChatActionUploadingPhoto or ChatActionTyping or ChatActionUploadingVideoNote or ChatActionRecordingVoiceNote or ChatActionUploadingVoiceNote or ChatActionChoosingLocation or ChatActionUploadingDocument or ChatActionChoosingContact or ChatActionRecordingVideo":
+    def read(q: dict, *args) -> "ChatActionCancel or ChatActionRecordingVideoNote or ChatActionUploadingVideoNote or ChatActionRecordingVoiceNote or ChatActionChoosingContact or ChatActionTyping or ChatActionChoosingLocation or ChatActionRecordingVideo or ChatActionUploadingPhoto or ChatActionUploadingVideo or ChatActionStartPlayingGame or ChatActionUploadingVoiceNote or ChatActionUploadingDocument":
         if q.get("@type"):
             return Object.read(q)
         return ChatAction()

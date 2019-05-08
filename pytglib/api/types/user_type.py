@@ -16,7 +16,7 @@ class UserType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "UserTypeRegular or UserTypeBot or UserTypeDeleted or UserTypeUnknown":
+    def read(q: dict, *args) -> "UserTypeRegular or UserTypeUnknown or UserTypeDeleted or UserTypeBot":
         if q.get("@type"):
             return Object.read(q)
         return UserType()

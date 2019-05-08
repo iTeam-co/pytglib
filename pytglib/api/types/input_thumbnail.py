@@ -14,9 +14,9 @@ class InputThumbnail(Object):
         thumbnail (:class:`telegram.api.types.InputFile`):
             Thumbnail file to sendSending thumbnails by file_id is currently not supported
         width (:obj:`int`):
-            Thumbnail width, usually shouldn't exceed 90Use 0 if unknown 
+            Thumbnail width, usually shouldn't exceed 320Use 0 if unknown 
         height (:obj:`int`):
-            Thumbnail height, usually shouldn't exceed 90Use 0 if unknown
+            Thumbnail height, usually shouldn't exceed 320Use 0 if unknown
 
     Returns:
         InputThumbnail

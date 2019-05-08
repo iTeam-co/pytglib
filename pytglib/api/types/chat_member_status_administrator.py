@@ -26,7 +26,7 @@ class ChatMemberStatusAdministrator(Object):
         can_restrict_members (:obj:`bool`):
             True, if the administrator can restrict, ban, or unban chat members
         can_pin_messages (:obj:`bool`):
-            True, if the administrator can pin messages; applicable to supergroups only
+            True, if the administrator can pin messages; applicable to groups only
         can_promote_members (:obj:`bool`):
             True, if the administrator can add new administrators with a subset of his own privileges or demote administrators that were directly or indirectly promoted by him
 

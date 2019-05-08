@@ -14,7 +14,7 @@ class CreateNewBasicGroupChat(Object):
         user_ids (List of :obj:`int`):
             Identifiers of users to be added to the basic group 
         title (:obj:`str`):
-            Title of the new basic group; 1-255 characters
+            Title of the new basic group; 1-128 characters
 
     Returns:
         Chat

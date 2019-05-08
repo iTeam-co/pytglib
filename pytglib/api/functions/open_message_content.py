@@ -5,7 +5,7 @@ from ..utils import Object
 
 class OpenMessageContent(Object):
     """
-    This method should be called if the message content has been opened (e.g., the user has opened a photo, video, document, location or venue, or has listened to an audio file or voice note message). An updateMessageContentOpened update will be generated if something has changed 
+    Informs TDLib that the message content has been opened (e.g., the user has opened a photo, video, document, location or venue, or has listened to an audio file or voice note message). An updateMessageContentOpened update will be generated if something has changed 
 
     Attributes:
         ID (:obj:`str`): ``OpenMessageContent``

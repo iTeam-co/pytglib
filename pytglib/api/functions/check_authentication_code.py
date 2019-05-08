@@ -14,9 +14,9 @@ class CheckAuthenticationCode(Object):
         code (:obj:`str`):
             The verification code received via SMS, Telegram message, phone call, or flash call
         first_name (:obj:`str`):
-            If the user is not yet registered, the first name of the user; 1-255 characters 
+            If the user is not yet registered, the first name of the user; 1-64 charactersYou can also pass an empty string for unregistered user there to check verification code validnessIn the latter case PHONE_NUMBER_UNOCCUPIED error will be returned for a valid code
         last_name (:obj:`str`):
-            If the user is not yet registered; the last name of the user; optional; 0-255 characters
+            If the user is not yet registered; the last name of the user; optional; 0-64 characters
 
     Returns:
         Ok

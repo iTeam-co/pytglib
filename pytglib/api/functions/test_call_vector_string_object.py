@@ -5,7 +5,7 @@ from ..utils import Object
 
 class TestCallVectorStringObject(Object):
     """
-    Returns the received vector of objects containing a string; for testing only 
+    Returns the received vector of objects containing a string; for testing only. This is an offline method. Can be called before authorization 
 
     Attributes:
         ID (:obj:`str`): ``TestCallVectorStringObject``

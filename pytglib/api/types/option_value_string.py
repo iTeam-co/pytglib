@@ -5,7 +5,7 @@ from ..utils import Object
 
 class OptionValueString(Object):
     """
-    A string option 
+    Represents a string option 
 
     Attributes:
         ID (:obj:`str`): ``OptionValueString``

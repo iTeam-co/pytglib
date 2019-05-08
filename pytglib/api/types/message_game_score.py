@@ -14,7 +14,7 @@ class MessageGameScore(Object):
         game_message_id (:obj:`int`):
             Identifier of the message with the game, can be an identifier of a deleted message 
         game_id (:obj:`int`):
-            Identifier of the game, may be different from the games presented in the message with the game 
+            Identifier of the game; may be different from the games presented in the message with the game 
         score (:obj:`int`):
             New score
 

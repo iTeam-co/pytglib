@@ -21,7 +21,7 @@ class PageBlockEmbeddedPost(Object):
             Point in time (Unix timestamp) when the post was created; 0 if unknown 
         page_blocks (List of :class:`telegram.api.types.PageBlock`):
             Post content 
-        caption (:class:`telegram.api.types.RichText`):
+        caption (:class:`telegram.api.types.pageBlockCaption`):
             Post caption
 
     Returns:
@@ -39,7 +39,7 @@ class PageBlockEmbeddedPost(Object):
         self.author_photo = author_photo  # Photo
         self.date = date  # int
         self.page_blocks = page_blocks  # list of PageBlock
-        self.caption = caption  # RichText
+        self.caption = caption  # PageBlockCaption
 
     @staticmethod
     def read(q: dict, *args) -> "PageBlockEmbeddedPost":

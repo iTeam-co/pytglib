@@ -5,7 +5,7 @@ from ..utils import Object
 
 class ClearImportedContacts(Object):
     """
-    Clears all imported contacts, contacts list remains unchanged
+    Clears all imported contacts, contact list remains unchanged
 
     Attributes:
         ID (:obj:`str`): ``ClearImportedContacts``

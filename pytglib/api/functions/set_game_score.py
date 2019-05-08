@@ -12,7 +12,7 @@ class SetGameScore(Object):
 
     Args:
         chat_id (:obj:`int`):
-            The chat to which the message with the game 
+            The chat to which the message with the game belongs 
         message_id (:obj:`int`):
             Identifier of the message 
         edit_message (:obj:`bool`):

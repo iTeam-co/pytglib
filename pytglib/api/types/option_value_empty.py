@@ -5,7 +5,7 @@ from ..utils import Object
 
 class OptionValueEmpty(Object):
     """
-    An unknown option or an option which has a default value
+    Represents an unknown option or an option which has a default value
 
     Attributes:
         ID (:obj:`str`): ``OptionValueEmpty``

@@ -5,7 +5,7 @@ from ..utils import Object
 
 class TestCallString(Object):
     """
-    Returns the received string; for testing only 
+    Returns the received string; for testing only. This is an offline method. Can be called before authorization 
 
     Attributes:
         ID (:obj:`str`): ``TestCallString``

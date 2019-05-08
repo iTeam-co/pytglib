@@ -16,7 +16,7 @@ class UpdateDeleteMessages(Object):
         message_ids (List of :obj:`int`):
             Identifiers of the deleted messages
         is_permanent (:obj:`bool`):
-            True, if the messages are permanently deleted by a user (as opposed to just becoming unaccessible)
+            True, if the messages are permanently deleted by a user (as opposed to just becoming inaccessible)
         from_cache (:obj:`bool`):
             True, if the messages are deleted only from the cache and can possibly be retrieved again in the future
 

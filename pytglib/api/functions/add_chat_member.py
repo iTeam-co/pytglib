@@ -16,7 +16,7 @@ class AddChatMember(Object):
         user_id (:obj:`int`):
             Identifier of the user 
         forward_limit (:obj:`int`):
-            The number of earlier messages from the chat to be forwarded to the new member; up to 300Ignored for supergroups and channels
+            The number of earlier messages from the chat to be forwarded to the new member; up to 100Ignored for supergroups and channels
 
     Returns:
         Ok

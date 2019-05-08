@@ -13,7 +13,7 @@ class UserProfilePhotos(Object):
     Args:
         total_count (:obj:`int`):
             Total number of user profile photos 
-        photos (List of :class:`telegram.api.types.photo`):
+        photos (List of :class:`telegram.api.types.userProfilePhoto`):
             A list of photos
 
     Returns:
@@ -27,7 +27,7 @@ class UserProfilePhotos(Object):
     def __init__(self, total_count, photos, **kwargs):
         
         self.total_count = total_count  # int
-        self.photos = photos  # list of photo
+        self.photos = photos  # list of userProfilePhoto
 
     @staticmethod
     def read(q: dict, *args) -> "UserProfilePhotos":

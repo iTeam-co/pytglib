@@ -18,9 +18,7 @@ class GetPassportAuthorizationForm(Object):
         public_key (:obj:`str`):
             Service's public_key 
         nonce (:obj:`str`):
-            Authorization form nonce provided by the service 
-        password (:obj:`str`):
-            Password of the current user
+            Authorization form nonce provided by the service
 
     Returns:
         PassportAuthorizationForm
@@ -30,13 +28,12 @@ class GetPassportAuthorizationForm(Object):
     """
     ID = "getPassportAuthorizationForm"
 
-    def __init__(self, bot_user_id, scope, public_key, nonce, password, extra=None, **kwargs):
+    def __init__(self, bot_user_id, scope, public_key, nonce, extra=None, **kwargs):
         self.extra = extra
         self.bot_user_id = bot_user_id  # int
         self.scope = scope  # str
         self.public_key = public_key  # str
         self.nonce = nonce  # str
-        self.password = password  # str
 
     @staticmethod
     def read(q: dict, *args) -> "GetPassportAuthorizationForm":
@@ -44,5 +41,4 @@ class GetPassportAuthorizationForm(Object):
         scope = q.get('scope')
         public_key = q.get('public_key')
         nonce = q.get('nonce')
-        password = q.get('password')
-        return GetPassportAuthorizationForm(bot_user_id, scope, public_key, nonce, password)
+        return GetPassportAuthorizationForm(bot_user_id, scope, public_key, nonce)

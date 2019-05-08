@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetGroupsInCommon(Object):
     """
-    Returns a list of common chats with a given user. Chats are sorted by their type and creation date 
+    Returns a list of common group chats with a given user. Chats are sorted by their type and creation date 
 
     Attributes:
         ID (:obj:`str`): ``GetGroupsInCommon``

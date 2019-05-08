@@ -5,7 +5,7 @@ from ..utils import Object
 
 class CloseChat(Object):
     """
-    This method should be called if the chat is closed by the user. Many useful activities depend on the chat being opened or closed 
+    Informs TDLib that the chat is closed by the user. Many useful activities depend on the chat being opened or closed 
 
     Attributes:
         ID (:obj:`str`): ``CloseChat``

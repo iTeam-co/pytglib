@@ -5,7 +5,7 @@ from ..utils import Object
 
 class RemoveContacts(Object):
     """
-    Removes users from the contacts list 
+    Removes users from the contact list 
 
     Attributes:
         ID (:obj:`str`): ``RemoveContacts``

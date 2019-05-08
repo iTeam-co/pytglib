@@ -16,7 +16,7 @@ class ChatType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "ChatTypePrivate or ChatTypeSupergroup or ChatTypeBasicGroup or ChatTypeSecret":
+    def read(q: dict, *args) -> "ChatTypeSupergroup or ChatTypeSecret or ChatTypePrivate or ChatTypeBasicGroup":
         if q.get("@type"):
             return Object.read(q)
         return ChatType()

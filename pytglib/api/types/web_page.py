@@ -51,8 +51,8 @@ class WebPage(Object):
             Preview of the content as a video note, if available; may be null
         voice_note (:class:`telegram.api.types.voiceNote`):
             Preview of the content as a voice note, if available; may be null
-        has_instant_view (:obj:`bool`):
-            True, if the web page has an instant view
+        instant_view_version (:obj:`int`):
+            Version of instant view, available for the web page (currently can be 1 or 2), 0 if none
 
     Returns:
         WebPage
@@ -62,7 +62,7 @@ class WebPage(Object):
     """
     ID = "webPage"
 
-    def __init__(self, url, display_url, type, site_name, title, description, photo, embed_url, embed_type, embed_width, embed_height, duration, author, animation, audio, document, sticker, video, video_note, voice_note, has_instant_view, **kwargs):
+    def __init__(self, url, display_url, type, site_name, title, description, photo, embed_url, embed_type, embed_width, embed_height, duration, author, animation, audio, document, sticker, video, video_note, voice_note, instant_view_version, **kwargs):
         
         self.url = url  # str
         self.display_url = display_url  # str
@@ -84,7 +84,7 @@ class WebPage(Object):
         self.video = video  # Video
         self.video_note = video_note  # VideoNote
         self.voice_note = voice_note  # VoiceNote
-        self.has_instant_view = has_instant_view  # bool
+        self.instant_view_version = instant_view_version  # int
 
     @staticmethod
     def read(q: dict, *args) -> "WebPage":
@@ -108,5 +108,5 @@ class WebPage(Object):
         video = Object.read(q.get('video'))
         video_note = Object.read(q.get('video_note'))
         voice_note = Object.read(q.get('voice_note'))
-        has_instant_view = q.get('has_instant_view')
-        return WebPage(url, display_url, type, site_name, title, description, photo, embed_url, embed_type, embed_width, embed_height, duration, author, animation, audio, document, sticker, video, video_note, voice_note, has_instant_view)
+        instant_view_version = q.get('instant_view_version')
+        return WebPage(url, display_url, type, site_name, title, description, photo, embed_url, embed_type, embed_width, embed_height, duration, author, animation, audio, document, sticker, video, video_note, voice_note, instant_view_version)

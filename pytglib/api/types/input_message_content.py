@@ -16,7 +16,7 @@ class InputMessageContent(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "InputMessageGame or InputMessageAnimation or InputMessageText or InputMessageVoiceNote or InputMessageLocation or InputMessageForwarded or InputMessageVenue or InputMessageVideoNote or InputMessageVideo or InputMessageDocument or InputMessageContact or InputMessageSticker or InputMessageInvoice or InputMessageAudio or InputMessagePhoto":
+    def read(q: dict, *args) -> "InputMessageDocument or InputMessageVideoNote or InputMessageLocation or InputMessageInvoice or InputMessageVideo or InputMessageContact or InputMessagePoll or InputMessageAnimation or InputMessageGame or InputMessageText or InputMessageForwarded or InputMessageVoiceNote or InputMessageSticker or InputMessageVenue or InputMessageAudio or InputMessagePhoto":
         if q.get("@type"):
             return Object.read(q)
         return InputMessageContent()

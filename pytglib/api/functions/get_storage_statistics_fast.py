@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetStorageStatisticsFast(Object):
     """
-    Quickly returns approximate storage usage statistics
+    Quickly returns approximate storage usage statistics. Can be called before authorization
 
     Attributes:
         ID (:obj:`str`): ``GetStorageStatisticsFast``

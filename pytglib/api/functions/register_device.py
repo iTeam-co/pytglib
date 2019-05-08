@@ -5,7 +5,7 @@ from ..utils import Object
 
 class RegisterDevice(Object):
     """
-    Registers the currently used device for receiving push notifications 
+    Registers the currently used device for receiving push notifications. Returns a globally unique identifier of the push notification subscription 
 
     Attributes:
         ID (:obj:`str`): ``RegisterDevice``
@@ -14,10 +14,10 @@ class RegisterDevice(Object):
         device_token (:class:`telegram.api.types.DeviceToken`):
             Device token 
         other_user_ids (List of :obj:`int`):
-            List of at most 100 user identifiers of other users currently using the client
+            List of user identifiers of other users currently using the client
 
     Returns:
-        Ok
+        PushReceiverId
 
     Raises:
         :class:`telegram.Error`

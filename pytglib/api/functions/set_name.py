@@ -12,9 +12,9 @@ class SetName(Object):
 
     Args:
         first_name (:obj:`str`):
-            The new value of the first name for the user; 1-255 characters 
+            The new value of the first name for the user; 1-64 characters 
         last_name (:obj:`str`):
-            The new value of the optional last name for the user; 0-255 characters
+            The new value of the optional last name for the user; 0-64 characters
 
     Returns:
         Ok

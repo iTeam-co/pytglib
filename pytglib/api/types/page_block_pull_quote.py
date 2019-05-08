@@ -13,8 +13,8 @@ class PageBlockPullQuote(Object):
     Args:
         text (:class:`telegram.api.types.RichText`):
             Quote text 
-        caption (:class:`telegram.api.types.RichText`):
-            Quote caption
+        credit (:class:`telegram.api.types.RichText`):
+            Quote credit
 
     Returns:
         PageBlock
@@ -24,13 +24,13 @@ class PageBlockPullQuote(Object):
     """
     ID = "pageBlockPullQuote"
 
-    def __init__(self, text, caption, **kwargs):
+    def __init__(self, text, credit, **kwargs):
         
         self.text = text  # RichText
-        self.caption = caption  # RichText
+        self.credit = credit  # RichText
 
     @staticmethod
     def read(q: dict, *args) -> "PageBlockPullQuote":
         text = Object.read(q.get('text'))
-        caption = Object.read(q.get('caption'))
-        return PageBlockPullQuote(text, caption)
+        credit = Object.read(q.get('credit'))
+        return PageBlockPullQuote(text, credit)

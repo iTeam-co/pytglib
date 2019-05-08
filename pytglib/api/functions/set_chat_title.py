@@ -14,7 +14,7 @@ class SetChatTitle(Object):
         chat_id (:obj:`int`):
             Chat identifier 
         title (:obj:`str`):
-            New title of the chat; 1-255 characters
+            New title of the chat; 1-128 characters
 
     Returns:
         Ok

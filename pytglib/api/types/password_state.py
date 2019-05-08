@@ -12,15 +12,15 @@ class PasswordState(Object):
 
     Args:
         has_password (:obj:`bool`):
-            True if a 2-step verification password is set 
+            True, if a 2-step verification password is set 
         password_hint (:obj:`str`):
-            Hint for the password; can be empty 
+            Hint for the password; may be empty
         has_recovery_email_address (:obj:`bool`):
-            True if a recovery email is set 
+            True, if a recovery email is set 
         has_passport_data (:obj:`bool`):
-            True if some Telegram Passport elements were saved 
-        unconfirmed_recovery_email_address_pattern (:obj:`str`):
-            Pattern of the email address to which the confirmation email was sent
+            True, if some Telegram Passport elements were saved
+        recovery_email_address_code_info (:class:`telegram.api.types.emailAddressAuthenticationCodeInfo`):
+            Information about the recovery email address to which the confirmation email was sent; may be null
 
     Returns:
         PasswordState
@@ -30,13 +30,13 @@ class PasswordState(Object):
     """
     ID = "passwordState"
 
-    def __init__(self, has_password, password_hint, has_recovery_email_address, has_passport_data, unconfirmed_recovery_email_address_pattern, **kwargs):
+    def __init__(self, has_password, password_hint, has_recovery_email_address, has_passport_data, recovery_email_address_code_info, **kwargs):
         
         self.has_password = has_password  # bool
         self.password_hint = password_hint  # str
         self.has_recovery_email_address = has_recovery_email_address  # bool
         self.has_passport_data = has_passport_data  # bool
-        self.unconfirmed_recovery_email_address_pattern = unconfirmed_recovery_email_address_pattern  # str
+        self.recovery_email_address_code_info = recovery_email_address_code_info  # EmailAddressAuthenticationCodeInfo
 
     @staticmethod
     def read(q: dict, *args) -> "PasswordState":
@@ -44,5 +44,5 @@ class PasswordState(Object):
         password_hint = q.get('password_hint')
         has_recovery_email_address = q.get('has_recovery_email_address')
         has_passport_data = q.get('has_passport_data')
-        unconfirmed_recovery_email_address_pattern = q.get('unconfirmed_recovery_email_address_pattern')
-        return PasswordState(has_password, password_hint, has_recovery_email_address, has_passport_data, unconfirmed_recovery_email_address_pattern)
+        recovery_email_address_code_info = Object.read(q.get('recovery_email_address_code_info'))
+        return PasswordState(has_password, password_hint, has_recovery_email_address, has_passport_data, recovery_email_address_code_info)

@@ -16,7 +16,7 @@ class OptionValue(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "OptionValueString or OptionValueInteger or OptionValueEmpty or OptionValueBoolean":
+    def read(q: dict, *args) -> "OptionValueEmpty or OptionValueBoolean or OptionValueInteger or OptionValueString":
         if q.get("@type"):
             return Object.read(q)
         return OptionValue()

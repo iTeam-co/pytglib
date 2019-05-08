@@ -5,14 +5,14 @@ from ..utils import Object
 
 class SetCustomLanguagePackString(Object):
     """
-    Adds, edits or deletes a string in a custom language pack 
+    Adds, edits or deletes a string in a custom local language pack. Can be called before authorization 
 
     Attributes:
         ID (:obj:`str`): ``SetCustomLanguagePackString``
 
     Args:
         language_pack_id (:obj:`str`):
-            Identifier of a previously added custom language pack in the current localization target 
+            Identifier of a previously added custom local language pack in the current localization target 
         new_string (:class:`telegram.api.types.languagePackString`):
             New language pack string
 

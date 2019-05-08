@@ -16,7 +16,7 @@ class PageBlock(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "PageBlockAuthorDate or PageBlockDivider or PageBlockAnchor or PageBlockHeader or PageBlockFooter or PageBlockCollage or PageBlockAnimation or PageBlockVideo or PageBlockTitle or PageBlockPullQuote or PageBlockList or PageBlockPreformatted or PageBlockEmbedded or PageBlockEmbeddedPost or PageBlockChatLink or PageBlockParagraph or PageBlockCover or PageBlockPhoto or PageBlockAudio or PageBlockSlideshow or PageBlockSubtitle or PageBlockBlockQuote or PageBlockSubheader":
+    def read(q: dict, *args) -> "PageBlockTable or PageBlockCollage or PageBlockFooter or PageBlockKicker or PageBlockPullQuote or PageBlockChatLink or PageBlockPreformatted or PageBlockCover or PageBlockSubtitle or PageBlockSubheader or PageBlockMap or PageBlockEmbedded or PageBlockSlideshow or PageBlockTitle or PageBlockHeader or PageBlockPhoto or PageBlockAudio or PageBlockEmbeddedPost or PageBlockAuthorDate or PageBlockBlockQuote or PageBlockVideo or PageBlockAnimation or PageBlockRelatedArticles or PageBlockAnchor or PageBlockDetails or PageBlockParagraph or PageBlockDivider or PageBlockList":
         if q.get("@type"):
             return Object.read(q)
         return PageBlock()

@@ -16,7 +16,7 @@ class CallDiscardReason(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "CallDiscardReasonEmpty or CallDiscardReasonDeclined or CallDiscardReasonHungUp or CallDiscardReasonMissed or CallDiscardReasonDisconnected":
+    def read(q: dict, *args) -> "CallDiscardReasonDisconnected or CallDiscardReasonDeclined or CallDiscardReasonMissed or CallDiscardReasonEmpty or CallDiscardReasonHungUp":
         if q.get("@type"):
             return Object.read(q)
         return CallDiscardReason()

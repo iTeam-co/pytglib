@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetLanguagePackStrings(Object):
     """
-    Returns strings from a language pack in the current localization target by their keys 
+    Returns strings from a language pack in the current localization target by their keys. Can be called before authorization 
 
     Attributes:
         ID (:obj:`str`): ``GetLanguagePackStrings``

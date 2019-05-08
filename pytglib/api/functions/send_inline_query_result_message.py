@@ -23,6 +23,8 @@ class SendInlineQueryResultMessage(Object):
             Identifier of the inline query 
         result_id (:obj:`str`):
             Identifier of the inline result
+        hide_via_bot (:obj:`bool`):
+            If true, there will be no mention of a bot, via which the message is sentCan be used only for bots GetOption("animation_search_bot_username"), GetOption("photo_search_bot_username") and GetOption("venue_search_bot_username")
 
     Returns:
         Message
@@ -32,7 +34,7 @@ class SendInlineQueryResultMessage(Object):
     """
     ID = "sendInlineQueryResultMessage"
 
-    def __init__(self, chat_id, reply_to_message_id, disable_notification, from_background, query_id, result_id, extra=None, **kwargs):
+    def __init__(self, chat_id, reply_to_message_id, disable_notification, from_background, query_id, result_id, hide_via_bot, extra=None, **kwargs):
         self.extra = extra
         self.chat_id = chat_id  # int
         self.reply_to_message_id = reply_to_message_id  # int
@@ -40,6 +42,7 @@ class SendInlineQueryResultMessage(Object):
         self.from_background = from_background  # bool
         self.query_id = query_id  # int
         self.result_id = result_id  # str
+        self.hide_via_bot = hide_via_bot  # bool
 
     @staticmethod
     def read(q: dict, *args) -> "SendInlineQueryResultMessage":
@@ -49,4 +52,5 @@ class SendInlineQueryResultMessage(Object):
         from_background = q.get('from_background')
         query_id = q.get('query_id')
         result_id = q.get('result_id')
-        return SendInlineQueryResultMessage(chat_id, reply_to_message_id, disable_notification, from_background, query_id, result_id)
+        hide_via_bot = q.get('hide_via_bot')
+        return SendInlineQueryResultMessage(chat_id, reply_to_message_id, disable_notification, from_background, query_id, result_id, hide_via_bot)

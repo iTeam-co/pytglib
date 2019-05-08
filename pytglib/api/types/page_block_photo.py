@@ -13,8 +13,10 @@ class PageBlockPhoto(Object):
     Args:
         photo (:class:`telegram.api.types.photo`):
             Photo file; may be null 
-        caption (:class:`telegram.api.types.RichText`):
-            Photo caption
+        caption (:class:`telegram.api.types.pageBlockCaption`):
+            Photo caption 
+        url (:obj:`str`):
+            URL that needs to be opened when the photo is clicked
 
     Returns:
         PageBlock
@@ -24,13 +26,15 @@ class PageBlockPhoto(Object):
     """
     ID = "pageBlockPhoto"
 
-    def __init__(self, photo, caption, **kwargs):
+    def __init__(self, photo, caption, url, **kwargs):
         
         self.photo = photo  # Photo
-        self.caption = caption  # RichText
+        self.caption = caption  # PageBlockCaption
+        self.url = url  # str
 
     @staticmethod
     def read(q: dict, *args) -> "PageBlockPhoto":
         photo = Object.read(q.get('photo'))
         caption = Object.read(q.get('caption'))
-        return PageBlockPhoto(photo, caption)
+        url = q.get('url')
+        return PageBlockPhoto(photo, caption, url)

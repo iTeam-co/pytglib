@@ -5,7 +5,7 @@ from ..utils import Object
 
 class OptionValueInteger(Object):
     """
-    An integer option 
+    Represents an integer option 
 
     Attributes:
         ID (:obj:`str`): ``OptionValueInteger``

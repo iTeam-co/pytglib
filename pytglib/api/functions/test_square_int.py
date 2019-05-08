@@ -5,7 +5,7 @@ from ..utils import Object
 
 class TestSquareInt(Object):
     """
-    Returns the squared received number; for testing only 
+    Returns the squared received number; for testing only. This is an offline method. Can be called before authorization 
 
     Attributes:
         ID (:obj:`str`): ``TestSquareInt``

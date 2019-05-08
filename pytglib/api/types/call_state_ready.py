@@ -20,7 +20,9 @@ class CallStateReady(Object):
         encryption_key (:obj:`bytes`):
             Call encryption key 
         emojis (List of :obj:`str`):
-            Encryption key emojis fingerprint
+            Encryption key emojis fingerprint 
+        allow_p2p (:obj:`bool`):
+            True, if peer-to-peer connection is allowed by users privacy settings
 
     Returns:
         CallState
@@ -30,13 +32,14 @@ class CallStateReady(Object):
     """
     ID = "callStateReady"
 
-    def __init__(self, protocol, connections, config, encryption_key, emojis, **kwargs):
+    def __init__(self, protocol, connections, config, encryption_key, emojis, allow_p2p, **kwargs):
         
         self.protocol = protocol  # CallProtocol
         self.connections = connections  # list of callConnection
         self.config = config  # str
         self.encryption_key = encryption_key  # bytes
         self.emojis = emojis  # list of str
+        self.allow_p2p = allow_p2p  # bool
 
     @staticmethod
     def read(q: dict, *args) -> "CallStateReady":
@@ -45,4 +48,5 @@ class CallStateReady(Object):
         config = q.get('config')
         encryption_key = q.get('encryption_key')
         emojis = q.get('emojis')
-        return CallStateReady(protocol, connections, config, encryption_key, emojis)
+        allow_p2p = q.get('allow_p2p')
+        return CallStateReady(protocol, connections, config, encryption_key, emojis, allow_p2p)

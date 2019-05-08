@@ -16,9 +16,9 @@ class GetChatHistory(Object):
         from_message_id (:obj:`int`):
             Identifier of the message starting from which history must be fetched; use 0 to get results from the last message
         offset (:obj:`int`):
-            Specify 0 to get results from exactly the from_message_id or a negative offset to get the specified message and some newer messages
+            Specify 0 to get results from exactly the from_message_id or a negative offset up to 99 to get additionally some newer messages
         limit (:obj:`int`):
-            The maximum number of messages to be returned; must be positive and can't be greater than 100If the offset is negative, the limit must be greater than -offsetFewer messages may be returned than specified by the limit, even if the end of the message history has not been reached
+            The maximum number of messages to be returned; must be positive and can't be greater than 100If the offset is negative, the limit must be greater or equal to -offsetFewer messages may be returned than specified by the limit, even if the end of the message history has not been reached
         only_local (:obj:`bool`):
             If true, returns only messages that are available locally without sending network requests
 

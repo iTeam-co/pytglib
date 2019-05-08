@@ -16,7 +16,7 @@ class ChatEventAction(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "ChatEventTitleChanged or ChatEventMemberInvited or ChatEventMemberJoined or ChatEventMessageUnpinned or ChatEventMessageDeleted or ChatEventMemberPromoted or ChatEventInvitesToggled or ChatEventPhotoChanged or ChatEventMemberLeft or ChatEventMessagePinned or ChatEventMemberRestricted or ChatEventStickerSetChanged or ChatEventMessageEdited or ChatEventUsernameChanged or ChatEventIsAllHistoryAvailableToggled or ChatEventSignMessagesToggled or ChatEventDescriptionChanged":
+    def read(q: dict, *args) -> "ChatEventMemberJoined or ChatEventDescriptionChanged or ChatEventInvitesToggled or ChatEventMessageEdited or ChatEventMemberRestricted or ChatEventMemberInvited or ChatEventMessagePinned or ChatEventMessageUnpinned or ChatEventSignMessagesToggled or ChatEventMemberLeft or ChatEventPhotoChanged or ChatEventUsernameChanged or ChatEventStickerSetChanged or ChatEventMemberPromoted or ChatEventMessageDeleted or ChatEventIsAllHistoryAvailableToggled or ChatEventTitleChanged":
         if q.get("@type"):
             return Object.read(q)
         return ChatEventAction()

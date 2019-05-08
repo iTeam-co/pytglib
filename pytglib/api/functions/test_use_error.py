@@ -5,7 +5,7 @@ from ..utils import Object
 
 class TestUseError(Object):
     """
-    Does nothing and ensures that the Error object is used; for testing only
+    Does nothing and ensures that the Error object is used; for testing only. This is an offline method. Can be called before authorization
 
     Attributes:
         ID (:obj:`str`): ``TestUseError``

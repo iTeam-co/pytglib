@@ -5,7 +5,7 @@ from ..utils import Object
 
 class LinkStateIsContact(Object):
     """
-    The phone number of user A has been saved to the contacts list of user B
+    The phone number of user A has been saved to the contact list of user B
 
     Attributes:
         ID (:obj:`str`): ``LinkStateIsContact``

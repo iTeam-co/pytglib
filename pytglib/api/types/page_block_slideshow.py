@@ -13,7 +13,7 @@ class PageBlockSlideshow(Object):
     Args:
         page_blocks (List of :class:`telegram.api.types.PageBlock`):
             Slideshow item contents 
-        caption (:class:`telegram.api.types.RichText`):
+        caption (:class:`telegram.api.types.pageBlockCaption`):
             Block caption
 
     Returns:
@@ -27,7 +27,7 @@ class PageBlockSlideshow(Object):
     def __init__(self, page_blocks, caption, **kwargs):
         
         self.page_blocks = page_blocks  # list of PageBlock
-        self.caption = caption  # RichText
+        self.caption = caption  # PageBlockCaption
 
     @staticmethod
     def read(q: dict, *args) -> "PageBlockSlideshow":

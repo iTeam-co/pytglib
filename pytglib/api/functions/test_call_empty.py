@@ -5,7 +5,7 @@ from ..utils import Object
 
 class TestCallEmpty(Object):
     """
-    Does nothing; for testing only
+    Does nothing; for testing only. This is an offline method. Can be called before authorization
 
     Attributes:
         ID (:obj:`str`): ``TestCallEmpty``

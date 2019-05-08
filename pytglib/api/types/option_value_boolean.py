@@ -5,7 +5,7 @@ from ..utils import Object
 
 class OptionValueBoolean(Object):
     """
-    Boolean option 
+    Represents a boolean option 
 
     Attributes:
         ID (:obj:`str`): ``OptionValueBoolean``

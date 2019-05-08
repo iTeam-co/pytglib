@@ -13,7 +13,7 @@ class PageBlockAudio(Object):
     Args:
         audio (:class:`telegram.api.types.audio`):
             Audio file; may be null 
-        caption (:class:`telegram.api.types.RichText`):
+        caption (:class:`telegram.api.types.pageBlockCaption`):
             Audio file caption
 
     Returns:
@@ -27,7 +27,7 @@ class PageBlockAudio(Object):
     def __init__(self, audio, caption, **kwargs):
         
         self.audio = audio  # Audio
-        self.caption = caption  # RichText
+        self.caption = caption  # PageBlockCaption
 
     @staticmethod
     def read(q: dict, *args) -> "PageBlockAudio":

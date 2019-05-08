@@ -5,7 +5,7 @@ from ..utils import Object
 
 class DeleteLanguagePack(Object):
     """
-    Deletes all information about a language pack in the current localization target. The language pack that is currently in use can't be deleted 
+    Deletes all information about a language pack in the current localization target. The language pack which is currently in use (including base language pack) or is being synchronized can't be deleted. Can be called before authorization 
 
     Attributes:
         ID (:obj:`str`): ``DeleteLanguagePack``

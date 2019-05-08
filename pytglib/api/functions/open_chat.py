@@ -5,7 +5,7 @@ from ..utils import Object
 
 class OpenChat(Object):
     """
-    This method should be called if the chat is opened by the user. Many useful activities depend on the chat being opened or closed (e.g., in supergroups and channels all updates are received only for opened chats) 
+    Informs TDLib that the chat is opened by the user. Many useful activities depend on the chat being opened or closed (e.g., in supergroups and channels all updates are received only for opened chats) 
 
     Attributes:
         ID (:obj:`str`): ``OpenChat``

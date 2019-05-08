@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SetPassword(Object):
     """
-    Changes the password for the user. If a new recovery email address is specified, then the error EMAIL_UNCONFIRMED is returned and the password change will not be applied until the new recovery email address has been confirmed. The application should periodically call getPasswordState to check whether the new email address has been confirmed
+    Changes the password for the user. If a new recovery email address is specified, then the change will not be applied until the new recovery email address is confirmed
 
     Attributes:
         ID (:obj:`str`): ``SetPassword``

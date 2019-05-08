@@ -12,7 +12,7 @@ class MessagePinMessage(Object):
 
     Args:
         message_id (:obj:`int`):
-            Identifier of the pinned message, can be an identifier of a deleted message
+            Identifier of the pinned message, can be an identifier of a deleted message or 0
 
     Returns:
         MessageContent

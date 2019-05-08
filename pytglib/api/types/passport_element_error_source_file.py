@@ -5,12 +5,14 @@ from ..utils import Object
 
 class PassportElementErrorSourceFile(Object):
     """
-    The file contains an error. The error will be considered resolved when the file changes
+    The file contains an error. The error will be considered resolved when the file changes 
 
     Attributes:
         ID (:obj:`str`): ``PassportElementErrorSourceFile``
 
-    No parameters required.
+    Args:
+        file_index (:obj:`int`):
+            Index of a file with the error
 
     Returns:
         PassportElementErrorSource
@@ -20,11 +22,11 @@ class PassportElementErrorSourceFile(Object):
     """
     ID = "passportElementErrorSourceFile"
 
-    def __init__(self, **kwargs):
+    def __init__(self, file_index, **kwargs):
         
-        pass
+        self.file_index = file_index  # int
 
     @staticmethod
     def read(q: dict, *args) -> "PassportElementErrorSourceFile":
-        
-        return PassportElementErrorSourceFile()
+        file_index = q.get('file_index')
+        return PassportElementErrorSourceFile(file_index)

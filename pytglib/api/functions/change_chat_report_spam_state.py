@@ -5,7 +5,7 @@ from ..utils import Object
 
 class ChangeChatReportSpamState(Object):
     """
-    Used to let the server know whether a chat is spam or not. Can be used only if ChatReportSpamState.can_report_spam is true. After this request, ChatReportSpamState.can_report_spam becomes false forever 
+    Reports to the server whether a chat is a spam chat or not. Can be used only if ChatReportSpamState.can_report_spam is true. After this request, ChatReportSpamState.can_report_spam becomes false forever 
 
     Attributes:
         ID (:obj:`str`): ``ChangeChatReportSpamState``

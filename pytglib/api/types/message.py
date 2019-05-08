@@ -22,7 +22,7 @@ class Message(Object):
         is_outgoing (:obj:`bool`):
             True, if the message is outgoing
         can_be_edited (:obj:`bool`):
-            True, if the message can be edited
+            True, if the message can be editedFor live location and poll messages this fields shows, whether editMessageLiveLocation or stopPoll can be used with this message by the client
         can_be_forwarded (:obj:`bool`):
             True, if the message can be forwarded
         can_be_deleted_only_for_self (:obj:`bool`):
@@ -37,7 +37,7 @@ class Message(Object):
             Point in time (Unix timestamp) when the message was sent
         edit_date (:obj:`int`):
             Point in time (Unix timestamp) when the message was last edited
-        forward_info (:class:`telegram.api.types.MessageForwardInfo`):
+        forward_info (:class:`telegram.api.types.messageForwardInfo`):
             Information about the initial message sender; may be null
         reply_to_message_id (:obj:`int`):
             If non-zero, the identifier of the message this message is replying to; can be the identifier of a deleted message

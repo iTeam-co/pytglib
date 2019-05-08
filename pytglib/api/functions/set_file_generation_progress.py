@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SetFileGenerationProgress(Object):
     """
-    The next part of a file was generated
+    Informs TDLib on a file generation prograss
 
     Attributes:
         ID (:obj:`str`): ``SetFileGenerationProgress``

@@ -12,7 +12,7 @@ class CreateNewSupergroupChat(Object):
 
     Args:
         title (:obj:`str`):
-            Title of the new chat; 1-255 characters 
+            Title of the new chat; 1-128 characters 
         is_channel (:obj:`bool`):
             True, if a channel chat should be created 
         description (:obj:`str`):

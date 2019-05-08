@@ -16,7 +16,7 @@ class ChatReportReason(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "ChatReportReasonCustom or ChatReportReasonPornography or ChatReportReasonViolence or ChatReportReasonCopyright or ChatReportReasonSpam":
+    def read(q: dict, *args) -> "ChatReportReasonChildAbuse or ChatReportReasonCustom or ChatReportReasonSpam or ChatReportReasonViolence or ChatReportReasonCopyright or ChatReportReasonPornography":
         if q.get("@type"):
             return Object.read(q)
         return ChatReportReason()

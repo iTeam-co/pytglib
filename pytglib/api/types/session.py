@@ -5,7 +5,7 @@ from ..utils import Object
 
 class Session(Object):
     """
-    Contains information about one session in a Telegram application used by the current user 
+    Contains information about one session in a Telegram application used by the current user. Sessions should be shown to the user in the returned order
 
     Attributes:
         ID (:obj:`str`): ``Session``
@@ -15,6 +15,8 @@ class Session(Object):
             Session identifier 
         is_current (:obj:`bool`):
             True, if this session is the current session
+        is_password_pending (:obj:`bool`):
+            True, if a password is needed to complete authorization of the session
         api_id (:obj:`int`):
             Telegram API identifier, as provided by the application 
         application_name (:obj:`str`):
@@ -48,10 +50,11 @@ class Session(Object):
     """
     ID = "session"
 
-    def __init__(self, id, is_current, api_id, application_name, application_version, is_official_application, device_model, platform, system_version, log_in_date, last_active_date, ip, country, region, **kwargs):
+    def __init__(self, id, is_current, is_password_pending, api_id, application_name, application_version, is_official_application, device_model, platform, system_version, log_in_date, last_active_date, ip, country, region, **kwargs):
         
         self.id = id  # int
         self.is_current = is_current  # bool
+        self.is_password_pending = is_password_pending  # bool
         self.api_id = api_id  # int
         self.application_name = application_name  # str
         self.application_version = application_version  # str
@@ -69,6 +72,7 @@ class Session(Object):
     def read(q: dict, *args) -> "Session":
         id = q.get('id')
         is_current = q.get('is_current')
+        is_password_pending = q.get('is_password_pending')
         api_id = q.get('api_id')
         application_name = q.get('application_name')
         application_version = q.get('application_version')
@@ -81,4 +85,4 @@ class Session(Object):
         ip = q.get('ip')
         country = q.get('country')
         region = q.get('region')
-        return Session(id, is_current, api_id, application_name, application_version, is_official_application, device_model, platform, system_version, log_in_date, last_active_date, ip, country, region)
+        return Session(id, is_current, is_password_pending, api_id, application_name, application_version, is_official_application, device_model, platform, system_version, log_in_date, last_active_date, ip, country, region)

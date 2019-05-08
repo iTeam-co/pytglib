@@ -13,7 +13,7 @@ class PageBlockVideo(Object):
     Args:
         video (:class:`telegram.api.types.video`):
             Video file; may be null 
-        caption (:class:`telegram.api.types.RichText`):
+        caption (:class:`telegram.api.types.pageBlockCaption`):
             Video caption 
         need_autoplay (:obj:`bool`):
             True, if the video should be played automatically 
@@ -31,7 +31,7 @@ class PageBlockVideo(Object):
     def __init__(self, video, caption, need_autoplay, is_looped, **kwargs):
         
         self.video = video  # Video
-        self.caption = caption  # RichText
+        self.caption = caption  # PageBlockCaption
         self.need_autoplay = need_autoplay  # bool
         self.is_looped = is_looped  # bool
 

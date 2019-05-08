@@ -12,9 +12,9 @@ class InputFileGenerated(Object):
 
     Args:
         original_path (:obj:`str`):
-            Local path to a file from which the file is generated; may be empty if there is no such file 
+            Local path to a file from which the file is generated; may be empty if there is no such file
         conversion (:obj:`str`):
-            String specifying the conversion applied to the original file; should be persistent across application restarts 
+            String specifying the conversion applied to the original file; should be persistent across application restartsConversions beginning with '#' are reserved for internal TDLib usage
         expected_size (:obj:`int`):
             Expected size of the generated file; 0 if unknown
 

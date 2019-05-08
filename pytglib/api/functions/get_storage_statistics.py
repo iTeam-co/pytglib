@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetStorageStatistics(Object):
     """
-    Returns storage usage statistics 
+    Returns storage usage statistics. Can be called before authorization 
 
     Attributes:
         ID (:obj:`str`): ``GetStorageStatistics``

@@ -16,7 +16,7 @@ class InlineKeyboardButtonType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "InlineKeyboardButtonTypeBuy or InlineKeyboardButtonTypeSwitchInline or InlineKeyboardButtonTypeCallback or InlineKeyboardButtonTypeUrl or InlineKeyboardButtonTypeCallbackGame":
+    def read(q: dict, *args) -> "InlineKeyboardButtonTypeCallbackGame or InlineKeyboardButtonTypeUrl or InlineKeyboardButtonTypeSwitchInline or InlineKeyboardButtonTypeBuy or InlineKeyboardButtonTypeCallback":
         if q.get("@type"):
             return Object.read(q)
         return InlineKeyboardButtonType()
