@@ -298,7 +298,9 @@ class Telegram:
             result = actions[authorization_state]()
 
             if result:
-                result.wait(raise_exc=True)
+                result.wait(timeout=3)
+                if result.error:
+                    raise ValueError(str(result.error_info))
                 authorization_state = result.update.authorization_state.ID
 
     def _set_initial_params(self) -> AsyncResult:
