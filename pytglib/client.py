@@ -280,7 +280,7 @@ class Telegram:
         """
         authorization_state = None
         actions = {
-            None: self._set_initial_params,
+            None: self._send_encryption_key,
             'authorizationStateWaitTdlibParameters': self._set_initial_params,
             'authorizationStateWaitEncryptionKey': self._send_encryption_key,
             'authorizationStateWaitPhoneNumber': self._send_phone_number_or_bot_token,
