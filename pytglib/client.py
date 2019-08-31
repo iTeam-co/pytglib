@@ -304,7 +304,7 @@ class Telegram:
                     # print(result.error_info)
                     if result.error_info['message'] == 'Database encryption key is needed: call checkDatabaseEncryptionKey first':
                         authorization_state = 'authorizationStateWaitEncryptionKey'
-                    elif result.error_info['message'] == 'Initialization parameters are needed: call setTdlibParameters first', '@extra': {'request_id': 'updateAuthorizationState':
+                    elif result.error_info['message'] == 'Initialization parameters are needed: call setTdlibParameters first':
                         authorization_state = 'authorizationStateWaitTdlibParameters'
                     else:
                         raise ValueError(str(result.error_info))  # TODO: Change to "Error" object
