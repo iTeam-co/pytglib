@@ -298,10 +298,20 @@ class Telegram:
             result = actions[authorization_state]()
 
             if result:
-                result.wait(timeout=3)
-                if result.error:
-                    raise ValueError(str(result.error_info))
-                authorization_state = result.update.authorization_state.ID
+                result.wait(raise_exc=False)
+                res = result.update
+                if not res:
+                    # print(result.error_info)
+                    if result.error_info['message'] == 'Database encryption key is needed: call checkDatabaseEncryptionKey first':
+                        authorization_state = 'authorizationStateWaitEncryptionKey'
+                    elif result.error_info['message'] == 'Initialization parameters are needed: call setTdlibParameters first', '@extra': {'request_id': 'updateAuthorizationState':
+                        authorization_state = 'authorizationStateWaitTdlibParameters'
+                    else:
+                        raise ValueError(str(result.error_info))  # TODO: Change to "Error" object
+                else:
+                    authorization_state = res.authorization_state.ID
+
+
 
     def _set_initial_params(self) -> AsyncResult:
         logger.info(
