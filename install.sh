@@ -7,7 +7,9 @@ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 sudo apt-get update
 sudo apt-get upgrade
 
-sudo apt-get install alien libstdc++6 musl-dev libssl-dev openssl gcc clang zlib1g zlib1g-dev python3 python3-dev python3-apt python3.6 python3.6-dev
+sudo apt-get install -y alien libstdc++6 musl-dev libssl-dev openssl gcc clang zlib1g zlib1g-dev 
+sudo apt install -y python3 python3-dev python3-apt python3.6 python3.6-dev
+sudo apt install -y python3.7 python3.7-dev
 
 sudo ln -s /usr/lib/x86_64-linux-musl/libc.so /lib/libc.musl-x86_64.so.1
 
