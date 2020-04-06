@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetSupergroupFullInfo(Object):
     """
-    Returns full information about a supergroup or channel by its identifier, cached for up to 1 minute 
+    Returns full information about a supergroup or a channel by its identifier, cached for up to 1 minute 
 
     Attributes:
         ID (:obj:`str`): ``GetSupergroupFullInfo``

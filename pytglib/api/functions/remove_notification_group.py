@@ -14,7 +14,7 @@ class RemoveNotificationGroup(Object):
         notification_group_id (:obj:`int`):
             Notification group identifier 
         max_notification_id (:obj:`int`):
-            Maximum identifier of removed notifications
+            The maximum identifier of removed notifications
 
     Returns:
         Ok

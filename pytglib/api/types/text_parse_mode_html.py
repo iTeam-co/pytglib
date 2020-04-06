@@ -5,7 +5,7 @@ from ..utils import Object
 
 class TextParseModeHTML(Object):
     """
-    The text should be parsed in HTML-style
+    The text uses HTML-style formatting. The same as Telegram Bot API "HTML" parse mode
 
     Attributes:
         ID (:obj:`str`): ``TextParseModeHTML``

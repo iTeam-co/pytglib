@@ -16,7 +16,9 @@ class CreateNewSupergroupChat(Object):
         is_channel (:obj:`bool`):
             True, if a channel chat should be created 
         description (:obj:`str`):
-            Chat description; 0-255 characters
+            Chat description; 0-255 characters 
+        location (:class:`telegram.api.types.chatLocation`):
+            Chat location if a location-based supergroup is being created
 
     Returns:
         Chat
@@ -26,15 +28,17 @@ class CreateNewSupergroupChat(Object):
     """
     ID = "createNewSupergroupChat"
 
-    def __init__(self, title, is_channel, description, extra=None, **kwargs):
+    def __init__(self, title, is_channel, description, location, extra=None, **kwargs):
         self.extra = extra
         self.title = title  # str
         self.is_channel = is_channel  # bool
         self.description = description  # str
+        self.location = location  # ChatLocation
 
     @staticmethod
     def read(q: dict, *args) -> "CreateNewSupergroupChat":
         title = q.get('title')
         is_channel = q.get('is_channel')
         description = q.get('description')
-        return CreateNewSupergroupChat(title, is_channel, description)
+        location = Object.read(q.get('location'))
+        return CreateNewSupergroupChat(title, is_channel, description, location)

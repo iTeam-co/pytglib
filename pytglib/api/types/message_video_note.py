@@ -12,7 +12,7 @@ class MessageVideoNote(Object):
 
     Args:
         video_note (:class:`telegram.api.types.videoNote`):
-            Message content 
+            The video note description 
         is_viewed (:obj:`bool`):
             True, if at least one of the recipients has viewed the video note 
         is_secret (:obj:`bool`):

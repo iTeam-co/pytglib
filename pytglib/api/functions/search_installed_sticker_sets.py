@@ -16,7 +16,7 @@ class SearchInstalledStickerSets(Object):
         query (:obj:`str`):
             Query to search for 
         limit (:obj:`int`):
-            Maximum number of sticker sets to return
+            The maximum number of sticker sets to return
 
     Returns:
         StickerSets

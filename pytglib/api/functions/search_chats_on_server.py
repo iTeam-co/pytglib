@@ -14,7 +14,7 @@ class SearchChatsOnServer(Object):
         query (:obj:`str`):
             Query to search for 
         limit (:obj:`int`):
-            Maximum number of chats to be returned
+            The maximum number of chats to be returned
 
     Returns:
         Chats

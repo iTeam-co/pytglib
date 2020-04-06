@@ -14,7 +14,7 @@ class SearchStickers(Object):
         emoji (:obj:`str`):
             String representation of emoji; must be non-empty 
         limit (:obj:`int`):
-            Maximum number of stickers to be returned
+            The maximum number of stickers to be returned
 
     Returns:
         Stickers

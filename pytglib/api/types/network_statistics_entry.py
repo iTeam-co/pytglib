@@ -16,7 +16,7 @@ class NetworkStatisticsEntry(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "NetworkStatisticsEntryCall or NetworkStatisticsEntryFile":
+    def read(q: dict, *args) -> "NetworkStatisticsEntryFile or NetworkStatisticsEntryCall":
         if q.get("@type"):
             return Object.read(q)
         return NetworkStatisticsEntry()

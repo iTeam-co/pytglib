@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SetChatNotificationSettings(Object):
     """
-    Changes the notification settings of a chat 
+    Changes the notification settings of a chat. Notification settings of a chat with the current user (Saved Messages) can't be changed
 
     Attributes:
         ID (:obj:`str`): ``SetChatNotificationSettings``
@@ -14,7 +14,7 @@ class SetChatNotificationSettings(Object):
         chat_id (:obj:`int`):
             Chat identifier 
         notification_settings (:class:`telegram.api.types.chatNotificationSettings`):
-            New notification settings for the chat
+            New notification settings for the chatIf the chat is muted for more than 1 week, it is considered to be muted forever
 
     Returns:
         Ok

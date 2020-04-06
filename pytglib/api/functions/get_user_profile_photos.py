@@ -16,7 +16,7 @@ class GetUserProfilePhotos(Object):
         offset (:obj:`int`):
             The number of photos to skip; must be non-negative 
         limit (:obj:`int`):
-            Maximum number of photos to be returned; up to 100
+            The maximum number of photos to be returned; up to 100
 
     Returns:
         UserProfilePhotos

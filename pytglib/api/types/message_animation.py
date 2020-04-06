@@ -12,7 +12,7 @@ class MessageAnimation(Object):
 
     Args:
         animation (:class:`telegram.api.types.animation`):
-            Message content 
+            The animation description 
         caption (:class:`telegram.api.types.formattedText`):
             Animation caption 
         is_secret (:obj:`bool`):

@@ -12,11 +12,13 @@ class UserFullInfo(Object):
 
     Args:
         is_blocked (:obj:`bool`):
-            True, if the user is blacklisted by the current user 
+            True, if the user is blacklisted by the current user
         can_be_called (:obj:`bool`):
             True, if the user can be called 
         has_private_calls (:obj:`bool`):
             True, if the user can't be called due to their privacy settings
+        need_phone_number_privacy_exception (:obj:`bool`):
+            True, if the current user needs to explicitly allow to share their phone number with the user when the method addContact is used
         bio (:obj:`str`):
             A short user bio 
         share_text (:obj:`str`):
@@ -34,11 +36,12 @@ class UserFullInfo(Object):
     """
     ID = "userFullInfo"
 
-    def __init__(self, is_blocked, can_be_called, has_private_calls, bio, share_text, group_in_common_count, bot_info, **kwargs):
+    def __init__(self, is_blocked, can_be_called, has_private_calls, need_phone_number_privacy_exception, bio, share_text, group_in_common_count, bot_info, **kwargs):
         
         self.is_blocked = is_blocked  # bool
         self.can_be_called = can_be_called  # bool
         self.has_private_calls = has_private_calls  # bool
+        self.need_phone_number_privacy_exception = need_phone_number_privacy_exception  # bool
         self.bio = bio  # str
         self.share_text = share_text  # str
         self.group_in_common_count = group_in_common_count  # int
@@ -49,8 +52,9 @@ class UserFullInfo(Object):
         is_blocked = q.get('is_blocked')
         can_be_called = q.get('can_be_called')
         has_private_calls = q.get('has_private_calls')
+        need_phone_number_privacy_exception = q.get('need_phone_number_privacy_exception')
         bio = q.get('bio')
         share_text = q.get('share_text')
         group_in_common_count = q.get('group_in_common_count')
         bot_info = Object.read(q.get('bot_info'))
-        return UserFullInfo(is_blocked, can_be_called, has_private_calls, bio, share_text, group_in_common_count, bot_info)
+        return UserFullInfo(is_blocked, can_be_called, has_private_calls, need_phone_number_privacy_exception, bio, share_text, group_in_common_count, bot_info)

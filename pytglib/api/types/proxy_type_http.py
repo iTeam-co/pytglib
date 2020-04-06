@@ -16,7 +16,7 @@ class ProxyTypeHttp(Object):
         password (:obj:`str`):
             Password for logging in; may be empty 
         http_only (:obj:`bool`):
-            Pass true, if the proxy supports only HTTP requests and doesn't support transparent TCP connections via HTTP CONNECT method
+            Pass true if the proxy supports only HTTP requests and doesn't support transparent TCP connections via HTTP CONNECT method
 
     Returns:
         ProxyType

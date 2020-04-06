@@ -14,7 +14,7 @@ class SearchChatRecentLocationMessages(Object):
         chat_id (:obj:`int`):
             Chat identifier 
         limit (:obj:`int`):
-            Maximum number of messages to be returned
+            The maximum number of messages to be returned
 
     Returns:
         Messages

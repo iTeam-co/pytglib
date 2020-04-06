@@ -5,7 +5,7 @@ from ..utils import Object
 
 class CloseSecretChat(Object):
     """
-    Closes a secret chat, effectively transfering its state to secretChatStateClosed 
+    Closes a secret chat, effectively transferring its state to secretChatStateClosed 
 
     Attributes:
         ID (:obj:`str`): ``CloseSecretChat``

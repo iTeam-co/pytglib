@@ -5,7 +5,7 @@ from ..utils import Object
 
 class PushMessageContentAnimation(Object):
     """
-    An animation message (GIF-style) 
+    An animation message (GIF-style). 
 
     Attributes:
         ID (:obj:`str`): ``PushMessageContentAnimation``

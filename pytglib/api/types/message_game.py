@@ -12,7 +12,7 @@ class MessageGame(Object):
 
     Args:
         game (:class:`telegram.api.types.game`):
-            Game
+            The game description
 
     Returns:
         MessageContent

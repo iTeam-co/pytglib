@@ -16,7 +16,7 @@ class KeyboardButtonType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "KeyboardButtonTypeRequestPhoneNumber or KeyboardButtonTypeText or KeyboardButtonTypeRequestLocation":
+    def read(q: dict, *args) -> "KeyboardButtonTypeRequestPhoneNumber or KeyboardButtonTypeRequestPoll or KeyboardButtonTypeRequestLocation or KeyboardButtonTypeText":
         if q.get("@type"):
             return Object.read(q)
         return KeyboardButtonType()

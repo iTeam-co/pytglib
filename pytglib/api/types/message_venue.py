@@ -12,7 +12,7 @@ class MessageVenue(Object):
 
     Args:
         venue (:class:`telegram.api.types.venue`):
-            Message content
+            The venue description
 
     Returns:
         MessageContent

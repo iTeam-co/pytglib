@@ -20,7 +20,9 @@ class Animation(Object):
         file_name (:obj:`str`):
             Original name of the file; as defined by the sender 
         mime_type (:obj:`str`):
-            MIME type of the file, usually "image/gif" or "video/mp4" 
+            MIME type of the file, usually "image/gif" or "video/mp4"
+        minithumbnail (:class:`telegram.api.types.minithumbnail`):
+            Animation minithumbnail; may be null 
         thumbnail (:class:`telegram.api.types.photoSize`):
             Animation thumbnail; may be null 
         animation (:class:`telegram.api.types.file`):
@@ -34,13 +36,14 @@ class Animation(Object):
     """
     ID = "animation"
 
-    def __init__(self, duration, width, height, file_name, mime_type, thumbnail, animation, **kwargs):
+    def __init__(self, duration, width, height, file_name, mime_type, minithumbnail, thumbnail, animation, **kwargs):
         
         self.duration = duration  # int
         self.width = width  # int
         self.height = height  # int
         self.file_name = file_name  # str
         self.mime_type = mime_type  # str
+        self.minithumbnail = minithumbnail  # Minithumbnail
         self.thumbnail = thumbnail  # PhotoSize
         self.animation = animation  # File
 
@@ -51,6 +54,7 @@ class Animation(Object):
         height = q.get('height')
         file_name = q.get('file_name')
         mime_type = q.get('mime_type')
+        minithumbnail = Object.read(q.get('minithumbnail'))
         thumbnail = Object.read(q.get('thumbnail'))
         animation = Object.read(q.get('animation'))
-        return Animation(duration, width, height, file_name, mime_type, thumbnail, animation)
+        return Animation(duration, width, height, file_name, mime_type, minithumbnail, thumbnail, animation)

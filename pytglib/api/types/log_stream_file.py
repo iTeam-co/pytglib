@@ -14,7 +14,7 @@ class LogStreamFile(Object):
         path (:obj:`str`):
             Path to the file to where the internal TDLib log will be written 
         max_file_size (:obj:`int`):
-            Maximum size of the file to where the internal TDLib log is written before the file will be auto-rotated
+            The maximum size of the file to where the internal TDLib log is written before the file will be auto-rotated
 
     Returns:
         LogStream

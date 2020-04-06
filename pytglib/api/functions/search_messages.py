@@ -11,6 +11,8 @@ class SearchMessages(Object):
         ID (:obj:`str`): ``SearchMessages``
 
     Args:
+        chat_list (:class:`telegram.api.types.ChatList`):
+            Chat list in which to search messages; pass null to search in all chats regardless of their chat list
         query (:obj:`str`):
             Query to search for
         offset_date (:obj:`int`):
@@ -30,8 +32,9 @@ class SearchMessages(Object):
     """
     ID = "searchMessages"
 
-    def __init__(self, query, offset_date, offset_chat_id, offset_message_id, limit, extra=None, **kwargs):
+    def __init__(self, chat_list, query, offset_date, offset_chat_id, offset_message_id, limit, extra=None, **kwargs):
         self.extra = extra
+        self.chat_list = chat_list  # ChatList
         self.query = query  # str
         self.offset_date = offset_date  # int
         self.offset_chat_id = offset_chat_id  # int
@@ -40,9 +43,10 @@ class SearchMessages(Object):
 
     @staticmethod
     def read(q: dict, *args) -> "SearchMessages":
+        chat_list = Object.read(q.get('chat_list'))
         query = q.get('query')
         offset_date = q.get('offset_date')
         offset_chat_id = q.get('offset_chat_id')
         offset_message_id = q.get('offset_message_id')
         limit = q.get('limit')
-        return SearchMessages(query, offset_date, offset_chat_id, offset_message_id, limit)
+        return SearchMessages(chat_list, query, offset_date, offset_chat_id, offset_message_id, limit)

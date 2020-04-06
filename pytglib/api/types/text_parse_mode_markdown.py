@@ -5,12 +5,14 @@ from ..utils import Object
 
 class TextParseModeMarkdown(Object):
     """
-    The text should be parsed in markdown-style
+    The text uses Markdown-style formatting
 
     Attributes:
         ID (:obj:`str`): ``TextParseModeMarkdown``
 
-    No parameters required.
+    Args:
+        version (:obj:`int`):
+            Version of the parser: 0 or 1 - Telegram Bot API "Markdown" parse mode, 2 - Telegram Bot API "MarkdownV2" parse mode
 
     Returns:
         TextParseMode
@@ -20,11 +22,11 @@ class TextParseModeMarkdown(Object):
     """
     ID = "textParseModeMarkdown"
 
-    def __init__(self, **kwargs):
+    def __init__(self, version, **kwargs):
         
-        pass
+        self.version = version  # int
 
     @staticmethod
     def read(q: dict, *args) -> "TextParseModeMarkdown":
-        
-        return TextParseModeMarkdown()
+        version = q.get('version')
+        return TextParseModeMarkdown(version)

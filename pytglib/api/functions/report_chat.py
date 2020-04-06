@@ -5,7 +5,7 @@ from ..utils import Object
 
 class ReportChat(Object):
     """
-    Reports a chat to the Telegram moderators. Supported only for supergroups, channels, or private chats with bots, since other chats can't be checked by moderators 
+    Reports a chat to the Telegram moderators. A chat can be reported only from the chat action bar, or if this is a private chats with a bot, a private chat with a user sharing their location, a supergroup, or a channel, since other chats can't be checked by moderators 
 
     Attributes:
         ID (:obj:`str`): ``ReportChat``

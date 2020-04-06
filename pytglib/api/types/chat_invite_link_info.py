@@ -20,11 +20,11 @@ class ChatInviteLinkInfo(Object):
         photo (:class:`telegram.api.types.chatPhoto`):
             Chat photo; may be null
         member_count (:obj:`int`):
-            Number of members
+            Number of members in the chat
         member_user_ids (List of :obj:`int`):
             User identifiers of some chat members that may be known to the current user
         is_public (:obj:`bool`):
-            True, if the chat is a public supergroup or channel with a username
+            True, if the chat is a public supergroup or channel, ieit has a username or it is a location-based supergroup
 
     Returns:
         ChatInviteLinkInfo

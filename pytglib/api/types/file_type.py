@@ -16,7 +16,7 @@ class FileType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "FileTypeNone or FileTypeUnknown or FileTypeVideo or FileTypeSticker or FileTypeVoiceNote or FileTypeDocument or FileTypeSecret or FileTypeSecure or FileTypeAudio or FileTypeWallpaper or FileTypeAnimation or FileTypeThumbnail or FileTypeProfilePhoto or FileTypeVideoNote or FileTypePhoto or FileTypeSecretThumbnail":
+    def read(q: dict, *args) -> "FileTypeNone or FileTypeDocument or FileTypeVideo or FileTypeVideoNote or FileTypeSecret or FileTypeAudio or FileTypeVoiceNote or FileTypeAnimation or FileTypeWallpaper or FileTypeUnknown or FileTypeSecure or FileTypeProfilePhoto or FileTypeSticker or FileTypePhoto or FileTypeThumbnail or FileTypeSecretThumbnail":
         if q.get("@type"):
             return Object.read(q)
         return FileType()

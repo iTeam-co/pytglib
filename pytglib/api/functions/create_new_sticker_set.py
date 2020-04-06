@@ -5,22 +5,22 @@ from ..utils import Object
 
 class CreateNewStickerSet(Object):
     """
-    Creates a new sticker set; for bots only. Returns the newly created sticker set 
+    Creates a new sticker set; for bots only. Returns the newly created sticker set
 
     Attributes:
         ID (:obj:`str`): ``CreateNewStickerSet``
 
     Args:
         user_id (:obj:`int`):
-            Sticker set owner 
+            Sticker set owner
         title (:obj:`str`):
-            Sticker set title; 1-64 characters 
+            Sticker set title; 1-64 characters
         name (:obj:`str`):
             Sticker set nameCan contain only English letters, digits and underscoresMust end with *"_by_<bot username>"* (*<bot_username>* is case insensitive); 1-64 characters
         is_masks (:obj:`bool`):
-            True, if stickers are masks 
-        stickers (List of :class:`telegram.api.types.inputSticker`):
-            List of stickers to be added to the set
+            True, if stickers are masksAnimated stickers can't be masks
+        stickers (List of :class:`telegram.api.types.InputSticker`):
+            List of stickers to be added to the set; must be non-emptyAll stickers must be of the same type
 
     Returns:
         StickerSet
@@ -36,7 +36,7 @@ class CreateNewStickerSet(Object):
         self.title = title  # str
         self.name = name  # str
         self.is_masks = is_masks  # bool
-        self.stickers = stickers  # list of inputSticker
+        self.stickers = stickers  # list of InputSticker
 
     @staticmethod
     def read(q: dict, *args) -> "CreateNewStickerSet":

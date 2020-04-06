@@ -16,7 +16,7 @@ class InputCredentials(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "InputCredentialsNew or InputCredentialsSaved or InputCredentialsApplePay or InputCredentialsAndroidPay":
+    def read(q: dict, *args) -> "InputCredentialsAndroidPay or InputCredentialsSaved or InputCredentialsNew or InputCredentialsApplePay":
         if q.get("@type"):
             return Object.read(q)
         return InputCredentials()

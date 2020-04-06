@@ -16,7 +16,7 @@ class NotificationSettingsScope(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "NotificationSettingsScopeGroupChats or NotificationSettingsScopePrivateChats or NotificationSettingsScopeChannelChats":
+    def read(q: dict, *args) -> "NotificationSettingsScopeChannelChats or NotificationSettingsScopePrivateChats or NotificationSettingsScopeGroupChats":
         if q.get("@type"):
             return Object.read(q)
         return NotificationSettingsScope()

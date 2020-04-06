@@ -14,7 +14,7 @@ class GetInlineQueryResults(Object):
         bot_user_id (:obj:`int`):
             The identifier of the target bot
         chat_id (:obj:`int`):
-            Identifier of the chat, where the query was sent 
+            Identifier of the chat where the query was sent 
         user_location (:class:`telegram.api.types.location`):
             Location of the user, only if needed 
         query (:obj:`str`):

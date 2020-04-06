@@ -12,7 +12,7 @@ class MessageVideo(Object):
 
     Args:
         video (:class:`telegram.api.types.video`):
-            Message content 
+            The video description 
         caption (:class:`telegram.api.types.formattedText`):
             Video caption 
         is_secret (:obj:`bool`):

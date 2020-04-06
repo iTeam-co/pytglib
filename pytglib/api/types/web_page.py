@@ -5,23 +5,23 @@ from ..utils import Object
 
 class WebPage(Object):
     """
-    Describes a web page preview 
+    Describes a web page preview
 
     Attributes:
         ID (:obj:`str`): ``WebPage``
 
     Args:
         url (:obj:`str`):
-            Original URL of the link 
+            Original URL of the link
         display_url (:obj:`str`):
             URL to display
         type (:obj:`str`):
             Type of the web pageCan be: article, photo, audio, video, document, profile, app, or something else
         site_name (:obj:`str`):
-            Short name of the site (eg, Google Docs, App Store) 
+            Short name of the site (eg, Google Docs, App Store)
         title (:obj:`str`):
-            Title of the content 
-        description (:obj:`str`):
+            Title of the content
+        description (:class:`telegram.api.types.formattedText`):
             Description of the content
         photo (:class:`telegram.api.types.photo`):
             Image representing the content; may be null
@@ -69,7 +69,7 @@ class WebPage(Object):
         self.type = type  # str
         self.site_name = site_name  # str
         self.title = title  # str
-        self.description = description  # str
+        self.description = description  # FormattedText
         self.photo = photo  # Photo
         self.embed_url = embed_url  # str
         self.embed_type = embed_type  # str
@@ -93,7 +93,7 @@ class WebPage(Object):
         type = q.get('type')
         site_name = q.get('site_name')
         title = q.get('title')
-        description = q.get('description')
+        description = Object.read(q.get('description'))
         photo = Object.read(q.get('photo'))
         embed_url = q.get('embed_url')
         embed_type = q.get('embed_type')

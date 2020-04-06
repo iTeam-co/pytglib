@@ -5,7 +5,7 @@ from ..utils import Object
 
 class CheckChatUsernameResultPublicChatsTooMuch(Object):
     """
-    The user has too much public chats, one of them should be made private first
+    The user has too much chats with username, one of them should be made private first
 
     Attributes:
         ID (:obj:`str`): ``CheckChatUsernameResultPublicChatsTooMuch``

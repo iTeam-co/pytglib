@@ -5,14 +5,14 @@ from ..utils import Object
 
 class ParseTextEntities(Object):
     """
-    Parses Bold, Italic, Code, Pre, PreCode and TextUrl entities contained in the text. This is an offline method. Can be called before authorization. Can be called synchronously 
+    Parses Bold, Italic, Underline, Strikethrough, Code, Pre, PreCode, TextUrl and MentionName entities contained in the text. This is an offline method. Can be called before authorization. Can be called synchronously 
 
     Attributes:
         ID (:obj:`str`): ``ParseTextEntities``
 
     Args:
         text (:obj:`str`):
-            The text which should be parsed 
+            The text to parse 
         parse_mode (:class:`telegram.api.types.TextParseMode`):
             Text parse mode
 

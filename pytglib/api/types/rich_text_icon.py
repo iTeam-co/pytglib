@@ -14,9 +14,9 @@ class RichTextIcon(Object):
         document (:class:`telegram.api.types.document`):
             The image represented as a documentThe image can be in GIF, JPEG or PNG format
         width (:obj:`int`):
-            Width of a bounding box in which the image should be shown, 0 if unknown
+            Width of a bounding box in which the image should be shown; 0 if unknown
         height (:obj:`int`):
-            Height of a bounding box in which the image should be shown, 0 if unknown
+            Height of a bounding box in which the image should be shown; 0 if unknown
 
     Returns:
         RichText

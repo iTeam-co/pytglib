@@ -5,7 +5,7 @@ from ..utils import Object
 
 class UploadStickerFile(Object):
     """
-    Uploads a PNG image with a sticker; for bots only; returns the uploaded file 
+    Uploads a PNG image with a sticker; for bots only; returns the uploaded file
 
     Attributes:
         ID (:obj:`str`): ``UploadStickerFile``
@@ -14,7 +14,7 @@ class UploadStickerFile(Object):
         user_id (:obj:`int`):
             Sticker file owner 
         png_sticker (:class:`telegram.api.types.InputFile`):
-            PNG image with the sticker; must be up to 512 kB in size and fit in 512x512 square
+            PNG image with the sticker; must be up to 512 KB in size and fit in 512x512 square
 
     Returns:
         File

@@ -16,7 +16,7 @@ class SecretChatState(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "SecretChatStatePending or SecretChatStateClosed or SecretChatStateReady":
+    def read(q: dict, *args) -> "SecretChatStatePending or SecretChatStateReady or SecretChatStateClosed":
         if q.get("@type"):
             return Object.read(q)
         return SecretChatState()

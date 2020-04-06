@@ -5,7 +5,7 @@ from ..utils import Object
 
 class PinChatMessage(Object):
     """
-    Pins a message in a chat; requires appropriate administrator rights in the group or channel 
+    Pins a message in a chat; requires can_pin_messages rights 
 
     Attributes:
         ID (:obj:`str`): ``PinChatMessage``

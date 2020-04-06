@@ -11,9 +11,9 @@ class ChatEventPhotoChanged(Object):
         ID (:obj:`str`): ``ChatEventPhotoChanged``
 
     Args:
-        old_photo (:class:`telegram.api.types.chatPhoto`):
+        old_photo (:class:`telegram.api.types.photo`):
             Previous chat photo value; may be null 
-        new_photo (:class:`telegram.api.types.chatPhoto`):
+        new_photo (:class:`telegram.api.types.photo`):
             New chat photo value; may be null
 
     Returns:
@@ -26,8 +26,8 @@ class ChatEventPhotoChanged(Object):
 
     def __init__(self, old_photo, new_photo, **kwargs):
         
-        self.old_photo = old_photo  # ChatPhoto
-        self.new_photo = new_photo  # ChatPhoto
+        self.old_photo = old_photo  # Photo
+        self.new_photo = new_photo  # Photo
 
     @staticmethod
     def read(q: dict, *args) -> "ChatEventPhotoChanged":

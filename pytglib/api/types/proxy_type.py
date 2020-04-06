@@ -5,7 +5,7 @@ from ..utils import Object
 
 class ProxyType(Object):
     """
-    Describes the type of the proxy server
+    Describes the type of a proxy server
 
     No parameters required.
     """
@@ -16,7 +16,7 @@ class ProxyType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "ProxyTypeHttp or ProxyTypeMtproto or ProxyTypeSocks5":
+    def read(q: dict, *args) -> "ProxyTypeMtproto or ProxyTypeHttp or ProxyTypeSocks5":
         if q.get("@type"):
             return Object.read(q)
         return ProxyType()

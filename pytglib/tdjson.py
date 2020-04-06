@@ -9,26 +9,15 @@ import pkg_resources
 logger = logging.getLogger(__name__)
 
 
-def _get_tdjson_lib_path() -> str:
-    if platform.system().lower() == 'darwin':
-        lib_name = 'darwin/libtdjson.dylib'
-    else:
-        lib_name = 'linux/libtdjson.so'
-
-    return pkg_resources.resource_filename('telegram', f'lib/{lib_name}')
-
-
 class TDJson:
-    def __init__(self, library_path: Optional[str] = None, verbosity: int = 2) -> None:
-        if library_path is None:
-            library_path = _get_tdjson_lib_path()
+    def __init__(self, library_path, verbosity: int = 2) -> None:
         logger.info('Using shared library "%s"', library_path)
 
         self._build_client(library_path, verbosity)
 
     def __del__(self):
         if hasattr(self, '_tdjson') and hasattr(
-            self._tdjson, '_td_json_client_destroy'
+                self._tdjson, '_td_json_client_destroy'
         ):
             self.stop()
 

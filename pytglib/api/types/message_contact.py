@@ -12,7 +12,7 @@ class MessageContact(Object):
 
     Args:
         contact (:class:`telegram.api.types.contact`):
-            Message content
+            The contact description
 
     Returns:
         MessageContent

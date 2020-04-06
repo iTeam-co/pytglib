@@ -16,7 +16,7 @@ class RichText(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "RichTextBold or RichTextUrl or RichTextSubscript or RichTextAnchor or RichTextEmailAddress or RichTextPhoneNumber or RichTextIcon or RichTexts or RichTextItalic or RichTextPlain or RichTextFixed or RichTextStrikethrough or RichTextUnderline or RichTextMarked or RichTextSuperscript":
+    def read(q: dict, *args) -> "RichTextIcon or RichTexts or RichTextFixed or RichTextSubscript or RichTextPlain or RichTextAnchor or RichTextEmailAddress or RichTextUnderline or RichTextMarked or RichTextReference or RichTextSuperscript or RichTextStrikethrough or RichTextPhoneNumber or RichTextBold or RichTextUrl or RichTextAnchorLink or RichTextItalic":
         if q.get("@type"):
             return Object.read(q)
         return RichText()

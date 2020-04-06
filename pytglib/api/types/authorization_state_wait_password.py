@@ -14,7 +14,7 @@ class AuthorizationStateWaitPassword(Object):
         password_hint (:obj:`str`):
             Hint for the password; may be empty 
         has_recovery_email_address (:obj:`bool`):
-            True if a recovery email address has been set up
+            True, if a recovery email address has been set up
         recovery_email_address_pattern (:obj:`str`):
             Pattern of the email address to which the recovery email was sent; empty until a recovery email has been sent
 

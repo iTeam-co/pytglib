@@ -16,11 +16,8 @@ from pytglib.tdjson import TDJson
 from pytglib.worker import BaseWorker, SimpleWorker
 from pytglib.api import Object
 from pytglib.functions import Function
-from pytglib.proxy import ProxyManager
-
 
 logger = logging.getLogger(__name__)
-
 
 MESSAGE_HANDLER_TYPE: str = 'updateNewMessage'
 RAW_UPDATE_HANDLER_TYPE: str = 'update'
@@ -29,24 +26,24 @@ DELETE_MESSAGES_HANDLER_TYPE: str = 'updateDeleteMessages'
 
 class Telegram:
     def __init__(
-        self,
-        api_id: int,
-        api_hash: str,
-        database_encryption_key: str,
-        phone: str = None,
-        bot_token: str = None,
-        library_path: str = None,
-        worker: Optional[Type[BaseWorker]] = None,
-        files_directory: str = None,
-        use_test_dc: bool = False,
-        use_message_database: bool = True,
-        device_model: str = 'python-telegram',
-        application_version: str = VERSION,
-        system_version: str = 'unknown',
-        system_language_code: str = 'en',
-        login: bool = False,
-        default_workers_queue_size=1000,
-        tdlib_verbosity: int = 2,
+            self,
+            library_path,
+            api_id: int,
+            api_hash: str,
+            database_encryption_key: str,
+            phone: str = None,
+            bot_token: str = None,
+            worker: Optional[Type[BaseWorker]] = None,
+            files_directory: str = None,
+            use_test_dc: bool = False,
+            use_message_database: bool = True,
+            device_model: str = 'python-telegram',
+            application_version: str = VERSION,
+            system_version: str = 'unknown',
+            system_language_code: str = 'en',
+            login: bool = False,
+            default_workers_queue_size=1000,
+            tdlib_verbosity: int = 2,
     ) -> None:
         """
         Args:
@@ -104,7 +101,6 @@ class Telegram:
         self._run()
 
         self.functions = Function(self)
-        self.proxy_manager = ProxyManager(self)
 
         if login:
             self.login()
@@ -261,8 +257,8 @@ class Telegram:
     def idle(self, stop_signals=(signal.SIGINT, signal.SIGTERM, signal.SIGABRT)):
         """Blocks until one of the signals are received and stops"""
 
-#        for sig in stop_signals:
-#            signal.signal(sig, self._signal_handler)
+        #        for sig in stop_signals:
+        #            signal.signal(sig, self._signal_handler)
 
         self._is_enabled = True
 
@@ -302,16 +298,16 @@ class Telegram:
                 res = result.update
                 if not res:
                     # print(result.error_info)
-                    if result.error_info['message'] == 'Database encryption key is needed: call checkDatabaseEncryptionKey first':
+                    if result.error_info['message'] == 'Database encryption key is needed:' \
+                                                       ' call checkDatabaseEncryptionKey first':
                         authorization_state = 'authorizationStateWaitEncryptionKey'
-                    elif result.error_info['message'] == 'Initialization parameters are needed: call setTdlibParameters first':
+                    elif result.error_info['message'] == 'Initialization parameters are needed:' \
+                                                         ' call setTdlibParameters first':
                         authorization_state = 'authorizationStateWaitTdlibParameters'
                     else:
                         raise ValueError(str(result.error_info))  # TODO: Change to "Error" object
                 else:
                     authorization_state = res.authorization_state.ID
-
-
 
     def _set_initial_params(self) -> AsyncResult:
         logger.info(

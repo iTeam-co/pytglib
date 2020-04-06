@@ -12,7 +12,7 @@ class MessageSticker(Object):
 
     Args:
         sticker (:class:`telegram.api.types.sticker`):
-            Message content
+            The sticker description
 
     Returns:
         MessageContent

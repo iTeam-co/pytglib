@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetStickerEmojis(Object):
     """
-    Returns emoji corresponding to a sticker 
+    Returns emoji corresponding to a sticker. The list is only for informational purposes, because a sticker is always sent with a fixed emoji from the corresponding Sticker object 
 
     Attributes:
         ID (:obj:`str`): ``GetStickerEmojis``
@@ -15,7 +15,7 @@ class GetStickerEmojis(Object):
             Sticker file identifier
 
     Returns:
-        StickerEmojis
+        Emojis
 
     Raises:
         :class:`telegram.Error`

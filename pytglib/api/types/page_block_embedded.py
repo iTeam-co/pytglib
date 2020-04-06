@@ -18,9 +18,9 @@ class PageBlockEmbedded(Object):
         poster_photo (:class:`telegram.api.types.photo`):
             Poster photo, if available; may be null 
         width (:obj:`int`):
-            Block width, 0 if unknown 
+            Block width; 0 if unknown 
         height (:obj:`int`):
-            Block height, 0 if unknown 
+            Block height; 0 if unknown 
         caption (:class:`telegram.api.types.pageBlockCaption`):
             Block caption 
         is_full_width (:obj:`bool`):

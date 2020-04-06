@@ -22,9 +22,11 @@ class Video(Object):
         mime_type (:obj:`str`):
             MIME type of the file; as defined by the sender 
         has_stickers (:obj:`bool`):
-            True, if stickers were added to the photo
+            True, if stickers were added to the video
         supports_streaming (:obj:`bool`):
             True, if the video should be tried to be streamed 
+        minithumbnail (:class:`telegram.api.types.minithumbnail`):
+            Video minithumbnail; may be null 
         thumbnail (:class:`telegram.api.types.photoSize`):
             Video thumbnail; as defined by the sender; may be null 
         video (:class:`telegram.api.types.file`):
@@ -38,7 +40,7 @@ class Video(Object):
     """
     ID = "video"
 
-    def __init__(self, duration, width, height, file_name, mime_type, has_stickers, supports_streaming, thumbnail, video, **kwargs):
+    def __init__(self, duration, width, height, file_name, mime_type, has_stickers, supports_streaming, minithumbnail, thumbnail, video, **kwargs):
         
         self.duration = duration  # int
         self.width = width  # int
@@ -47,6 +49,7 @@ class Video(Object):
         self.mime_type = mime_type  # str
         self.has_stickers = has_stickers  # bool
         self.supports_streaming = supports_streaming  # bool
+        self.minithumbnail = minithumbnail  # Minithumbnail
         self.thumbnail = thumbnail  # PhotoSize
         self.video = video  # File
 
@@ -59,6 +62,7 @@ class Video(Object):
         mime_type = q.get('mime_type')
         has_stickers = q.get('has_stickers')
         supports_streaming = q.get('supports_streaming')
+        minithumbnail = Object.read(q.get('minithumbnail'))
         thumbnail = Object.read(q.get('thumbnail'))
         video = Object.read(q.get('video'))
-        return Video(duration, width, height, file_name, mime_type, has_stickers, supports_streaming, thumbnail, video)
+        return Video(duration, width, height, file_name, mime_type, has_stickers, supports_streaming, minithumbnail, thumbnail, video)

@@ -16,7 +16,7 @@ class PushMessageContentChatAddMembers(Object):
         is_current_user (:obj:`bool`):
             True, if the current user was added to the group
         is_returned (:obj:`bool`):
-            True, if the user has returned to the group himself
+            True, if the user has returned to the group themself
 
     Returns:
         PushMessageContent

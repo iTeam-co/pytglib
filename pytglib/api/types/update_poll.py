@@ -5,7 +5,7 @@ from ..utils import Object
 
 class UpdatePoll(Object):
     """
-    Information about a poll was updated; for bots only 
+    A poll was updated; for bots only 
 
     Attributes:
         ID (:obj:`str`): ``UpdatePoll``

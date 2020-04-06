@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SupergroupMembersFilterAdministrators(Object):
     """
-    Returns the creator and administrators
+    Returns the owner and administrators
 
     Attributes:
         ID (:obj:`str`): ``SupergroupMembersFilterAdministrators``

@@ -14,7 +14,9 @@ class RichTextUrl(Object):
         text (:class:`telegram.api.types.RichText`):
             Text 
         url (:obj:`str`):
-            URL
+            URL 
+        is_cached (:obj:`bool`):
+            True, if the URL has cached instant view server-side
 
     Returns:
         RichText
@@ -24,13 +26,15 @@ class RichTextUrl(Object):
     """
     ID = "richTextUrl"
 
-    def __init__(self, text, url, **kwargs):
+    def __init__(self, text, url, is_cached, **kwargs):
         
         self.text = text  # RichText
         self.url = url  # str
+        self.is_cached = is_cached  # bool
 
     @staticmethod
     def read(q: dict, *args) -> "RichTextUrl":
         text = Object.read(q.get('text'))
         url = q.get('url')
-        return RichTextUrl(text, url)
+        is_cached = q.get('is_cached')
+        return RichTextUrl(text, url, is_cached)

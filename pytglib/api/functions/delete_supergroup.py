@@ -5,7 +5,7 @@ from ..utils import Object
 
 class DeleteSupergroup(Object):
     """
-    Deletes a supergroup or channel along with all messages in the corresponding chat. This will release the supergroup or channel username and remove all members; requires creator privileges in the supergroup or channel. Chats with more than 1000 members can't be deleted using this method 
+    Deletes a supergroup or channel along with all messages in the corresponding chat. This will release the supergroup or channel username and remove all members; requires owner privileges in the supergroup or channel. Chats with more than 1000 members can't be deleted using this method 
 
     Attributes:
         ID (:obj:`str`): ``DeleteSupergroup``

@@ -12,7 +12,7 @@ class MessageVoiceNote(Object):
 
     Args:
         voice_note (:class:`telegram.api.types.voiceNote`):
-            Message content 
+            The voice note description 
         caption (:class:`telegram.api.types.formattedText`):
             Voice note caption 
         is_listened (:obj:`bool`):

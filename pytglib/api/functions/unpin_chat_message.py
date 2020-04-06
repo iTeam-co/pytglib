@@ -5,7 +5,7 @@ from ..utils import Object
 
 class UnpinChatMessage(Object):
     """
-    Removes the pinned message from a chat; requires appropriate administrator rights in the group or channel 
+    Removes the pinned message from a chat; requires can_pin_messages rights in the group or channel 
 
     Attributes:
         ID (:obj:`str`): ``UnpinChatMessage``

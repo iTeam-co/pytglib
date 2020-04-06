@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SetSupergroupStickerSet(Object):
     """
-    Changes the sticker set of a supergroup; requires appropriate rights in the supergroup 
+    Changes the sticker set of a supergroup; requires can_change_info rights 
 
     Attributes:
         ID (:obj:`str`): ``SetSupergroupStickerSet``

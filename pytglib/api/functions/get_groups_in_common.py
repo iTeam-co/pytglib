@@ -16,7 +16,7 @@ class GetGroupsInCommon(Object):
         offset_chat_id (:obj:`int`):
             Chat identifier starting from which to return chats; use 0 for the first request 
         limit (:obj:`int`):
-            Maximum number of chats to be returned; up to 100
+            The maximum number of chats to be returned; up to 100
 
     Returns:
         Chats

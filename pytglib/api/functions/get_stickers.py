@@ -14,7 +14,7 @@ class GetStickers(Object):
         emoji (:obj:`str`):
             String representation of emojiIf empty, returns all known installed stickers 
         limit (:obj:`int`):
-            Maximum number of stickers to be returned
+            The maximum number of stickers to be returned
 
     Returns:
         Stickers

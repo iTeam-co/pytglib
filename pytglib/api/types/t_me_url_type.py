@@ -16,7 +16,7 @@ class TMeUrlType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "TMeUrlTypeSupergroup or TMeUrlTypeChatInvite or TMeUrlTypeUser or TMeUrlTypeStickerSet":
+    def read(q: dict, *args) -> "TMeUrlTypeChatInvite or TMeUrlTypeSupergroup or TMeUrlTypeStickerSet or TMeUrlTypeUser":
         if q.get("@type"):
             return Object.read(q)
         return TMeUrlType()

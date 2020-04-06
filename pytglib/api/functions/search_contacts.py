@@ -14,7 +14,7 @@ class SearchContacts(Object):
         query (:obj:`str`):
             Query to search for; may be empty to return all contacts 
         limit (:obj:`int`):
-            Maximum number of users to be returned
+            The maximum number of users to be returned
 
     Returns:
         Users

@@ -5,7 +5,7 @@ from ..utils import Object
 
 class BotCommand(Object):
     """
-    Represents commands supported by a bot 
+    Represents a command supported by a bot 
 
     Attributes:
         ID (:obj:`str`): ``BotCommand``

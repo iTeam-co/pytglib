@@ -14,7 +14,7 @@ class SearchChats(Object):
         query (:obj:`str`):
             Query to search forIf the query is empty, returns up to 20 recently found chats 
         limit (:obj:`int`):
-            Maximum number of chats to be returned
+            The maximum number of chats to be returned
 
     Returns:
         Chats

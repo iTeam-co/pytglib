@@ -16,7 +16,7 @@ class ReplyMarkup(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "ReplyMarkupInlineKeyboard or ReplyMarkupShowKeyboard or ReplyMarkupForceReply or ReplyMarkupRemoveKeyboard":
+    def read(q: dict, *args) -> "ReplyMarkupForceReply or ReplyMarkupRemoveKeyboard or ReplyMarkupInlineKeyboard or ReplyMarkupShowKeyboard":
         if q.get("@type"):
             return Object.read(q)
         return ReplyMarkup()

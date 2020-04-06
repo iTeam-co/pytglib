@@ -14,9 +14,9 @@ class ProfilePhoto(Object):
         id (:obj:`int`):
             Photo identifier; 0 for an empty photoCan be used to find a photo in a list of userProfilePhotos
         small (:class:`telegram.api.types.file`):
-            A small (160x160) user profile photo 
+            A small (160x160) user profile photoThe file can be downloaded only before the photo is changed 
         big (:class:`telegram.api.types.file`):
-            A big (640x640) user profile photo
+            A big (640x640) user profile photoThe file can be downloaded only before the photo is changed
 
     Returns:
         ProfilePhoto

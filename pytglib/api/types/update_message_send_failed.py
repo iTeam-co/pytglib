@@ -12,7 +12,7 @@ class UpdateMessageSendFailed(Object):
 
     Args:
         message (:class:`telegram.api.types.message`):
-            Contains information about the message that failed to send 
+            Contains information about the message which failed to send 
         old_message_id (:obj:`int`):
             The previous temporary message identifier 
         error_code (:obj:`int`):

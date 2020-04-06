@@ -12,7 +12,7 @@ class MessageAudio(Object):
 
     Args:
         audio (:class:`telegram.api.types.audio`):
-            Message content 
+            The audio description 
         caption (:class:`telegram.api.types.formattedText`):
             Audio caption
 

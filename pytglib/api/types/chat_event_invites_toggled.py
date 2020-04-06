@@ -5,14 +5,14 @@ from ..utils import Object
 
 class ChatEventInvitesToggled(Object):
     """
-    The anyone_can_invite setting of a supergroup chat was toggled 
+    The can_invite_users permission of a supergroup chat was toggled 
 
     Attributes:
         ID (:obj:`str`): ``ChatEventInvitesToggled``
 
     Args:
-        anyone_can_invite (:obj:`bool`):
-            New value of anyone_can_invite
+        can_invite_users (:obj:`bool`):
+            New value of can_invite_users permission
 
     Returns:
         ChatEventAction
@@ -22,11 +22,11 @@ class ChatEventInvitesToggled(Object):
     """
     ID = "chatEventInvitesToggled"
 
-    def __init__(self, anyone_can_invite, **kwargs):
+    def __init__(self, can_invite_users, **kwargs):
         
-        self.anyone_can_invite = anyone_can_invite  # bool
+        self.can_invite_users = can_invite_users  # bool
 
     @staticmethod
     def read(q: dict, *args) -> "ChatEventInvitesToggled":
-        anyone_can_invite = q.get('anyone_can_invite')
-        return ChatEventInvitesToggled(anyone_can_invite)
+        can_invite_users = q.get('can_invite_users')
+        return ChatEventInvitesToggled(can_invite_users)

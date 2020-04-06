@@ -12,7 +12,7 @@ class InputMessageText(Object):
 
     Args:
         text (:class:`telegram.api.types.formattedText`):
-            Formatted text to be sent; 1-GetOption("message_text_length_max") charactersOnly Bold, Italic, Code, Pre, PreCode and TextUrl entities are allowed to be specified manually
+            Formatted text to be sent; 1-GetOption("message_text_length_max") charactersOnly Bold, Italic, Underline, Strikethrough, Code, Pre, PreCode, TextUrl and MentionName entities are allowed to be specified manually
         disable_web_page_preview (:obj:`bool`):
             True, if rich web page previews for URLs in the message text should be disabled 
         clear_draft (:obj:`bool`):

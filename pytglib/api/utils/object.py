@@ -11,6 +11,8 @@ class Object:
             return None
         if isinstance(q, Object):
             return q
+        if not isinstance(q, dict):
+            return q
         for key, value in q.items():
             if isinstance(value, dict) and value.get("@type", False):
                 q[key] = Object.all[value["@type"]].read(value)

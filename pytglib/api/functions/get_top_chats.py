@@ -14,7 +14,7 @@ class GetTopChats(Object):
         category (:class:`telegram.api.types.TopChatCategory`):
             Category of chats to be returned 
         limit (:obj:`int`):
-            Maximum number of chats to be returned; up to 30
+            The maximum number of chats to be returned; up to 30
 
     Returns:
         Chats

@@ -16,7 +16,7 @@ class SendBotStartMessage(Object):
         chat_id (:obj:`int`):
             Identifier of the target chat 
         parameter (:obj:`str`):
-            A hidden parameter sent to the bot for deep linking purposes (https://apitelegramorg/bots#deep-linking)
+            A hidden parameter sent to the bot for deep linking purposes (https://coretelegramorg/bots#deep-linking)
 
     Returns:
         Message

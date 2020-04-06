@@ -19,12 +19,12 @@ sys.path.insert(0, os.path.abspath('..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Python-telegram'
-copyright = '2019, iTeam'
+project = 'Pytglib'
+copyright = '2020, iTeam'
 author = 'iTeam'
 
 # The short X.Y version
-version = '0.3'
+version = '0.4'
 # The full version, including alpha/beta/rc tags
 release = 'beta'
 
@@ -107,7 +107,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Python-telegramdoc'
+htmlhelp_basename = 'Pytglibdoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -134,7 +134,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'Python-telegram.tex', 'Python-telegram Documentation',
+    (master_doc, 'Pytglib.tex', 'Pytglib Documentation',
      'iTeam', 'manual'),
 ]
 
@@ -144,7 +144,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'python-telegram', 'Python-telegram Documentation',
+    (master_doc, 'pytglib', 'Pytglib Documentation',
      [author], 1)
 ]
 
@@ -155,8 +155,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'Python-telegram', 'Python-telegram Documentation',
-     author, 'Python-telegram', 'One line description of project.',
+    (master_doc, 'Pytglib', 'Pytglib Documentation',
+     author, 'Pytglib', 'One line description of project.',
      'Miscellaneous'),
 ]
 

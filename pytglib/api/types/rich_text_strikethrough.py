@@ -5,7 +5,7 @@ from ..utils import Object
 
 class RichTextStrikethrough(Object):
     """
-    A strike-through rich text 
+    A strikethrough rich text 
 
     Attributes:
         ID (:obj:`str`): ``RichTextStrikethrough``

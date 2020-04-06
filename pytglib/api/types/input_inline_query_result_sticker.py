@@ -5,7 +5,7 @@ from ..utils import Object
 
 class InputInlineQueryResultSticker(Object):
     """
-    Represents a link to a WEBP sticker 
+    Represents a link to a WEBP or TGS sticker 
 
     Attributes:
         ID (:obj:`str`): ``InputInlineQueryResultSticker``
@@ -16,7 +16,7 @@ class InputInlineQueryResultSticker(Object):
         thumbnail_url (:obj:`str`):
             URL of the sticker thumbnail, if it exists
         sticker_url (:obj:`str`):
-            The URL of the WEBP sticker (sticker file size must not exceed 5MB) 
+            The URL of the WEBP or TGS sticker (sticker file size must not exceed 5MB) 
         sticker_width (:obj:`int`):
             Width of the sticker 
         sticker_height (:obj:`int`):

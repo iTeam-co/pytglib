@@ -5,12 +5,14 @@ from ..utils import Object
 
 class GetCreatedPublicChats(Object):
     """
-    Returns a list of public chats created by the user
+    Returns a list of public chats of the specified type, owned by the user 
 
     Attributes:
         ID (:obj:`str`): ``GetCreatedPublicChats``
 
-    No parameters required.
+    Args:
+        type (:class:`telegram.api.types.PublicChatType`):
+            Type of the public chats to return
 
     Returns:
         Chats
@@ -20,11 +22,11 @@ class GetCreatedPublicChats(Object):
     """
     ID = "getCreatedPublicChats"
 
-    def __init__(self, extra=None, **kwargs):
+    def __init__(self, type, extra=None, **kwargs):
         self.extra = extra
-        pass
+        self.type = type  # PublicChatType
 
     @staticmethod
     def read(q: dict, *args) -> "GetCreatedPublicChats":
-        
-        return GetCreatedPublicChats()
+        type = Object.read(q.get('type'))
+        return GetCreatedPublicChats(type)

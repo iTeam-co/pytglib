@@ -5,7 +5,7 @@ from ..utils import Object
 
 class NotificationGroupType(Object):
     """
-    Describes type of notifications in the group
+    Describes the type of notifications in a notification group
 
     No parameters required.
     """
@@ -16,7 +16,7 @@ class NotificationGroupType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "NotificationGroupTypeMessages or NotificationGroupTypeMentions or NotificationGroupTypeSecretChat or NotificationGroupTypeCalls":
+    def read(q: dict, *args) -> "NotificationGroupTypeSecretChat or NotificationGroupTypeMentions or NotificationGroupTypeCalls or NotificationGroupTypeMessages":
         if q.get("@type"):
             return Object.read(q)
         return NotificationGroupType()

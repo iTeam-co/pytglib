@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SetSupergroupUsername(Object):
     """
-    Changes the username of a supergroup or channel, requires creator privileges in the supergroup or channel 
+    Changes the username of a supergroup or channel, requires owner privileges in the supergroup or channel 
 
     Attributes:
         ID (:obj:`str`): ``SetSupergroupUsername``

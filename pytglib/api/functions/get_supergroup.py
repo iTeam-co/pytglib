@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetSupergroup(Object):
     """
-    Returns information about a supergroup or channel by its identifier. This is an offline request if the current user is not a bot 
+    Returns information about a supergroup or a channel by its identifier. This is an offline request if the current user is not a bot 
 
     Attributes:
         ID (:obj:`str`): ``GetSupergroup``

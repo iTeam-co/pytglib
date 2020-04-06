@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SetPollAnswer(Object):
     """
-    Changes user answer to a poll 
+    Changes the user answer to a poll. A poll in quiz mode can be answered only once
 
     Attributes:
         ID (:obj:`str`): ``SetPollAnswer``
@@ -16,7 +16,7 @@ class SetPollAnswer(Object):
         message_id (:obj:`int`):
             Identifier of the message containing the poll
         option_ids (List of :obj:`int`):
-            0-based identifiers of options, chosen by the userCurrently user can't choose more than 1 option
+            0-based identifiers of answer options, chosen by the userUser can choose more than 1 answer option only is the poll allows multiple answers
 
     Returns:
         Ok

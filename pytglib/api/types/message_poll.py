@@ -12,7 +12,7 @@ class MessagePoll(Object):
 
     Args:
         poll (:class:`telegram.api.types.poll`):
-            Poll
+            The poll description
 
     Returns:
         MessageContent

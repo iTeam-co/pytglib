@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SetStickerPositionInSet(Object):
     """
-    Changes the position of a sticker in the set to which it belongs; for bots only. The sticker set must have been created by the bot 
+    Changes the position of a sticker in the set to which it belongs; for bots only. The sticker set must have been created by the bot
 
     Attributes:
         ID (:obj:`str`): ``SetStickerPositionInSet``

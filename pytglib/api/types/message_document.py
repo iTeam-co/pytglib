@@ -12,7 +12,7 @@ class MessageDocument(Object):
 
     Args:
         document (:class:`telegram.api.types.document`):
-            Message content 
+            The document description 
         caption (:class:`telegram.api.types.formattedText`):
             Document caption
 

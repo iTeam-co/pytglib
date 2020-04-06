@@ -5,7 +5,7 @@ from ..utils import Object
 
 class UpdateHavePendingNotifications(Object):
     """
-    Describes, whether there are some pending notification updates. Can be used to prevent application from killing, while there are some pending notifications
+    Describes whether there are some pending notification updates. Can be used to prevent application from killing, while there are some pending notifications
 
     Attributes:
         ID (:obj:`str`): ``UpdateHavePendingNotifications``

@@ -5,14 +5,14 @@ from ..utils import Object
 
 class ImportContacts(Object):
     """
-    Adds new contacts or edits existing contacts; contacts' user identifiers are ignored 
+    Adds new contacts or edits existing contacts by their phone numbers; contacts' user identifiers are ignored 
 
     Attributes:
         ID (:obj:`str`): ``ImportContacts``
 
     Args:
         contacts (List of :class:`telegram.api.types.contact`):
-            The list of contacts to import or edit, contact's vCard are ignored and are not imported
+            The list of contacts to import or edit; contacts' vCard are ignored and are not imported
 
     Returns:
         ImportedContacts

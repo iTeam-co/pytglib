@@ -17,12 +17,14 @@ class ForwardMessages(Object):
             Identifier of the chat from which to forward messages 
         message_ids (List of :obj:`int`):
             Identifiers of the messages to forward
-        disable_notification (:obj:`bool`):
-            Pass true to disable notification for the message, doesn't work if messages are forwarded to a secret chat 
-        from_background (:obj:`bool`):
-            Pass true if the message is sent from the background
+        options (:class:`telegram.api.types.sendMessageOptions`):
+            Options to be used to send the messages
         as_album (:obj:`bool`):
             True, if the messages should be grouped into an album after forwardingFor this to work, no more than 10 messages may be forwarded, and all of them must be photo or video messages
+        send_copy (:obj:`bool`):
+            True, if content of the messages needs to be copied without links to the original messagesAlways true if the messages are forwarded to a secret chat
+        remove_caption (:obj:`bool`):
+            True, if media captions of message copies needs to be removedIgnored if send_copy is false
 
     Returns:
         Messages
@@ -32,21 +34,23 @@ class ForwardMessages(Object):
     """
     ID = "forwardMessages"
 
-    def __init__(self, chat_id, from_chat_id, message_ids, disable_notification, from_background, as_album, extra=None, **kwargs):
+    def __init__(self, chat_id, from_chat_id, message_ids, options, as_album, send_copy, remove_caption, extra=None, **kwargs):
         self.extra = extra
         self.chat_id = chat_id  # int
         self.from_chat_id = from_chat_id  # int
         self.message_ids = message_ids  # list of int
-        self.disable_notification = disable_notification  # bool
-        self.from_background = from_background  # bool
+        self.options = options  # SendMessageOptions
         self.as_album = as_album  # bool
+        self.send_copy = send_copy  # bool
+        self.remove_caption = remove_caption  # bool
 
     @staticmethod
     def read(q: dict, *args) -> "ForwardMessages":
         chat_id = q.get('chat_id')
         from_chat_id = q.get('from_chat_id')
         message_ids = q.get('message_ids')
-        disable_notification = q.get('disable_notification')
-        from_background = q.get('from_background')
+        options = Object.read(q.get('options'))
         as_album = q.get('as_album')
-        return ForwardMessages(chat_id, from_chat_id, message_ids, disable_notification, from_background, as_album)
+        send_copy = q.get('send_copy')
+        remove_caption = q.get('remove_caption')
+        return ForwardMessages(chat_id, from_chat_id, message_ids, options, as_album, send_copy, remove_caption)

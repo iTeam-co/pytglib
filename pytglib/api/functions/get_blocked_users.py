@@ -14,7 +14,7 @@ class GetBlockedUsers(Object):
         offset (:obj:`int`):
             Number of users to skip in the result; must be non-negative 
         limit (:obj:`int`):
-            Maximum number of users to return; up to 100
+            The maximum number of users to return; up to 100
 
     Returns:
         Users

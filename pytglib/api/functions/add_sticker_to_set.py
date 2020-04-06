@@ -5,7 +5,7 @@ from ..utils import Object
 
 class AddStickerToSet(Object):
     """
-    Adds a new sticker to a set; for bots only. Returns the sticker set 
+    Adds a new sticker to a set; for bots only. Returns the sticker set
 
     Attributes:
         ID (:obj:`str`): ``AddStickerToSet``
@@ -15,7 +15,7 @@ class AddStickerToSet(Object):
             Sticker set owner 
         name (:obj:`str`):
             Sticker set name 
-        sticker (:class:`telegram.api.types.inputSticker`):
+        sticker (:class:`telegram.api.types.InputSticker`):
             Sticker to add to the set
 
     Returns:

@@ -16,7 +16,7 @@ class PageBlockEmbeddedPost(Object):
         author (:obj:`str`):
             Post author 
         author_photo (:class:`telegram.api.types.photo`):
-            Post author photo 
+            Post author photo; may be null 
         date (:obj:`int`):
             Point in time (Unix timestamp) when the post was created; 0 if unknown 
         page_blocks (List of :class:`telegram.api.types.PageBlock`):

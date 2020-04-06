@@ -12,7 +12,7 @@ class MessageLocation(Object):
 
     Args:
         location (:class:`telegram.api.types.location`):
-            Message content 
+            The location description 
         live_period (:obj:`int`):
             Time relative to the message sent date until which the location can be updated, in seconds
         expires_in (:obj:`int`):

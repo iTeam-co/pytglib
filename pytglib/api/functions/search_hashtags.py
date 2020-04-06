@@ -14,7 +14,7 @@ class SearchHashtags(Object):
         prefix (:obj:`str`):
             Hashtag prefix to search for 
         limit (:obj:`int`):
-            Maximum number of hashtags to be returned
+            The maximum number of hashtags to be returned
 
     Returns:
         Hashtags

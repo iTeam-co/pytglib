@@ -25,6 +25,8 @@ class OptimizeStorage(Object):
             If not empty, only files from the given chats are consideredUse 0 as chat identifier to delete files not belonging to any chat (eg, profile photos)
         exclude_chat_ids (List of :obj:`int`):
             If not empty, files from the given chats are excludedUse 0 as chat identifier to exclude all files not belonging to any chat (eg, profile photos)
+        return_deleted_file_statistics (:obj:`bool`):
+            Pass true if deleted file statistics needs to be returned instead of the whole storage usage statisticsAffects only returned statistics
         chat_limit (:obj:`int`):
             Same as in getStorageStatisticsAffects only returned statistics
 
@@ -36,7 +38,7 @@ class OptimizeStorage(Object):
     """
     ID = "optimizeStorage"
 
-    def __init__(self, size, ttl, count, immunity_delay, file_types, chat_ids, exclude_chat_ids, chat_limit, extra=None, **kwargs):
+    def __init__(self, size, ttl, count, immunity_delay, file_types, chat_ids, exclude_chat_ids, return_deleted_file_statistics, chat_limit, extra=None, **kwargs):
         self.extra = extra
         self.size = size  # int
         self.ttl = ttl  # int
@@ -45,6 +47,7 @@ class OptimizeStorage(Object):
         self.file_types = file_types  # list of FileType
         self.chat_ids = chat_ids  # list of int
         self.exclude_chat_ids = exclude_chat_ids  # list of int
+        self.return_deleted_file_statistics = return_deleted_file_statistics  # bool
         self.chat_limit = chat_limit  # int
 
     @staticmethod
@@ -56,5 +59,6 @@ class OptimizeStorage(Object):
         file_types = [Object.read(i) for i in q.get('file_types', [])]
         chat_ids = q.get('chat_ids')
         exclude_chat_ids = q.get('exclude_chat_ids')
+        return_deleted_file_statistics = q.get('return_deleted_file_statistics')
         chat_limit = q.get('chat_limit')
-        return OptimizeStorage(size, ttl, count, immunity_delay, file_types, chat_ids, exclude_chat_ids, chat_limit)
+        return OptimizeStorage(size, ttl, count, immunity_delay, file_types, chat_ids, exclude_chat_ids, return_deleted_file_statistics, chat_limit)

@@ -5,7 +5,7 @@ from ..utils import Object
 
 class InputThumbnail(Object):
     """
-    A thumbnail to be sent along with a file; should be in JPEG or WEBP format for stickers, and less than 200 kB in size 
+    A thumbnail to be sent along with a file; should be in JPEG or WEBP format for stickers, and less than 200 KB in size 
 
     Attributes:
         ID (:obj:`str`): ``InputThumbnail``

@@ -5,7 +5,7 @@ from ..utils import Object
 
 class FileTypeWallpaper(Object):
     """
-    The file is a wallpaper
+    The file is a wallpaper or a background pattern
 
     Attributes:
         ID (:obj:`str`): ``FileTypeWallpaper``

@@ -12,7 +12,7 @@ class MessagePhoto(Object):
 
     Args:
         photo (:class:`telegram.api.types.photo`):
-            Message content 
+            The photo description 
         caption (:class:`telegram.api.types.formattedText`):
             Photo caption 
         is_secret (:obj:`bool`):

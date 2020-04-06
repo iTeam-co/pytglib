@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetChatAdministrators(Object):
     """
-    Returns a list of users who are administrators of the chat 
+    Returns a list of administrators of the chat with their custom titles 
 
     Attributes:
         ID (:obj:`str`): ``GetChatAdministrators``
@@ -15,7 +15,7 @@ class GetChatAdministrators(Object):
             Chat identifier
 
     Returns:
-        Users
+        ChatAdministrators
 
     Raises:
         :class:`telegram.Error`

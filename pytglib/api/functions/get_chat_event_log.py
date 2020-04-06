@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetChatEventLog(Object):
     """
-    Returns a list of service actions taken by chat members and administrators in the last 48 hours. Available only in supergroups and channels. Requires administrator rights. Returns results in reverse chronological order (i. e., in order of decreasing event_id)
+    Returns a list of service actions taken by chat members and administrators in the last 48 hours. Available only for supergroups and channels. Requires administrator rights. Returns results in reverse chronological order (i. e., in order of decreasing event_id)
 
     Attributes:
         ID (:obj:`str`): ``GetChatEventLog``
@@ -18,7 +18,7 @@ class GetChatEventLog(Object):
         from_event_id (:obj:`int`):
             Identifier of an event from which to return resultsUse 0 to get results from the latest events 
         limit (:obj:`int`):
-            Maximum number of events to return; up to 100
+            The maximum number of events to return; up to 100
         filters (:class:`telegram.api.types.chatEventLogFilters`):
             The types of events to returnBy default, all types will be returned 
         user_ids (List of :obj:`int`):

@@ -5,7 +5,7 @@ from ..utils import Object
 
 class ToggleSupergroupSignMessages(Object):
     """
-    Toggles sender signatures messages sent in a channel; requires appropriate administrator rights in the channel. 
+    Toggles sender signatures messages sent in a channel; requires can_change_info rights 
 
     Attributes:
         ID (:obj:`str`): ``ToggleSupergroupSignMessages``

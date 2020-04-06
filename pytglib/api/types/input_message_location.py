@@ -14,7 +14,7 @@ class InputMessageLocation(Object):
         location (:class:`telegram.api.types.location`):
             Location to be sent 
         live_period (:obj:`int`):
-            Period for which the location can be updated, in seconds; should bebetween 60 and 86400 for a live location and 0 otherwise
+            Period for which the location can be updated, in seconds; should be between 60 and 86400 for a live location and 0 otherwise
 
     Returns:
         InputMessageContent

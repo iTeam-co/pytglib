@@ -5,7 +5,7 @@ from ..utils import Object
 
 class PublicMessageLink(Object):
     """
-    Contains a public HTTPS link to a message in a public supergroup or channel 
+    Contains a public HTTPS link to a message in a supergroup or channel with a username 
 
     Attributes:
         ID (:obj:`str`): ``PublicMessageLink``

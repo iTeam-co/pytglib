@@ -12,7 +12,7 @@ class AddLogMessage(Object):
 
     Args:
         verbosity_level (:obj:`int`):
-            Minimum verbosity level needed for the message to be logged, 0-1023 
+            The minimum verbosity level needed for the message to be logged, 0-1023 
         text (:obj:`str`):
             Text of a message to log
 

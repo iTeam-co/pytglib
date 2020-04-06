@@ -5,7 +5,7 @@ from ..utils import Object
 
 class DeleteChatMessagesFromUser(Object):
     """
-    Deletes all messages sent by the specified user to a chat. Supported only in supergroups; requires can_delete_messages administrator privileges 
+    Deletes all messages sent by the specified user to a chat. Supported only for supergroups; requires can_delete_messages administrator privileges 
 
     Attributes:
         ID (:obj:`str`): ``DeleteChatMessagesFromUser``

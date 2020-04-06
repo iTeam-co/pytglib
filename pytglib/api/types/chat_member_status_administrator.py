@@ -11,6 +11,8 @@ class ChatMemberStatusAdministrator(Object):
         ID (:obj:`str`): ``ChatMemberStatusAdministrator``
 
     Args:
+        custom_title (:obj:`str`):
+            A custom title of the administrator; 0-16 characters without emojis; applicable to supergroups only
         can_be_edited (:obj:`bool`):
             True, if the current user can edit the administrator privileges for the called user
         can_change_info (:obj:`bool`):
@@ -28,7 +30,7 @@ class ChatMemberStatusAdministrator(Object):
         can_pin_messages (:obj:`bool`):
             True, if the administrator can pin messages; applicable to groups only
         can_promote_members (:obj:`bool`):
-            True, if the administrator can add new administrators with a subset of his own privileges or demote administrators that were directly or indirectly promoted by him
+            True, if the administrator can add new administrators with a subset of their own privileges or demote administrators that were directly or indirectly promoted by them
 
     Returns:
         ChatMemberStatus
@@ -38,8 +40,9 @@ class ChatMemberStatusAdministrator(Object):
     """
     ID = "chatMemberStatusAdministrator"
 
-    def __init__(self, can_be_edited, can_change_info, can_post_messages, can_edit_messages, can_delete_messages, can_invite_users, can_restrict_members, can_pin_messages, can_promote_members, **kwargs):
+    def __init__(self, custom_title, can_be_edited, can_change_info, can_post_messages, can_edit_messages, can_delete_messages, can_invite_users, can_restrict_members, can_pin_messages, can_promote_members, **kwargs):
         
+        self.custom_title = custom_title  # str
         self.can_be_edited = can_be_edited  # bool
         self.can_change_info = can_change_info  # bool
         self.can_post_messages = can_post_messages  # bool
@@ -52,6 +55,7 @@ class ChatMemberStatusAdministrator(Object):
 
     @staticmethod
     def read(q: dict, *args) -> "ChatMemberStatusAdministrator":
+        custom_title = q.get('custom_title')
         can_be_edited = q.get('can_be_edited')
         can_change_info = q.get('can_change_info')
         can_post_messages = q.get('can_post_messages')
@@ -61,4 +65,4 @@ class ChatMemberStatusAdministrator(Object):
         can_restrict_members = q.get('can_restrict_members')
         can_pin_messages = q.get('can_pin_messages')
         can_promote_members = q.get('can_promote_members')
-        return ChatMemberStatusAdministrator(can_be_edited, can_change_info, can_post_messages, can_edit_messages, can_delete_messages, can_invite_users, can_restrict_members, can_pin_messages, can_promote_members)
+        return ChatMemberStatusAdministrator(custom_title, can_be_edited, can_change_info, can_post_messages, can_edit_messages, can_delete_messages, can_invite_users, can_restrict_members, can_pin_messages, can_promote_members)

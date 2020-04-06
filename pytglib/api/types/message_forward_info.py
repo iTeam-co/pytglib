@@ -16,9 +16,9 @@ class MessageForwardInfo(Object):
         date (:obj:`int`):
             Point in time (Unix timestamp) when the message was originally sent
         from_chat_id (:obj:`int`):
-            For messages forwarded to the chat with the current user (saved messages), the identifier of the chat from which the message was forwarded last time; 0 if unknown
+            For messages forwarded to the chat with the current user (Saved Messages) or to the channel's discussion group, the identifier of the chat from which the message was forwarded last time; 0 if unknown
         from_message_id (:obj:`int`):
-            For messages forwarded to the chat with the current user (saved messages), the identifier of the original message from which the new message was forwarded last time; 0 if unknown
+            For messages forwarded to the chat with the current user (Saved Messages) or to the channel's discussion group, the identifier of the original message from which the new message was forwarded last time; 0 if unknown
 
     Returns:
         MessageForwardInfo

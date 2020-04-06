@@ -12,9 +12,9 @@ class ChatPhoto(Object):
 
     Args:
         small (:class:`telegram.api.types.file`):
-            A small (160x160) chat photo 
+            A small (160x160) chat photoThe file can be downloaded only before the photo is changed 
         big (:class:`telegram.api.types.file`):
-            A big (640x640) chat photo
+            A big (640x640) chat photoThe file can be downloaded only before the photo is changed
 
     Returns:
         ChatPhoto

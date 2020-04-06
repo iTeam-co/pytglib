@@ -16,7 +16,7 @@ class SearchMessagesFilter(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "SearchMessagesFilterPhotoAndVideo or SearchMessagesFilterVoiceAndVideoNote or SearchMessagesFilterMissedCall or SearchMessagesFilterMention or SearchMessagesFilterUnreadMention or SearchMessagesFilterPhoto or SearchMessagesFilterEmpty or SearchMessagesFilterAudio or SearchMessagesFilterAnimation or SearchMessagesFilterChatPhoto or SearchMessagesFilterVideoNote or SearchMessagesFilterVoiceNote or SearchMessagesFilterUrl or SearchMessagesFilterDocument or SearchMessagesFilterCall or SearchMessagesFilterVideo":
+    def read(q: dict, *args) -> "SearchMessagesFilterChatPhoto or SearchMessagesFilterVoiceAndVideoNote or SearchMessagesFilterCall or SearchMessagesFilterPhotoAndVideo or SearchMessagesFilterDocument or SearchMessagesFilterVideoNote or SearchMessagesFilterEmpty or SearchMessagesFilterPhoto or SearchMessagesFilterVideo or SearchMessagesFilterUrl or SearchMessagesFilterVoiceNote or SearchMessagesFilterMention or SearchMessagesFilterAnimation or SearchMessagesFilterMissedCall or SearchMessagesFilterAudio or SearchMessagesFilterUnreadMention":
         if q.get("@type"):
             return Object.read(q)
         return SearchMessagesFilter()

@@ -14,7 +14,7 @@ class FormattedText(Object):
         text (:obj:`str`):
             The text 
         entities (List of :class:`telegram.api.types.textEntity`):
-            Entities contained in the text
+            Entities contained in the textEntities can be nested, but must not mutually intersect with each otherPre, Code and PreCode entities can't contain other entitiesBold, Italic, Underline and Strikethrough entities can contain and to be contained in all other entitiesAll other entities can't contain each other
 
     Returns:
         FormattedText

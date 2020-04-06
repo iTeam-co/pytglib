@@ -12,7 +12,7 @@ class PageBlockTableCell(Object):
 
     Args:
         text (:class:`telegram.api.types.RichText`):
-            Cell text 
+            Cell text; may be nullIf the text is null, then the cell should be invisible 
         is_header (:obj:`bool`):
             True, if it is a header cell
         colspan (:obj:`int`):

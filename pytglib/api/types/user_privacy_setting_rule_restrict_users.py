@@ -12,7 +12,7 @@ class UserPrivacySettingRuleRestrictUsers(Object):
 
     Args:
         user_ids (List of :obj:`int`):
-            The user identifiers
+            The user identifiers, total number of users in all rules must not exceed 1000
 
     Returns:
         UserPrivacySettingRule

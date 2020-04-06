@@ -1,6 +1,10 @@
 from pytglib.api.functions import *
 from pytglib.api.types import *
 
+"""
+ !!! This file is not adapted to new TDLib version !!!
+"""
+
 
 class Function:
     def __init__(self, client):
@@ -9,7 +13,7 @@ class Function:
         self.execute = client.execute
 
     def send_message(self, chat_id: int, text: str, reply_to_message_id=0, disable_notification=False,
-                     from_background=False,
+                     from_background=False, scheduling_state=False,
                      markup=None, parse_mode=None, disable_web_page_preview=False, clear_draft=True):
         """
         Sends a message to a chat. The chat must be in the tdlib's database.
@@ -28,6 +32,8 @@ class Function:
                 Not supported in secret chats
             from_background (:obj:`bool`):
                 Pass true if the message is sent from the background
+            scheduling_state (:class:`pytglib.api.types.MessageSchedulingState`):
+                Pass a MessageSchedulingState if you want message to be scheduled
             markup (:class:`pytglib.api.types.ReplyMarkup`):
                 Markup for replying to the message; for bots only
             parse_mode (:obj:`str`):
@@ -42,37 +48,16 @@ class Function:
             AsyncResult
         """
         if parse_mode is not None:
-            parse_mode = TextParseModeMarkdown() if parse_mode.lower() in ["md", "markdown"] else TextParseModeHTML()
+            parse_mode = TextParseModeMarkdown(version=1) if parse_mode.lower() in ["md", "markdown"] \
+                else TextParseModeHTML()
             msg_text = self.execute(ParseTextEntities(text, parse_mode))
         else:
             msg_text = FormattedText(text, [])
-        data = SendMessage(chat_id, reply_to_message_id, disable_notification, from_background, markup,
+        data = SendMessage(chat_id, reply_to_message_id,
+                           SendMessageOptions(disable_notification, from_background, scheduling_state), markup,
                            InputMessageText(msg_text, disable_web_page_preview, clear_draft))
 
         return self.send(data)
-
-    def send_game(self, chat_id: int, bot_id: int, game_key: str):
-
-        """
-        Send a game into the chat requested.
-
-        Args:
-            chat_id (:obj:`int`):
-                Target chat
-            bot_id (:obj:`int`):
-                UserId of the bot
-            game_key (:obj:`str`):
-                Unique key of the game
-
-        Returns:
-           AsyncResult
-        """
-        
-        game_obj = InputMessageGame(bot_id, game_key)
-        data = SendMessage(chat_id, 0, False, False, None, game_obj)
-        
-        return self.send(data)
-        
 
     def press_inline_button(self, chat_id: int, message_id: int, button_data: str):
 
@@ -97,8 +82,7 @@ class Function:
         return self.send(data)
 
     def send_photo(self, chat_id: int, photo: str, caption="", reply_to_message_id=0, disable_notification=False,
-                   from_background=False, markup=None, parse_mode=None):
-
+                   from_background=False, scheduling_state=False, markup=None, parse_mode=None):
         """
         Sends a photo to a chat. The chat must be in the tdlib's database.
         If there is no chat in the DB, tdlib returns an error.
@@ -118,6 +102,8 @@ class Function:
                 Not supported in secret chats
             from_background (:obj:`bool`):
                 Pass true if the message is sent from the background
+            scheduling_state (:class:`pytglib.api.types.MessageSchedulingState`):
+                Pass a MessageSchedulingState if you want message to be scheduled
             markup (:class:`pytglib.api.types.ReplyMarkup`):
                 Markup for replying to the message; for bots only
             parse_mode (:obj:`str`):
@@ -128,7 +114,7 @@ class Function:
             AsyncResult
         """
 
-        data = SendMessage(chat_id, disable_notification=disable_notification, from_background=from_background,
+        data = SendMessage(chat_id, options=SendMessageOptions(disable_notification, from_background, scheduling_state),
                            reply_markup=markup,
                            input_message_content=InputMessagePhoto(added_sticker_file_ids=[0],
                                                                    caption=FormattedText(caption, []), height=0,
@@ -167,12 +153,14 @@ class Function:
         return self.send(GetMe())
 
     def get_chats(
-            self, offset_order: int = 2 ** 63 - 1, offset_chat_id: int = 0, limit: int = 10000
+            self, chat_list: ChatList, offset_order: int = 2 ** 63 - 1, offset_chat_id: int = 0, limit: int = 10000
     ):
         """
             Returns an ordered list of chats. Chats are sorted newest to oldest.
             Don't send the values and it'll return full chats.
 
+            chat_list (:class:`pytglib.api.types.ChatList`):
+                ChatListMain or ChatListArchive
             offset_order (:obj:`int`):
                 Chat order to return chats from
             offset_chat_id (:obj:`int`):
@@ -184,7 +172,7 @@ class Function:
             Returns:
                 AsyncResult
         """
-        return self.send(GetChats(offset_order, offset_chat_id, limit))
+        return self.send(GetChats(chat_list, offset_order, offset_chat_id, limit))
 
     def get_chat_history(
             self,
@@ -195,19 +183,24 @@ class Function:
             only_local: bool = False,
     ):
         """
-            Returns messages in a chat. The messages are returned in a reverse chronological order (i.e., in order of decreasing message_id).
-            For optimal performance the number of returned messages is chosen by the library. This is an offline request if only_local is true
+            Returns messages in a chat. The messages are returned in a reverse chronological order
+             (i.e., in order of decreasing message_id).
+            For optimal performance the number of returned messages is chosen by the library.
+             This is an offline request if only_local is true
 
             Args:
                 chat_id (:obj:`int`):
                     Chat identifier
                 from_message_id (:obj:`int`):
-                    Identifier of the message starting from which history must be fetched; use 0 to get results from the last message
+                    Identifier of the message starting from which history must be fetched;
+                     use 0 to get results from the last message
                 offset (:obj:`int`):
-                    Specify 0 to get results from exactly the from_message_id or a negative offset to get the specified message and some newer messages
+                    Specify 0 to get results from exactly the from_message_id
+                    or a negative offset to get the specified message and some newer messages
                 limit (:obj:`int`):
                     The maximum number of messages to be returned; must be positive and can't be greater than 100
-                    If the offset is negative, the limit must be greater than -offsetFewer messages may be returned than specified by the limit,
+                    If the offset is negative,
+                    the limit must be greater than -offsetFewer messages may be returned than specified by the limit,
                     Even if the end of the message history has not been reached
                 only_local (:obj:`bool`):
                     If true, returns only messages that are available locally without sending network requests
@@ -220,7 +213,8 @@ class Function:
 
     def get_inline_query_results(self, bot_user_id, chat_id, query, offset, user_location=Location(0, 0)):
         """
-        Sends an inline query to a bot and returns its results. Returns an error with code 502 if the bot fails to answer the query before the query timeout expires
+        Sends an inline query to a bot and returns its results.
+         Returns an error with code 502 if the bot fails to answer the query before the query timeout expires
 
         Args:
             bot_user_id (:obj:`int`):
@@ -282,7 +276,8 @@ class Function:
     def forward_messages(self, chat_id, from_chat_id, message_ids, disable_notification=False, from_background=False,
                          as_album=False):
         """
-        Forwards previously sent messages. Returns the forwarded messages in the same order as the message identifiers passed in message_ids.
+        Forwards previously sent messages.
+         Returns the forwarded messages in the same order as the message identifiers passed in message_ids.
         If a message can't be forwarded, null will be returned instead of the message
 
         Args:
@@ -293,12 +288,14 @@ class Function:
             message_ids (List of :obj:`int`):
                 Identifiers of the messages to forward
             disable_notification (:obj:`bool`):
-                Pass true to disable notification for the message, doesn't work if messages are forwarded to a secret chat
+                Pass true to disable notification for the message,
+                 doesn't work if messages are forwarded to a secret chat
             from_background (:obj:`bool`):
                 Pass true if the message is sent from the background
             as_album (:obj:`bool`):
                 True, if the messages should be grouped into an album after forwarding
-                For this to work, no more than 10 messages may be forwarded, and all of them must be photo or video messages
+                For this to work, no more than 10 messages may be forwarded,
+                 and all of them must be photo or video messages
 
         Returns:
             AsyncResult
@@ -316,7 +313,8 @@ class Function:
                 message_ids (List of :obj:`int`):
                     Identifiers of the messages to be deleted
                 revoke (:obj:`bool`):
-                    Pass true to try to delete outgoing messages for all chat members (may fail if messages are too old)Always true for supergroups, channels and secret chats
+                    Pass true to try to delete outgoing messages for all chat members (may fail if messages are too old)
+                    Always true for supergroups, channels and secret chats
 
             Returns:
                 AsyncResult
@@ -345,7 +343,8 @@ class Function:
                 AsyncResult
         """
         if parse_mode is not None:
-            parse_mode = TextParseModeMarkdown() if parse_mode.lower() in ["md", "markdown"] else TextParseModeHTML()
+            parse_mode = TextParseModeMarkdown(version=1) if parse_mode.lower() in ["md",
+                                                                                    "markdown"] else TextParseModeHTML()
             msg_text = self.execute(ParseTextEntities(text, parse_mode))
         else:
             msg_text = FormattedText(text, [])
@@ -379,16 +378,12 @@ class Function:
             parse_mode (:obj:`str`):
                 Caption parse mode
                 MarkDown, HTML or None
-            disable_web_page_preview (:obj:`bool`):
-                True, if rich web page previews for URLs in the message text should be disabled
-            clear_draft (:obj:`bool`):
-                True, if a chat message draft should be deleted
-
         Returns:
             AsyncResult
         """
         if parse_mode is not None:
-            parse_mode = TextParseModeMarkdown() if parse_mode.lower() in ["md", "markdown"] else TextParseModeHTML()
+            parse_mode = TextParseModeMarkdown(version=1) if parse_mode.lower() in ["md",
+                                                                                    "markdown"] else TextParseModeHTML()
             caption = self.execute(ParseTextEntities(caption, parse_mode))
         else:
             caption = FormattedText(caption, [])

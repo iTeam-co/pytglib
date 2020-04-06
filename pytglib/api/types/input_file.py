@@ -16,7 +16,7 @@ class InputFile(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "InputFileRemote or InputFileLocal or InputFileId or InputFileGenerated":
+    def read(q: dict, *args) -> "InputFileRemote or InputFileGenerated or InputFileLocal or InputFileId":
         if q.get("@type"):
             return Object.read(q)
         return InputFile()
