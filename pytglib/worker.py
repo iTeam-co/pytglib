@@ -38,11 +38,8 @@ class SimpleWorker(BaseWorker):
             handler(Object.read(update))
             self._queue.task_done()
 
-
+"""
 class ThreadedWorker(BaseWorker):
-    """
-    Simple multi-thread worker
-    """
 
     def run(self) -> None:
         self._thread = threading.Thread(target=self._run_thread)  # pylint: disable=attribute-defined-outside-init
@@ -57,3 +54,4 @@ class ThreadedWorker(BaseWorker):
             promise = Promise(handler, (Object.read(update)), {}, logger)
             threading.Thread(target=promise.run).start()
             self._queue.task_done()
+"""
