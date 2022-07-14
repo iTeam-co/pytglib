@@ -15,7 +15,10 @@ class Object:
             return q
         for key, value in q.items():
             if isinstance(value, dict) and value.get("@type", False):
-                q[key] = Object.all[value["@type"]].read(value)
+                try:
+                    q[key] = Object.all[value["@type"]].read(value)
+                except:
+                    print("Exception at object.py: key not found. Perhaps you should update Pytglib to latest version?")
         return Object.all[q["@type"]].read(q, *args)
 
     def __str__(self) -> str:

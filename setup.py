@@ -12,7 +12,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='Pytglib',
-    version='0.4',
+    version='0.4.2',
     description='Python library to help you build your own Telegram clients',
     author='iTeam',
     author_email='co.amirh@gmail.com',

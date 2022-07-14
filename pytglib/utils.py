@@ -25,6 +25,7 @@ class AsyncResult:
 
         self.request: Optional[Dict[Any, Any]] = None
         self.error = False
+        self.error_info = None
         self.update: Object = None
 
     def __str__(self):
@@ -54,4 +55,6 @@ class AsyncResult:
             # self.update = Error(update["code"], update["message"])
         else:
             self.update = Object.read(update)
+            if not self.update:
+                self.update = update  # Passes as JSON in case a future TDLIB version is not supported by library.
 
