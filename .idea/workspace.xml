@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="146b0b91-58b1-4f09-b3e6-7e0309c668df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/python-telegram.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python-telegram.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generate/api/source/td_api.tl" beforeDir="false" afterPath="$PROJECT_DIR$/generate/api/source/td_api.tl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytglib/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytglib/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytglib/api/utils/object.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytglib/api/utils/object.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytglib/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytglib/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,13 +13,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pytglib/api/utils/object.py">
+        <entry file="file://$PROJECT_DIR$/pytglib/api/functions/get_chats.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="118" selection-start-line="20" selection-start-column="118" selection-end-line="20" selection-end-column="118" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -135,6 +125,17 @@
             <path>
               <item name="pytglib" type="b2602c69:ProjectViewProjectNode" />
               <item name="pytglib" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pytglib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pytglib" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pytglib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pytglib" type="462c0819:PsiDirectoryNode" />
               <item name="pytglib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -148,7 +149,7 @@
               <item name="pytglib" type="462c0819:PsiDirectoryNode" />
               <item name="pytglib" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -183,15 +184,30 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554072645077</updated>
-      <workItem from="1657796605615" duration="274000" />
+      <workItem from="1657796605615" duration="844000" />
     </task>
+    <task id="LOCAL-00001" summary="updates?">
+      <created>1657796907673</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657796907673</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fixed compatibility with tdlib 1.8.4, Minor bugfixes.">
+      <created>1657797190862</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1657797190862</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274000" />
+    <option name="totallyTimeSpent" value="844000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="0" width="1753" height="941" extended-state="0" />
+    <frame x="-10" y="0" width="1753" height="941" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49851632" visible="true" weight="0.2058997" />
@@ -207,7 +223,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32908162" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Database" />
@@ -243,25 +259,12 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="updates?" />
+    <MESSAGE value="Fixed compatibility with tdlib 1.8.4, Minor bugfixes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed compatibility with tdlib 1.8.4, Minor bugfixes." />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/telegram/api/functions/disable_proxy.py" />
-    <entry file="file://$PROJECT_DIR$/telegram/api/types/proxy.py" />
-    <entry file="file://$PROJECT_DIR$/telegram/api/types/proxies.py" />
-    <entry file="file://$PROJECT_DIR$/telegram/api/functions/get_proxies.py" />
-    <entry file="file://$PROJECT_DIR$/docs/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/index.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/telegram/client.py" />
-    <entry file="file://$PROJECT_DIR$/telegram/worker.py" />
-    <entry file="file://$PROJECT_DIR$/telegram/utils.py" />
-    <entry file="file://$PROJECT_DIR$/telegram/tdjson.py" />
     <entry file="file://$PROJECT_DIR$/telegram/__init__.py" />
     <entry file="file://$PROJECT_DIR$/telegram/proxy.py" />
     <entry file="file://$PROJECT_DIR$/telegram/functions.py" />
@@ -430,16 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="e#22#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pytglib/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -474,11 +467,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pytglib/api/utils/object.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="118" selection-start-line="20" selection-start-column="118" selection-end-line="20" selection-end-column="118" />
+        <state relative-caret-position="687">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#22#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/pytglib/functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324">
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/pytglib/api/functions/set_chat_photo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/generate/api/generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-594">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/pytglib/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/pytglib/api/types/chat_photo.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pytglib/api/functions/add_chat_members.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/pytglib/api/types/input_chat_photo_static.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pytglib/api/types/input_chat_photo_static.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-219" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pytglib/api/types/inline_query_result.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pytglib/api/functions/get_chats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
