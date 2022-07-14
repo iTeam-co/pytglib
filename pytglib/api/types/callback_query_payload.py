@@ -16,7 +16,7 @@ class CallbackQueryPayload(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "CallbackQueryPayloadGame or CallbackQueryPayloadData":
+    def read(q: dict, *args) -> "CallbackQueryPayloadData or CallbackQueryPayloadDataWithPassword or CallbackQueryPayloadGame":
         if q.get("@type"):
             return Object.read(q)
         return CallbackQueryPayload()

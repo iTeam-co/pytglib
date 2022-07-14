@@ -5,16 +5,16 @@ from ..utils import Object
 
 class GetChatNotificationSettingsExceptions(Object):
     """
-    Returns list of chats with non-default notification settings 
+    Returns list of chats with non-default notification settings
 
     Attributes:
         ID (:obj:`str`): ``GetChatNotificationSettingsExceptions``
 
     Args:
         scope (:class:`telegram.api.types.NotificationSettingsScope`):
-            If specified, only chats from the specified scope will be returned 
+            If specified, only chats from the scope will be returned; pass null to return chats from all scopes
         compare_sound (:obj:`bool`):
-            If true, also chats with non-default sound will be returned
+            Pass true to include in the response chats with only non-default sound
 
     Returns:
         Chats

@@ -12,7 +12,7 @@ class TMeUrlTypeChatInvite(Object):
 
     Args:
         info (:class:`telegram.api.types.chatInviteLinkInfo`):
-            Chat invite link info
+            Information about the chat invite link
 
     Returns:
         TMeUrlType

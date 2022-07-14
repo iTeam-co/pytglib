@@ -12,7 +12,7 @@ class DeviceTokenUbuntuPush(Object):
 
     Args:
         token (:obj:`str`):
-            Token; may be empty to de-register a device
+            Token; may be empty to deregister a device
 
     Returns:
         DeviceToken

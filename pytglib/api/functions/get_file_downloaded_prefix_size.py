@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetFileDownloadedPrefixSize(Object):
     """
-    Returns file downloaded prefix size from a given offset 
+    Returns file downloaded prefix size from a given offset, in bytes 
 
     Attributes:
         ID (:obj:`str`): ``GetFileDownloadedPrefixSize``
@@ -14,10 +14,10 @@ class GetFileDownloadedPrefixSize(Object):
         file_id (:obj:`int`):
             Identifier of the file 
         offset (:obj:`int`):
-            Offset from which downloaded prefix size should be calculated
+            Offset from which downloaded prefix size needs to be calculated
 
     Returns:
-        Count
+        FileDownloadedPrefixSize
 
     Raises:
         :class:`telegram.Error`

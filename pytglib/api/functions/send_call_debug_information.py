@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SendCallDebugInformation(Object):
     """
-    Sends debug information for a call 
+    Sends debug information for a call to Telegram servers 
 
     Attributes:
         ID (:obj:`str`): ``SendCallDebugInformation``

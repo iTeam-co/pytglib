@@ -24,9 +24,9 @@ class PageBlockEmbedded(Object):
         caption (:class:`telegram.api.types.pageBlockCaption`):
             Block caption 
         is_full_width (:obj:`bool`):
-            True, if the block should be full width 
+            True, if the block must be full width 
         allow_scrolling (:obj:`bool`):
-            True, if scrolling should be allowed
+            True, if scrolling needs to be allowed
 
     Returns:
         PageBlock

@@ -16,7 +16,7 @@ class PushMessageContentChatDeleteMember(Object):
         is_current_user (:obj:`bool`):
             True, if the current user was deleted from the group
         is_left (:obj:`bool`):
-            True, if the user has left the group themself
+            True, if the user has left the group themselves
 
     Returns:
         PushMessageContent

@@ -14,7 +14,7 @@ class StorageStatisticsByFileType(Object):
         file_type (:class:`telegram.api.types.FileType`):
             File type 
         size (:obj:`int`):
-            Total size of the files 
+            Total size of the files, in bytes 
         count (:obj:`int`):
             Total number of files
 

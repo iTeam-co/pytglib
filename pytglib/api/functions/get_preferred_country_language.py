@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetPreferredCountryLanguage(Object):
     """
-    Returns an IETF language tag of the language preferred in the country, which should be used to fill native fields in Telegram Passport personal details. Returns a 404 error if unknown 
+    Returns an IETF language tag of the language preferred in the country, which must be used to fill native fields in Telegram Passport personal details. Returns a 404 error if unknown 
 
     Attributes:
         ID (:obj:`str`): ``GetPreferredCountryLanguage``

@@ -5,7 +5,7 @@ from ..utils import Object
 
 class AutoDownloadSettingsPresets(Object):
     """
-    Contains auto-download settings presets for the user
+    Contains auto-download settings presets for the current user
 
     Attributes:
         ID (:obj:`str`): ``AutoDownloadSettingsPresets``

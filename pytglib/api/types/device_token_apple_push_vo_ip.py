@@ -12,11 +12,11 @@ class DeviceTokenApplePushVoIP(Object):
 
     Args:
         device_token (:obj:`str`):
-            Device token; may be empty to de-register a device 
+            Device token; may be empty to deregister a device 
         is_app_sandbox (:obj:`bool`):
             True, if App Sandbox is enabled 
         encrypt (:obj:`bool`):
-            True, if push notifications should be additionally encrypted
+            True, if push notifications must be additionally encrypted
 
     Returns:
         DeviceToken

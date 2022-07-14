@@ -16,7 +16,7 @@ class TextEntityType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "TextEntityTypeCashtag or TextEntityTypeEmailAddress or TextEntityTypePre or TextEntityTypeHashtag or TextEntityTypeStrikethrough or TextEntityTypeBotCommand or TextEntityTypeItalic or TextEntityTypeBankCardNumber or TextEntityTypeCode or TextEntityTypeUrl or TextEntityTypePreCode or TextEntityTypeUnderline or TextEntityTypePhoneNumber or TextEntityTypeMentionName or TextEntityTypeTextUrl or TextEntityTypeMention or TextEntityTypeBold":
+    def read(q: dict, *args) -> "TextEntityTypeBotCommand or TextEntityTypeBold or TextEntityTypeMention or TextEntityTypeUrl or TextEntityTypeSpoiler or TextEntityTypeMentionName or TextEntityTypeHashtag or TextEntityTypeItalic or TextEntityTypeCode or TextEntityTypePre or TextEntityTypePreCode or TextEntityTypeStrikethrough or TextEntityTypeTextUrl or TextEntityTypePhoneNumber or TextEntityTypeBankCardNumber or TextEntityTypeMediaTimestamp or TextEntityTypeCashtag or TextEntityTypeUnderline or TextEntityTypeEmailAddress":
         if q.get("@type"):
             return Object.read(q)
         return TextEntityType()

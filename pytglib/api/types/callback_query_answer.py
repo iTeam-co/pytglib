@@ -14,7 +14,7 @@ class CallbackQueryAnswer(Object):
         text (:obj:`str`):
             Text of the answer 
         show_alert (:obj:`bool`):
-            True, if an alert should be shown to the user instead of a toast notification 
+            True, if an alert must be shown to the user instead of a toast notification 
         url (:obj:`str`):
             URL to be opened
 

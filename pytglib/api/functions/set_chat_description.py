@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SetChatDescription(Object):
     """
-    Changes information about a chat. Available for basic groups, supergroups, and channels. Requires can_change_info rights 
+    Changes information about a chat. Available for basic groups, supergroups, and channels. Requires can_change_info administrator right 
 
     Attributes:
         ID (:obj:`str`): ``SetChatDescription``

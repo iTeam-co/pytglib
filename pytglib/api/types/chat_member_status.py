@@ -16,7 +16,7 @@ class ChatMemberStatus(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "ChatMemberStatusMember or ChatMemberStatusAdministrator or ChatMemberStatusBanned or ChatMemberStatusCreator or ChatMemberStatusRestricted or ChatMemberStatusLeft":
+    def read(q: dict, *args) -> "ChatMemberStatusLeft or ChatMemberStatusRestricted or ChatMemberStatusAdministrator or ChatMemberStatusBanned or ChatMemberStatusMember or ChatMemberStatusCreator":
         if q.get("@type"):
             return Object.read(q)
         return ChatMemberStatus()

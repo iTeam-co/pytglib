@@ -12,7 +12,7 @@ class ChatMembers(Object):
 
     Args:
         total_count (:obj:`int`):
-            Approximate total count of chat members found 
+            Approximate total number of chat members found 
         members (List of :class:`telegram.api.types.chatMember`):
             A list of chat members
 

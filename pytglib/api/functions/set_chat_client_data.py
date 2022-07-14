@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SetChatClientData(Object):
     """
-    Changes client data associated with a chat 
+    Changes application-specific data associated with a chat 
 
     Attributes:
         ID (:obj:`str`): ``SetChatClientData``

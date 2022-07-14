@@ -15,8 +15,8 @@ class UpdateChatLastMessage(Object):
             Chat identifier 
         last_message (:class:`telegram.api.types.message`):
             The new last message in the chat; may be null 
-        order (:obj:`int`):
-            New value of the chat order
+        positions (List of :class:`telegram.api.types.chatPosition`):
+            The new chat positions in the chat lists
 
     Returns:
         Update
@@ -26,15 +26,15 @@ class UpdateChatLastMessage(Object):
     """
     ID = "updateChatLastMessage"
 
-    def __init__(self, chat_id, last_message, order, **kwargs):
+    def __init__(self, chat_id, last_message, positions, **kwargs):
         
         self.chat_id = chat_id  # int
         self.last_message = last_message  # Message
-        self.order = order  # int
+        self.positions = positions  # list of chatPosition
 
     @staticmethod
     def read(q: dict, *args) -> "UpdateChatLastMessage":
         chat_id = q.get('chat_id')
         last_message = Object.read(q.get('last_message'))
-        order = q.get('order')
-        return UpdateChatLastMessage(chat_id, last_message, order)
+        positions = [Object.read(i) for i in q.get('positions', [])]
+        return UpdateChatLastMessage(chat_id, last_message, positions)

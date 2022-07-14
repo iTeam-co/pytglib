@@ -11,8 +11,8 @@ class UpdateTrendingStickerSets(Object):
         ID (:obj:`str`): ``UpdateTrendingStickerSets``
 
     Args:
-        sticker_sets (:class:`telegram.api.types.stickerSets`):
-            The new list of trending sticker sets
+        sticker_sets (:class:`telegram.api.types.trendingStickerSets`):
+            The prefix of the list of trending sticker sets with the newest trending sticker sets
 
     Returns:
         Update
@@ -24,7 +24,7 @@ class UpdateTrendingStickerSets(Object):
 
     def __init__(self, sticker_sets, **kwargs):
         
-        self.sticker_sets = sticker_sets  # StickerSets
+        self.sticker_sets = sticker_sets  # TrendingStickerSets
 
     @staticmethod
     def read(q: dict, *args) -> "UpdateTrendingStickerSets":

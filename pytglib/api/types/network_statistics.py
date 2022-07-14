@@ -12,7 +12,7 @@ class NetworkStatistics(Object):
 
     Args:
         since_date (:obj:`int`):
-            Point in time (Unix timestamp) when the app began collecting statistics 
+            Point in time (Unix timestamp) from which the statistics are collected 
         entries (List of :class:`telegram.api.types.NetworkStatisticsEntry`):
             Network statistics entries
 

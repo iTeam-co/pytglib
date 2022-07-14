@@ -16,7 +16,7 @@ class DeleteMessages(Object):
         message_ids (List of :obj:`int`):
             Identifiers of the messages to be deleted 
         revoke (:obj:`bool`):
-            Pass true to try to delete messages for all chat membersAlways true for supergroups, channels and secret chats
+            Pass true to delete messages for all chat membersAlways true for supergroups, channels and secret chats
 
     Returns:
         Ok

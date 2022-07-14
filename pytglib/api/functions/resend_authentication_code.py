@@ -5,7 +5,7 @@ from ..utils import Object
 
 class ResendAuthenticationCode(Object):
     """
-    Re-sends an authentication code to the user. Works only when the current authorization state is authorizationStateWaitCode and the next_code_type of the result is not null
+    Re-sends an authentication code to the user. Works only when the current authorization state is authorizationStateWaitCode, the next_code_type of the result is not null and the server-specified timeout has passed
 
     Attributes:
         ID (:obj:`str`): ``ResendAuthenticationCode``

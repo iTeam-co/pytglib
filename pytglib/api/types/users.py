@@ -12,7 +12,7 @@ class Users(Object):
 
     Args:
         total_count (:obj:`int`):
-            Approximate total count of users found 
+            Approximate total number of users found 
         user_ids (List of :obj:`int`):
             A list of user identifiers
 

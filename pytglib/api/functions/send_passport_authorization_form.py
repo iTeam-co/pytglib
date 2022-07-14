@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SendPassportAuthorizationForm(Object):
     """
-    Sends a Telegram Passport authorization form, effectively sharing data with the service. This method must be called after getPassportAuthorizationFormAvailableElements if some previously available elements need to be used
+    Sends a Telegram Passport authorization form, effectively sharing data with the service. This method must be called after getPassportAuthorizationFormAvailableElements if some previously available elements are going to be reused
 
     Attributes:
         ID (:obj:`str`): ``SendPassportAuthorizationForm``

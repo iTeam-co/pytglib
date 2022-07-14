@@ -18,7 +18,7 @@ class EditProxy(Object):
         port (:obj:`int`):
             Proxy server port 
         enable (:obj:`bool`):
-            True, if the proxy should be enabled 
+            Pass true to immediately enable the proxy 
         type (:class:`telegram.api.types.ProxyType`):
             Proxy type
 

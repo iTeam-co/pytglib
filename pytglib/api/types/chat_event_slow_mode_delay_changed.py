@@ -12,9 +12,9 @@ class ChatEventSlowModeDelayChanged(Object):
 
     Args:
         old_slow_mode_delay (:obj:`int`):
-            Previous value of slow_mode_delay 
+            Previous value of slow_mode_delay, in seconds 
         new_slow_mode_delay (:obj:`int`):
-            New value of slow_mode_delay
+            New value of slow_mode_delay, in seconds
 
     Returns:
         ChatEventAction

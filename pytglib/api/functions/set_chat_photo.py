@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SetChatPhoto(Object):
     """
-    Changes the photo of a chat. Supported only for basic groups, supergroups and channels. Requires can_change_info rights. The photo will not be changed before request to the server has been completed
+    Changes the photo of a chat. Supported only for basic groups, supergroups and channels. Requires can_change_info administrator right
 
     Attributes:
         ID (:obj:`str`): ``SetChatPhoto``
@@ -13,8 +13,8 @@ class SetChatPhoto(Object):
     Args:
         chat_id (:obj:`int`):
             Chat identifier 
-        photo (:class:`telegram.api.types.InputFile`):
-            New chat photoYou can use a zero InputFileId to delete the chat photoFiles that are accessible only by HTTP URL are not acceptable
+        photo (:class:`telegram.api.types.InputChatPhoto`):
+            New chat photo; pass null to delete the chat photo
 
     Returns:
         Ok
@@ -27,7 +27,7 @@ class SetChatPhoto(Object):
     def __init__(self, chat_id, photo, extra=None, **kwargs):
         self.extra = extra
         self.chat_id = chat_id  # int
-        self.photo = photo  # InputFile
+        self.photo = photo  # InputChatPhoto
 
     @staticmethod
     def read(q: dict, *args) -> "SetChatPhoto":

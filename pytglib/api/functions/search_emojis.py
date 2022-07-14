@@ -14,9 +14,9 @@ class SearchEmojis(Object):
         text (:obj:`str`):
             Text to search for 
         exact_match (:obj:`bool`):
-            True, if only emojis, which exactly match text needs to be returned 
-        input_language_code (:obj:`str`):
-            IETF language tag of the user's input language; may be empty if unknown
+            Pass true if only emojis, which exactly match the text, needs to be returned 
+        input_language_codes (List of :obj:`str`):
+            List of possible IETF language tags of the user's input language; may be empty if unknown
 
     Returns:
         Emojis
@@ -26,15 +26,15 @@ class SearchEmojis(Object):
     """
     ID = "searchEmojis"
 
-    def __init__(self, text, exact_match, input_language_code, extra=None, **kwargs):
+    def __init__(self, text, exact_match, input_language_codes, extra=None, **kwargs):
         self.extra = extra
         self.text = text  # str
         self.exact_match = exact_match  # bool
-        self.input_language_code = input_language_code  # str
+        self.input_language_codes = input_language_codes  # list of str
 
     @staticmethod
     def read(q: dict, *args) -> "SearchEmojis":
         text = q.get('text')
         exact_match = q.get('exact_match')
-        input_language_code = q.get('input_language_code')
-        return SearchEmojis(text, exact_match, input_language_code)
+        input_language_codes = q.get('input_language_codes')
+        return SearchEmojis(text, exact_match, input_language_codes)

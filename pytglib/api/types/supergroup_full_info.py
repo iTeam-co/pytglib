@@ -11,6 +11,8 @@ class SupergroupFullInfo(Object):
         ID (:obj:`str`): ``SupergroupFullInfo``
 
     Args:
+        photo (:class:`telegram.api.types.chatPhoto`):
+            Chat photo; may be null
         description (:obj:`str`):
             Supergroup or channel description
         member_count (:obj:`int`):
@@ -35,16 +37,18 @@ class SupergroupFullInfo(Object):
             True, if the supergroup sticker set can be changed
         can_set_location (:obj:`bool`):
             True, if the supergroup location can be changed
-        can_view_statistics (:obj:`bool`):
-            True, if the channel statistics is available
+        can_get_statistics (:obj:`bool`):
+            True, if the supergroup or channel statistics are available
         is_all_history_available (:obj:`bool`):
             True, if new chat members will have access to old messagesIn public or discussion groups and both public and private channels, old messages are always available, so this option affects only private supergroups without a linked chatThe value of this field is only available for chat administrators
         sticker_set_id (:obj:`int`):
             Identifier of the supergroup sticker set; 0 if none
         location (:class:`telegram.api.types.chatLocation`):
             Location to which the supergroup is connected; may be null
-        invite_link (:obj:`str`):
-            Invite link for this chat
+        invite_link (:class:`telegram.api.types.chatInviteLink`):
+            Primary invite link for the chat; may be nullFor chat administrators with can_invite_users right only
+        bot_commands (List of :class:`telegram.api.types.botCommands`):
+            List of commands of bots in the group
         upgraded_from_basic_group_id (:obj:`int`):
             Identifier of the basic group from which supergroup was upgraded; 0 if none
         upgraded_from_max_message_id (:obj:`int`):
@@ -58,8 +62,9 @@ class SupergroupFullInfo(Object):
     """
     ID = "supergroupFullInfo"
 
-    def __init__(self, description, member_count, administrator_count, restricted_count, banned_count, linked_chat_id, slow_mode_delay, slow_mode_delay_expires_in, can_get_members, can_set_username, can_set_sticker_set, can_set_location, can_view_statistics, is_all_history_available, sticker_set_id, location, invite_link, upgraded_from_basic_group_id, upgraded_from_max_message_id, **kwargs):
+    def __init__(self, photo, description, member_count, administrator_count, restricted_count, banned_count, linked_chat_id, slow_mode_delay, slow_mode_delay_expires_in, can_get_members, can_set_username, can_set_sticker_set, can_set_location, can_get_statistics, is_all_history_available, sticker_set_id, location, invite_link, bot_commands, upgraded_from_basic_group_id, upgraded_from_max_message_id, **kwargs):
         
+        self.photo = photo  # ChatPhoto
         self.description = description  # str
         self.member_count = member_count  # int
         self.administrator_count = administrator_count  # int
@@ -72,16 +77,18 @@ class SupergroupFullInfo(Object):
         self.can_set_username = can_set_username  # bool
         self.can_set_sticker_set = can_set_sticker_set  # bool
         self.can_set_location = can_set_location  # bool
-        self.can_view_statistics = can_view_statistics  # bool
+        self.can_get_statistics = can_get_statistics  # bool
         self.is_all_history_available = is_all_history_available  # bool
         self.sticker_set_id = sticker_set_id  # int
         self.location = location  # ChatLocation
-        self.invite_link = invite_link  # str
+        self.invite_link = invite_link  # ChatInviteLink
+        self.bot_commands = bot_commands  # list of botCommands
         self.upgraded_from_basic_group_id = upgraded_from_basic_group_id  # int
         self.upgraded_from_max_message_id = upgraded_from_max_message_id  # int
 
     @staticmethod
     def read(q: dict, *args) -> "SupergroupFullInfo":
+        photo = Object.read(q.get('photo'))
         description = q.get('description')
         member_count = q.get('member_count')
         administrator_count = q.get('administrator_count')
@@ -94,11 +101,12 @@ class SupergroupFullInfo(Object):
         can_set_username = q.get('can_set_username')
         can_set_sticker_set = q.get('can_set_sticker_set')
         can_set_location = q.get('can_set_location')
-        can_view_statistics = q.get('can_view_statistics')
+        can_get_statistics = q.get('can_get_statistics')
         is_all_history_available = q.get('is_all_history_available')
         sticker_set_id = q.get('sticker_set_id')
         location = Object.read(q.get('location'))
-        invite_link = q.get('invite_link')
+        invite_link = Object.read(q.get('invite_link'))
+        bot_commands = [Object.read(i) for i in q.get('bot_commands', [])]
         upgraded_from_basic_group_id = q.get('upgraded_from_basic_group_id')
         upgraded_from_max_message_id = q.get('upgraded_from_max_message_id')
-        return SupergroupFullInfo(description, member_count, administrator_count, restricted_count, banned_count, linked_chat_id, slow_mode_delay, slow_mode_delay_expires_in, can_get_members, can_set_username, can_set_sticker_set, can_set_location, can_view_statistics, is_all_history_available, sticker_set_id, location, invite_link, upgraded_from_basic_group_id, upgraded_from_max_message_id)
+        return SupergroupFullInfo(photo, description, member_count, administrator_count, restricted_count, banned_count, linked_chat_id, slow_mode_delay, slow_mode_delay_expires_in, can_get_members, can_set_username, can_set_sticker_set, can_set_location, can_get_statistics, is_all_history_available, sticker_set_id, location, invite_link, bot_commands, upgraded_from_basic_group_id, upgraded_from_max_message_id)

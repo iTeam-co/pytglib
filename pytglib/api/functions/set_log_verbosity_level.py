@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SetLogVerbosityLevel(Object):
     """
-    Sets the verbosity level of the internal logging of TDLib. This is an offline method. Can be called before authorization. Can be called synchronously
+    Sets the verbosity level of the internal logging of TDLib. Can be called synchronously
 
     Attributes:
         ID (:obj:`str`): ``SetLogVerbosityLevel``

@@ -12,7 +12,7 @@ class GetNetworkStatistics(Object):
 
     Args:
         only_current (:obj:`bool`):
-            If true, returns only data for the current library launch
+            Pass true to get statistics only for the current library launch
 
     Returns:
         NetworkStatistics

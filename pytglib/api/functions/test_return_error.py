@@ -5,7 +5,7 @@ from ..utils import Object
 
 class TestReturnError(Object):
     """
-    Returns the specified error and ensures that the Error object is used; for testing only. This is an offline method. Can be called before authorization. Can be called synchronously 
+    Returns the specified error and ensures that the Error object is used; for testing only. Can be called synchronously 
 
     Attributes:
         ID (:obj:`str`): ``TestReturnError``

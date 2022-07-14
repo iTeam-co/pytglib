@@ -26,9 +26,9 @@ class InputInlineQueryResultPhoto(Object):
         photo_height (:obj:`int`):
             Height of the photo
         reply_markup (:class:`telegram.api.types.ReplyMarkup`):
-            The message reply markupMust be of type replyMarkupInlineKeyboard or null
+            The message reply markup; pass null if noneMust be of type replyMarkupInlineKeyboard or null
         input_message_content (:class:`telegram.api.types.InputMessageContent`):
-            The content of the message to be sentMust be one of the following types: InputMessageText, InputMessagePhoto, InputMessageLocation, InputMessageVenue or InputMessageContact
+            The content of the message to be sentMust be one of the following types: inputMessageText, inputMessagePhoto, inputMessageInvoice, inputMessageLocation, inputMessageVenue or inputMessageContact
 
     Returns:
         InputInlineQueryResult

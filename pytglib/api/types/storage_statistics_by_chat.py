@@ -14,7 +14,7 @@ class StorageStatisticsByChat(Object):
         chat_id (:obj:`int`):
             Chat identifier; 0 if none 
         size (:obj:`int`):
-            Total size of the files in the chat 
+            Total size of the files in the chat, in bytes 
         count (:obj:`int`):
             Total number of files in the chat 
         by_file_type (List of :class:`telegram.api.types.storageStatisticsByFileType`):

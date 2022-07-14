@@ -16,7 +16,7 @@ class GetArchivedStickerSets(Object):
         offset_sticker_set_id (:obj:`int`):
             Identifier of the sticker set from which to return the result 
         limit (:obj:`int`):
-            The maximum number of sticker sets to return
+            The maximum number of sticker sets to return; up to 100
 
     Returns:
         StickerSets

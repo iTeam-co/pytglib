@@ -5,7 +5,7 @@ from ..utils import Object
 
 class MessageForwardOriginHiddenUser(Object):
     """
-    The message was originally written by a user, which is hidden by their privacy settings 
+    The message was originally sent by a user, which is hidden by their privacy settings 
 
     Attributes:
         ID (:obj:`str`): ``MessageForwardOriginHiddenUser``

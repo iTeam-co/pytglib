@@ -14,7 +14,7 @@ class InputMessageVideoNote(Object):
         video_note (:class:`telegram.api.types.InputFile`):
             Video note to be sent 
         thumbnail (:class:`telegram.api.types.inputThumbnail`):
-            Video thumbnail, if available 
+            Video thumbnail; pass null to skip thumbnail uploading 
         duration (:obj:`int`):
             Duration of the video, in seconds 
         length (:obj:`int`):

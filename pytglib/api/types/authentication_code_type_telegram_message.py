@@ -5,7 +5,7 @@ from ..utils import Object
 
 class AuthenticationCodeTypeTelegramMessage(Object):
     """
-    An authentication code is delivered via a private Telegram message, which can be viewed in another client 
+    An authentication code is delivered via a private Telegram message, which can be viewed from another active session 
 
     Attributes:
         ID (:obj:`str`): ``AuthenticationCodeTypeTelegramMessage``

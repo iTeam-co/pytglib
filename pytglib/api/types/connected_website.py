@@ -28,7 +28,7 @@ class ConnectedWebsite(Object):
         ip (:obj:`str`):
             IP address from which the user was logged in, in human-readable format
         location (:obj:`str`):
-            Human-readable description of a country and a region, from which the user was logged in, based on the IP address
+            Human-readable description of a country and a region from which the user was logged in, based on the IP address
 
     Returns:
         ConnectedWebsite

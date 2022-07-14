@@ -12,7 +12,7 @@ class UpdateMessageSendSucceeded(Object):
 
     Args:
         message (:class:`telegram.api.types.message`):
-            Information about the sent messageUsually only the message identifier, date, and content are changed, but almost all other fields can also change 
+            The sent messageUsually only the message identifier, date, and content are changed, but almost all other fields can also change 
         old_message_id (:obj:`int`):
             The previous temporary message identifier
 

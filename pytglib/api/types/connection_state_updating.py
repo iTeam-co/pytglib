@@ -5,7 +5,7 @@ from ..utils import Object
 
 class ConnectionStateUpdating(Object):
     """
-    Downloading data received while the client was offline
+    Downloading data received while the application was offline
 
     Attributes:
         ID (:obj:`str`): ``ConnectionStateUpdating``

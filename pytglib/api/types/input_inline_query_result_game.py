@@ -16,7 +16,7 @@ class InputInlineQueryResultGame(Object):
         game_short_name (:obj:`str`):
             Short name of the game 
         reply_markup (:class:`telegram.api.types.ReplyMarkup`):
-            Message reply markupMust be of type replyMarkupInlineKeyboard or null
+            The message reply markup; pass null if noneMust be of type replyMarkupInlineKeyboard or null
 
     Returns:
         InputInlineQueryResult

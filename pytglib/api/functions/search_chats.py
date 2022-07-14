@@ -5,14 +5,14 @@ from ..utils import Object
 
 class SearchChats(Object):
     """
-    Searches for the specified query in the title and username of already known chats, this is an offline request. Returns chats in the order seen in the chat list 
+    Searches for the specified query in the title and username of already known chats, this is an offline request. Returns chats in the order seen in the main chat list 
 
     Attributes:
         ID (:obj:`str`): ``SearchChats``
 
     Args:
         query (:obj:`str`):
-            Query to search forIf the query is empty, returns up to 20 recently found chats 
+            Query to search forIf the query is empty, returns up to 50 recently found chats 
         limit (:obj:`int`):
             The maximum number of chats to be returned
 

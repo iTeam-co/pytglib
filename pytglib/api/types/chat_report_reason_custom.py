@@ -5,14 +5,12 @@ from ..utils import Object
 
 class ChatReportReasonCustom(Object):
     """
-    A custom reason provided by the user 
+    A custom reason provided by the user
 
     Attributes:
         ID (:obj:`str`): ``ChatReportReasonCustom``
 
-    Args:
-        text (:obj:`str`):
-            Report text
+    No parameters required.
 
     Returns:
         ChatReportReason
@@ -22,11 +20,11 @@ class ChatReportReasonCustom(Object):
     """
     ID = "chatReportReasonCustom"
 
-    def __init__(self, text, **kwargs):
+    def __init__(self, **kwargs):
         
-        self.text = text  # str
+        pass
 
     @staticmethod
     def read(q: dict, *args) -> "ChatReportReasonCustom":
-        text = q.get('text')
-        return ChatReportReasonCustom(text)
+        
+        return ChatReportReasonCustom()

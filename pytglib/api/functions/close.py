@@ -5,7 +5,7 @@ from ..utils import Object
 
 class Close(Object):
     """
-    Closes the TDLib instance. All databases will be flushed to disk and properly closed. After the close completes, updateAuthorizationState with authorizationStateClosed will be sent
+    Closes the TDLib instance. All databases will be flushed to disk and properly closed. After the close completes, updateAuthorizationState with authorizationStateClosed will be sent. Can be called before initialization
 
     Attributes:
         ID (:obj:`str`): ``Close``

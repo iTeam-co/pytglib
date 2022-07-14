@@ -12,13 +12,13 @@ class VideoNote(Object):
 
     Args:
         duration (:obj:`int`):
-            Duration of the video, in seconds; as defined by the sender 
+            Duration of the video, in seconds; as defined by the sender
         length (:obj:`int`):
             Video width and height; as defined by the sender 
         minithumbnail (:class:`telegram.api.types.minithumbnail`):
-            Video minithumbnail; may be null 
-        thumbnail (:class:`telegram.api.types.photoSize`):
-            Video thumbnail; as defined by the sender; may be null 
+            Video minithumbnail; may be null
+        thumbnail (:class:`telegram.api.types.thumbnail`):
+            Video thumbnail in JPEG format; as defined by the sender; may be null 
         video (:class:`telegram.api.types.file`):
             File containing the video
 
@@ -35,7 +35,7 @@ class VideoNote(Object):
         self.duration = duration  # int
         self.length = length  # int
         self.minithumbnail = minithumbnail  # Minithumbnail
-        self.thumbnail = thumbnail  # PhotoSize
+        self.thumbnail = thumbnail  # Thumbnail
         self.video = video  # File
 
     @staticmethod

@@ -16,7 +16,7 @@ class NotificationType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "NotificationTypeNewCall or NotificationTypeNewMessage or NotificationTypeNewPushMessage or NotificationTypeNewSecretChat":
+    def read(q: dict, *args) -> "NotificationTypeNewMessage or NotificationTypeNewCall or NotificationTypeNewSecretChat or NotificationTypeNewPushMessage":
         if q.get("@type"):
             return Object.read(q)
         return NotificationType()

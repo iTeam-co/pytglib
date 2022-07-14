@@ -17,8 +17,8 @@ class InlineQueryResultLocation(Object):
             Location result 
         title (:obj:`str`):
             Title of the result 
-        thumbnail (:class:`telegram.api.types.photoSize`):
-            Result thumbnail; may be null
+        thumbnail (:class:`telegram.api.types.thumbnail`):
+            Result thumbnail in JPEG format; may be null
 
     Returns:
         InlineQueryResult
@@ -33,7 +33,7 @@ class InlineQueryResultLocation(Object):
         self.id = id  # str
         self.location = location  # Location
         self.title = title  # str
-        self.thumbnail = thumbnail  # PhotoSize
+        self.thumbnail = thumbnail  # Thumbnail
 
     @staticmethod
     def read(q: dict, *args) -> "InlineQueryResultLocation":

@@ -12,11 +12,11 @@ class StopPoll(Object):
 
     Args:
         chat_id (:obj:`int`):
-            Identifier of the chat to which the poll belongs 
+            Identifier of the chat to which the poll belongs
         message_id (:obj:`int`):
-            Identifier of the message containing the poll 
+            Identifier of the message containing the poll
         reply_markup (:class:`telegram.api.types.ReplyMarkup`):
-            The new message reply markup; for bots only
+            The new message reply markup; pass null if none; for bots only
 
     Returns:
         Ok

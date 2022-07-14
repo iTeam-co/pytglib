@@ -18,7 +18,7 @@ class InputMessageVoiceNote(Object):
         waveform (:obj:`bytes`):
             Waveform representation of the voice note, in 5-bit format 
         caption (:class:`telegram.api.types.formattedText`):
-            Voice note caption; 0-GetOption("message_caption_length_max") characters
+            Voice note caption; pass null to use an empty caption; 0-GetOption("message_caption_length_max") characters
 
     Returns:
         InputMessageContent

@@ -12,7 +12,7 @@ class SetTdlibParameters(Object):
 
     Args:
         parameters (:class:`telegram.api.types.tdlibParameters`):
-            Parameters
+            Parameters for TDLib initialization
 
     Returns:
         Ok

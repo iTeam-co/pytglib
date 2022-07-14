@@ -16,7 +16,7 @@ class PublicChatType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "PublicChatTypeHasUsername or PublicChatTypeIsLocationBased":
+    def read(q: dict, *args) -> "PublicChatTypeIsLocationBased or PublicChatTypeHasUsername":
         if q.get("@type"):
             return Object.read(q)
         return PublicChatType()

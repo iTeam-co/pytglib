@@ -5,14 +5,14 @@ from ..utils import Object
 
 class MessageChatSetTtl(Object):
     """
-    The TTL (Time To Live) setting messages in a secret chat has been changed 
+    The TTL (Time To Live) setting for messages in the chat has been changed 
 
     Attributes:
         ID (:obj:`str`): ``MessageChatSetTtl``
 
     Args:
         ttl (:obj:`int`):
-            New TTL
+            New message TTL
 
     Returns:
         MessageContent

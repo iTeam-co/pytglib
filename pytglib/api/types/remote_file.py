@@ -12,7 +12,7 @@ class RemoteFile(Object):
 
     Args:
         id (:obj:`str`):
-            Remote file identifier; may be emptyCan be used across application restarts or even from other devices for the current userUniquely identifies a file, but a file can have a lot of different valid identifiersIf the ID starts with "http://" or "https://", it represents the HTTP URL of the fileTDLib is currently unable to download files if only their URL is knownIf downloadFile is called on such a file or if it is sent to a secret chat, TDLib starts a file generation process by sending updateFileGenerationStart to the client with the HTTP URL in the original_path and "#url#" as the conversion stringClients should generate the file by downloading it to the specified location
+            Remote file identifier; may be emptyCan be used by the current user across application restarts or even from other devicesUniquely identifies a file, but a file can have a lot of different valid identifiersIf the ID starts with "http://" or "https://", it represents the HTTP URL of the fileTDLib is currently unable to download files if only their URL is knownIf downloadFile/addFileToDownloads is called on such a file or if it is sent to a secret chat, TDLib starts a file generation process by sending updateFileGenerationStart to the application with the HTTP URL in the original_path and "#url#" as the conversion stringApplication must generate the file by downloading it to the specified location
         unique_id (:obj:`str`):
             Unique file identifier; may be empty if unknownThe unique file identifier which is the same for the same file even for different users and is persistent over time
         is_uploading_active (:obj:`bool`):
@@ -20,7 +20,7 @@ class RemoteFile(Object):
         is_uploading_completed (:obj:`bool`):
             True, if a remote copy is fully available
         uploaded_size (:obj:`int`):
-            Size of the remote available part of the file; 0 if unknown
+            Size of the remote available part of the file, in bytes; 0 if unknown
 
     Returns:
         RemoteFile

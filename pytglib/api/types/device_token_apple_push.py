@@ -12,7 +12,7 @@ class DeviceTokenApplePush(Object):
 
     Args:
         device_token (:obj:`str`):
-            Device token; may be empty to de-register a device 
+            Device token; may be empty to deregister a device 
         is_app_sandbox (:obj:`bool`):
             True, if App Sandbox is enabled
 

@@ -14,7 +14,7 @@ class InputMessageVideo(Object):
         video (:class:`telegram.api.types.InputFile`):
             Video to be sent 
         thumbnail (:class:`telegram.api.types.inputThumbnail`):
-            Video thumbnail, if available 
+            Video thumbnail; pass null to skip thumbnail uploading 
         added_sticker_file_ids (List of :obj:`int`):
             File identifiers of the stickers added to the video, if applicable
         duration (:obj:`int`):
@@ -24,9 +24,9 @@ class InputMessageVideo(Object):
         height (:obj:`int`):
             Video height 
         supports_streaming (:obj:`bool`):
-            True, if the video should be tried to be streamed
+            True, if the video is supposed to be streamed
         caption (:class:`telegram.api.types.formattedText`):
-            Video caption; 0-GetOption("message_caption_length_max") characters 
+            Video caption; pass null to use an empty caption; 0-GetOption("message_caption_length_max") characters 
         ttl (:obj:`int`):
             Video TTL (Time To Live), in seconds (0-60)A non-zero TTL can be specified only in private chats
 

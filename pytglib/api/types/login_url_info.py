@@ -16,7 +16,7 @@ class LoginUrlInfo(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "LoginUrlInfoRequestConfirmation or LoginUrlInfoOpen":
+    def read(q: dict, *args) -> "LoginUrlInfoOpen or LoginUrlInfoRequestConfirmation":
         if q.get("@type"):
             return Object.read(q)
         return LoginUrlInfo()

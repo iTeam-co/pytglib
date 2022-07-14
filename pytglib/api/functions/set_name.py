@@ -5,16 +5,16 @@ from ..utils import Object
 
 class SetName(Object):
     """
-    Changes the first and last name of the current user. If something changes, updateUser will be sent 
+    Changes the first and last name of the current user 
 
     Attributes:
         ID (:obj:`str`): ``SetName``
 
     Args:
         first_name (:obj:`str`):
-            The new value of the first name for the user; 1-64 characters 
+            The new value of the first name for the current user; 1-64 characters 
         last_name (:obj:`str`):
-            The new value of the optional last name for the user; 0-64 characters
+            The new value of the optional last name for the current user; 0-64 characters
 
     Returns:
         Ok

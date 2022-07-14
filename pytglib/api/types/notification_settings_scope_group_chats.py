@@ -5,7 +5,7 @@ from ..utils import Object
 
 class NotificationSettingsScopeGroupChats(Object):
     """
-    Notification settings applied to all basic groups and supergroups when the corresponding chat setting has a default value
+    Notification settings applied to all basic group and supergroup chats when the corresponding chat setting has a default value
 
     Attributes:
         ID (:obj:`str`): ``NotificationSettingsScopeGroupChats``

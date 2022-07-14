@@ -14,7 +14,7 @@ class GetWebPageInstantView(Object):
         url (:obj:`str`):
             The web page URL 
         force_full (:obj:`bool`):
-            If true, the full instant view for the web page will be returned
+            Pass true to get full instant view for the web page
 
     Returns:
         WebPageInstantView

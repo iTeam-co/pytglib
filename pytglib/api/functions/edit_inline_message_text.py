@@ -5,18 +5,18 @@ from ..utils import Object
 
 class EditInlineMessageText(Object):
     """
-    Edits the text of an inline text or game message sent via a bot; for bots only 
+    Edits the text of an inline text or game message sent via a bot; for bots only
 
     Attributes:
         ID (:obj:`str`): ``EditInlineMessageText``
 
     Args:
         inline_message_id (:obj:`str`):
-            Inline message identifier 
+            Inline message identifier
         reply_markup (:class:`telegram.api.types.ReplyMarkup`):
-            The new message reply markup 
+            The new message reply markup; pass null if none
         input_message_content (:class:`telegram.api.types.InputMessageContent`):
-            New text content of the messageShould be of type InputMessageText
+            New text content of the messageMust be of type inputMessageText
 
     Returns:
         Ok

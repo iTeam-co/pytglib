@@ -5,7 +5,7 @@ from ..utils import Object
 
 class MessageForwardOriginUser(Object):
     """
-    The message was originally written by a known user 
+    The message was originally sent by a known user 
 
     Attributes:
         ID (:obj:`str`): ``MessageForwardOriginUser``

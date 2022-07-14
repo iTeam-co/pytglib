@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetRepliedMessage(Object):
     """
-    Returns information about a message that is replied by given message 
+    Returns information about a message that is replied by a given message. Also returns the pinned message, the game message, and the invoice message for messages of the types messagePinMessage, messageGameScore, and messagePaymentSuccessful respectively
 
     Attributes:
         ID (:obj:`str`): ``GetRepliedMessage``
@@ -14,7 +14,7 @@ class GetRepliedMessage(Object):
         chat_id (:obj:`int`):
             Identifier of the chat the message belongs to 
         message_id (:obj:`int`):
-            Identifier of the message reply to which get
+            Identifier of the reply message
 
     Returns:
         Message

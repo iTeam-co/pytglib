@@ -11,7 +11,7 @@ class MessageChatChangePhoto(Object):
         ID (:obj:`str`): ``MessageChatChangePhoto``
 
     Args:
-        photo (:class:`telegram.api.types.photo`):
+        photo (:class:`telegram.api.types.chatPhoto`):
             New chat photo
 
     Returns:
@@ -24,7 +24,7 @@ class MessageChatChangePhoto(Object):
 
     def __init__(self, photo, **kwargs):
         
-        self.photo = photo  # Photo
+        self.photo = photo  # ChatPhoto
 
     @staticmethod
     def read(q: dict, *args) -> "MessageChatChangePhoto":

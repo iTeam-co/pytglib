@@ -13,8 +13,8 @@ class RichTextAnchorLink(Object):
     Args:
         text (:class:`telegram.api.types.RichText`):
             The link text 
-        name (:obj:`str`):
-            The anchor nameIf the name is empty, the link should bring back to top 
+        anchor_name (:obj:`str`):
+            The anchor nameIf the name is empty, the link must bring back to top 
         url (:obj:`str`):
             An HTTP URL, opening the anchor
 
@@ -26,15 +26,15 @@ class RichTextAnchorLink(Object):
     """
     ID = "richTextAnchorLink"
 
-    def __init__(self, text, name, url, **kwargs):
+    def __init__(self, text, anchor_name, url, **kwargs):
         
         self.text = text  # RichText
-        self.name = name  # str
+        self.anchor_name = anchor_name  # str
         self.url = url  # str
 
     @staticmethod
     def read(q: dict, *args) -> "RichTextAnchorLink":
         text = Object.read(q.get('text'))
-        name = q.get('name')
+        anchor_name = q.get('anchor_name')
         url = q.get('url')
-        return RichTextAnchorLink(text, name, url)
+        return RichTextAnchorLink(text, anchor_name, url)

@@ -14,9 +14,9 @@ class File(Object):
         id (:obj:`int`):
             Unique file identifier
         size (:obj:`int`):
-            File size; 0 if unknown
+            File size, in bytes; 0 if unknown
         expected_size (:obj:`int`):
-            Expected file size in case the exact file size is unknown, but an approximate size is knownCan be used to show download/upload progress
+            Approximate file size in bytes in case the exact file size is unknownCan be used to show download/upload progress
         local (:class:`telegram.api.types.localFile`):
             Information about the local copy of the file
         remote (:class:`telegram.api.types.remoteFile`):

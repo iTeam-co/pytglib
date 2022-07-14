@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetSupergroupMembers(Object):
     """
-    Returns information about members or banned users in a supergroup or channel. Can be used only if SupergroupFullInfo.can_get_members == true; additionally, administrator privileges may be required for some filters 
+    Returns information about members or banned users in a supergroup or channel. Can be used only if supergroupFullInfo.can_get_members == true; additionally, administrator privileges may be required for some filters 
 
     Attributes:
         ID (:obj:`str`): ``GetSupergroupMembers``
@@ -14,7 +14,7 @@ class GetSupergroupMembers(Object):
         supergroup_id (:obj:`int`):
             Identifier of the supergroup or channel
         filter (:class:`telegram.api.types.SupergroupMembersFilter`):
-            The type of users to returnBy default, supergroupMembersRecent 
+            The type of users to return; pass null to use supergroupMembersFilterRecent 
         offset (:obj:`int`):
             Number of users to skip 
         limit (:obj:`int`):

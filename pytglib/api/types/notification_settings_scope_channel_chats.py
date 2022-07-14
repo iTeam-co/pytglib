@@ -5,7 +5,7 @@ from ..utils import Object
 
 class NotificationSettingsScopeChannelChats(Object):
     """
-    Notification settings applied to all channels when the corresponding chat setting has a default value
+    Notification settings applied to all channel chats when the corresponding chat setting has a default value
 
     Attributes:
         ID (:obj:`str`): ``NotificationSettingsScopeChannelChats``

@@ -12,7 +12,7 @@ class DeviceTokenWindowsPush(Object):
 
     Args:
         access_token (:obj:`str`):
-            The access token that will be used to send notifications; may be empty to de-register a device
+            The access token that will be used to send notifications; may be empty to deregister a device
 
     Returns:
         DeviceToken

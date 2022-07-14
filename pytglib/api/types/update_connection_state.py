@@ -5,7 +5,7 @@ from ..utils import Object
 
 class UpdateConnectionState(Object):
     """
-    The connection state has changed 
+    The connection state has changed. This update must be used only to show a human-readable description of the connection state 
 
     Attributes:
         ID (:obj:`str`): ``UpdateConnectionState``

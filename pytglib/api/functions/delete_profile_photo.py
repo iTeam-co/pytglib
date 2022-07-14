@@ -5,7 +5,7 @@ from ..utils import Object
 
 class DeleteProfilePhoto(Object):
     """
-    Deletes a profile photo. If something changes, updateUser will be sent 
+    Deletes a profile photo 
 
     Attributes:
         ID (:obj:`str`): ``DeleteProfilePhoto``

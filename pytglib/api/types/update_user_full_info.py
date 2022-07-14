@@ -5,7 +5,7 @@ from ..utils import Object
 
 class UpdateUserFullInfo(Object):
     """
-    Some data from userFullInfo has been changed 
+    Some data in userFullInfo has been changed 
 
     Attributes:
         ID (:obj:`str`): ``UpdateUserFullInfo``

@@ -5,7 +5,7 @@ from ..utils import Object
 
 class MaskPointEyes(Object):
     """
-    A mask should be placed relatively to the eyes
+    The mask is placed relatively to the eyes
 
     Attributes:
         ID (:obj:`str`): ``MaskPointEyes``

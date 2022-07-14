@@ -5,7 +5,7 @@ from ..utils import Object
 
 class MaskPointForehead(Object):
     """
-    A mask should be placed relatively to the forehead
+    The mask is placed relatively to the forehead
 
     Attributes:
         ID (:obj:`str`): ``MaskPointForehead``

@@ -16,7 +16,7 @@ class InputBackground(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "InputBackgroundLocal or InputBackgroundRemote":
+    def read(q: dict, *args) -> "InputBackgroundRemote or InputBackgroundLocal":
         if q.get("@type"):
             return Object.read(q)
         return InputBackground()

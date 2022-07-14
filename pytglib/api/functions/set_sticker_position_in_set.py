@@ -14,7 +14,7 @@ class SetStickerPositionInSet(Object):
         sticker (:class:`telegram.api.types.InputFile`):
             Sticker 
         position (:obj:`int`):
-            New position of the sticker in the set, zero-based
+            New position of the sticker in the set, 0-based
 
     Returns:
         Ok

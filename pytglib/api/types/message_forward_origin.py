@@ -16,7 +16,7 @@ class MessageForwardOrigin(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "MessageForwardOriginChannel or MessageForwardOriginUser or MessageForwardOriginHiddenUser":
+    def read(q: dict, *args) -> "MessageForwardOriginMessageImport or MessageForwardOriginChat or MessageForwardOriginHiddenUser or MessageForwardOriginChannel or MessageForwardOriginUser":
         if q.get("@type"):
             return Object.read(q)
         return MessageForwardOrigin()

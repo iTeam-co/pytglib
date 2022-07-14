@@ -14,7 +14,7 @@ class UpdateNewChosenInlineResult(Object):
         sender_user_id (:obj:`int`):
             Identifier of the user who sent the query 
         user_location (:class:`telegram.api.types.location`):
-            User location, provided by the client; may be null
+            User location; may be null
         query (:obj:`str`):
             Text of the query 
         result_id (:obj:`str`):

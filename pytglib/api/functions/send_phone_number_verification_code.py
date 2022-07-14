@@ -14,7 +14,7 @@ class SendPhoneNumberVerificationCode(Object):
         phone_number (:obj:`str`):
             The phone number of the user, in international format 
         settings (:class:`telegram.api.types.phoneNumberAuthenticationSettings`):
-            Settings for the authentication of the user's phone number
+            Settings for the authentication of the user's phone number; pass null to use default settings
 
     Returns:
         AuthenticationCodeInfo

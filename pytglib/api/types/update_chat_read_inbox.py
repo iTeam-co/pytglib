@@ -5,7 +5,7 @@ from ..utils import Object
 
 class UpdateChatReadInbox(Object):
     """
-    Incoming messages were read or number of unread messages has been changed 
+    Incoming messages were read or the number of unread messages has been changed 
 
     Attributes:
         ID (:obj:`str`): ``UpdateChatReadInbox``

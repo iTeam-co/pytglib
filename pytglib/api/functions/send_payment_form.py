@@ -11,16 +11,18 @@ class SendPaymentForm(Object):
         ID (:obj:`str`): ``SendPaymentForm``
 
     Args:
-        chat_id (:obj:`int`):
-            Chat identifier of the Invoice message 
-        message_id (:obj:`int`):
-            Message identifier 
+        input_invoice (:class:`telegram.api.types.InputInvoice`):
+            The invoice
+        payment_form_id (:obj:`int`):
+            Payment form identifier returned by getPaymentForm 
         order_info_id (:obj:`str`):
-            Identifier returned by ValidateOrderInfo, or an empty string 
+            Identifier returned by validateOrderInfo, or an empty string 
         shipping_option_id (:obj:`str`):
             Identifier of a chosen shipping option, if applicable
         credentials (:class:`telegram.api.types.InputCredentials`):
-            The credentials chosen by user for payment
+            The credentials chosen by user for payment 
+        tip_amount (:obj:`int`):
+            Chosen by the user amount of tip in the smallest units of the currency
 
     Returns:
         PaymentResult
@@ -30,19 +32,21 @@ class SendPaymentForm(Object):
     """
     ID = "sendPaymentForm"
 
-    def __init__(self, chat_id, message_id, order_info_id, shipping_option_id, credentials, extra=None, **kwargs):
+    def __init__(self, input_invoice, payment_form_id, order_info_id, shipping_option_id, credentials, tip_amount, extra=None, **kwargs):
         self.extra = extra
-        self.chat_id = chat_id  # int
-        self.message_id = message_id  # int
+        self.input_invoice = input_invoice  # InputInvoice
+        self.payment_form_id = payment_form_id  # int
         self.order_info_id = order_info_id  # str
         self.shipping_option_id = shipping_option_id  # str
         self.credentials = credentials  # InputCredentials
+        self.tip_amount = tip_amount  # int
 
     @staticmethod
     def read(q: dict, *args) -> "SendPaymentForm":
-        chat_id = q.get('chat_id')
-        message_id = q.get('message_id')
+        input_invoice = Object.read(q.get('input_invoice'))
+        payment_form_id = q.get('payment_form_id')
         order_info_id = q.get('order_info_id')
         shipping_option_id = q.get('shipping_option_id')
         credentials = Object.read(q.get('credentials'))
-        return SendPaymentForm(chat_id, message_id, order_info_id, shipping_option_id, credentials)
+        tip_amount = q.get('tip_amount')
+        return SendPaymentForm(input_invoice, payment_form_id, order_info_id, shipping_option_id, credentials, tip_amount)

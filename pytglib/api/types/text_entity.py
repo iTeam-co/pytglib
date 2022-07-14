@@ -12,7 +12,7 @@ class TextEntity(Object):
 
     Args:
         offset (:obj:`int`):
-            Offset of the entity in UTF-16 code units 
+            Offset of the entity, in UTF-16 code units 
         length (:obj:`int`):
             Length of the entity, in UTF-16 code units 
         type (:class:`telegram.api.types.TextEntityType`):

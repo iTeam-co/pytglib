@@ -5,7 +5,7 @@ from ..utils import Object
 
 class UpdateBasicGroupFullInfo(Object):
     """
-    Some data from basicGroupFullInfo has been changed 
+    Some data in basicGroupFullInfo has been changed 
 
     Attributes:
         ID (:obj:`str`): ``UpdateBasicGroupFullInfo``

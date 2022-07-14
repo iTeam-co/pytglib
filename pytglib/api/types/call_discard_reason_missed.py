@@ -5,7 +5,7 @@ from ..utils import Object
 
 class CallDiscardReasonMissed(Object):
     """
-    The call was ended before the conversation started. It was cancelled by the caller or missed by the other party
+    The call was ended before the conversation started. It was canceled by the caller or missed by the other party
 
     Attributes:
         ID (:obj:`str`): ``CallDiscardReasonMissed``

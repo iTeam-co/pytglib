@@ -12,7 +12,7 @@ class AccountTtl(Object):
 
     Args:
         days (:obj:`int`):
-            Number of days of inactivity before the account will be flagged for deletion; should range from 30-366 days
+            Number of days of inactivity before the account will be flagged for deletion; 30-366 days
 
     Returns:
         AccountTtl

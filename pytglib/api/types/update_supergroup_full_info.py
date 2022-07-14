@@ -5,7 +5,7 @@ from ..utils import Object
 
 class UpdateSupergroupFullInfo(Object):
     """
-    Some data from supergroupFullInfo has been changed 
+    Some data in supergroupFullInfo has been changed 
 
     Attributes:
         ID (:obj:`str`): ``UpdateSupergroupFullInfo``

@@ -5,7 +5,7 @@ from ..utils import Object
 
 class UpdateSecretChat(Object):
     """
-    Some data of a secret chat has changed. This update is guaranteed to come before the secret chat identifier is returned to the client 
+    Some data of a secret chat has changed. This update is guaranteed to come before the secret chat identifier is returned to the application 
 
     Attributes:
         ID (:obj:`str`): ``UpdateSecretChat``

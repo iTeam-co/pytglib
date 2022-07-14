@@ -13,8 +13,8 @@ class CallStateReady(Object):
     Args:
         protocol (:class:`telegram.api.types.callProtocol`):
             Call protocols supported by the peer 
-        connections (List of :class:`telegram.api.types.callConnection`):
-            Available UDP reflectors 
+        servers (List of :class:`telegram.api.types.callServer`):
+            List of available call servers 
         config (:obj:`str`):
             A JSON-encoded call config 
         encryption_key (:obj:`bytes`):
@@ -32,10 +32,10 @@ class CallStateReady(Object):
     """
     ID = "callStateReady"
 
-    def __init__(self, protocol, connections, config, encryption_key, emojis, allow_p2p, **kwargs):
+    def __init__(self, protocol, servers, config, encryption_key, emojis, allow_p2p, **kwargs):
         
         self.protocol = protocol  # CallProtocol
-        self.connections = connections  # list of callConnection
+        self.servers = servers  # list of callServer
         self.config = config  # str
         self.encryption_key = encryption_key  # bytes
         self.emojis = emojis  # list of str
@@ -44,9 +44,9 @@ class CallStateReady(Object):
     @staticmethod
     def read(q: dict, *args) -> "CallStateReady":
         protocol = Object.read(q.get('protocol'))
-        connections = [Object.read(i) for i in q.get('connections', [])]
+        servers = [Object.read(i) for i in q.get('servers', [])]
         config = q.get('config')
         encryption_key = q.get('encryption_key')
         emojis = q.get('emojis')
         allow_p2p = q.get('allow_p2p')
-        return CallStateReady(protocol, connections, config, encryption_key, emojis, allow_p2p)
+        return CallStateReady(protocol, servers, config, encryption_key, emojis, allow_p2p)

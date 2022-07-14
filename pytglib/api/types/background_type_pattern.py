@@ -12,9 +12,11 @@ class BackgroundTypePattern(Object):
 
     Args:
         fill (:class:`telegram.api.types.BackgroundFill`):
-            Description of the background fill
+            Fill of the background
         intensity (:obj:`int`):
-            Intensity of the pattern when it is shown above the filled background, 0-100
+            Intensity of the pattern when it is shown above the filled background; 0-100
+        is_inverted (:obj:`bool`):
+            True, if the background fill must be applied only to the pattern itselfAll other pixels are black in this caseFor dark themes only
         is_moving (:obj:`bool`):
             True, if the background needs to be slightly moved when device is tilted
 
@@ -26,15 +28,17 @@ class BackgroundTypePattern(Object):
     """
     ID = "backgroundTypePattern"
 
-    def __init__(self, fill, intensity, is_moving, **kwargs):
+    def __init__(self, fill, intensity, is_inverted, is_moving, **kwargs):
         
         self.fill = fill  # BackgroundFill
         self.intensity = intensity  # int
+        self.is_inverted = is_inverted  # bool
         self.is_moving = is_moving  # bool
 
     @staticmethod
     def read(q: dict, *args) -> "BackgroundTypePattern":
         fill = Object.read(q.get('fill'))
         intensity = q.get('intensity')
+        is_inverted = q.get('is_inverted')
         is_moving = q.get('is_moving')
-        return BackgroundTypePattern(fill, intensity, is_moving)
+        return BackgroundTypePattern(fill, intensity, is_inverted, is_moving)

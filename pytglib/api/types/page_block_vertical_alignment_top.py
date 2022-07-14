@@ -5,7 +5,7 @@ from ..utils import Object
 
 class PageBlockVerticalAlignmentTop(Object):
     """
-    The content should be top-aligned
+    The content must be top-aligned
 
     Attributes:
         ID (:obj:`str`): ``PageBlockVerticalAlignmentTop``

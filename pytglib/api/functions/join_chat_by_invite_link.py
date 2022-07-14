@@ -5,14 +5,14 @@ from ..utils import Object
 
 class JoinChatByInviteLink(Object):
     """
-    Uses an invite link to add the current user to the chat if possible. The new member will not be added until the chat state has been synchronized with the server
+    Uses an invite link to add the current user to the chat if possible. May return an error with a message "INVITE_REQUEST_SENT" if only a join request was created 
 
     Attributes:
         ID (:obj:`str`): ``JoinChatByInviteLink``
 
     Args:
         invite_link (:obj:`str`):
-            Invite link to import; should begin with "https://tme/joinchat/", "https://telegramme/joinchat/", or "https://telegramdog/joinchat/"
+            Invite link to use
 
     Returns:
         Chat

@@ -16,7 +16,7 @@ class ProxyType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "ProxyTypeMtproto or ProxyTypeHttp or ProxyTypeSocks5":
+    def read(q: dict, *args) -> "ProxyTypeMtproto or ProxyTypeSocks5 or ProxyTypeHttp":
         if q.get("@type"):
             return Object.read(q)
         return ProxyType()

@@ -5,7 +5,7 @@ from ..utils import Object
 
 class InputMessageInvoice(Object):
     """
-    A message with an invoice; can be used only by bots and only in private chats 
+    A message with an invoice; can be used only by bots 
 
     Attributes:
         ID (:obj:`str`): ``InputMessageInvoice``
@@ -16,7 +16,7 @@ class InputMessageInvoice(Object):
         title (:obj:`str`):
             Product title; 1-32 characters 
         description (:obj:`str`):
-            Product description; 0-255 characters 
+            Product description; 0-255 characters
         photo_url (:obj:`str`):
             Product photo URL; optional 
         photo_size (:obj:`int`):
@@ -30,9 +30,9 @@ class InputMessageInvoice(Object):
         provider_token (:obj:`str`):
             Payment provider token 
         provider_data (:obj:`str`):
-            JSON-encoded data about the invoice, which will be shared with the payment provider 
+            JSON-encoded data about the invoice, which will be shared with the payment provider
         start_parameter (:obj:`str`):
-            Unique invoice bot start_parameter for the generation of this invoice
+            Unique invoice bot deep link parameter for the generation of this invoiceIf empty, it would be possible to pay directly from forwards of the invoice message
 
     Returns:
         InputMessageContent

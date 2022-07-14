@@ -5,7 +5,7 @@ from ..utils import Object
 
 class ChatActionCancel(Object):
     """
-    The user has cancelled the previous action
+    The user has canceled the previous action
 
     Attributes:
         ID (:obj:`str`): ``ChatActionCancel``

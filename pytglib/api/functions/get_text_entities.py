@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetTextEntities(Object):
     """
-    Returns all entities (mentions, hashtags, cashtags, bot commands, bank card numbers, URLs, and email addresses) contained in the text. This is an offline method. Can be called before authorization. Can be called synchronously 
+    Returns all entities (mentions, hashtags, cashtags, bot commands, bank card numbers, URLs, and email addresses) contained in the text. Can be called synchronously 
 
     Attributes:
         ID (:obj:`str`): ``GetTextEntities``

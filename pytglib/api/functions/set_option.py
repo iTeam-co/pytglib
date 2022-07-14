@@ -14,7 +14,7 @@ class SetOption(Object):
         name (:obj:`str`):
             The name of the option 
         value (:class:`telegram.api.types.OptionValue`):
-            The new value of the option
+            The new value of the option; pass null to reset option value to a default value
 
     Returns:
         Ok

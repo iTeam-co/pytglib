@@ -16,7 +16,7 @@ class JsonValue(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "JsonValueArray or JsonValueBoolean or JsonValueObject or JsonValueString or JsonValueNull or JsonValueNumber":
+    def read(q: dict, *args) -> "JsonValueString or JsonValueBoolean or JsonValueNull or JsonValueArray or JsonValueNumber or JsonValueObject":
         if q.get("@type"):
             return Object.read(q)
         return JsonValue()

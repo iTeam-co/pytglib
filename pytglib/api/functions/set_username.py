@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SetUsername(Object):
     """
-    Changes the username of the current user. If something changes, updateUser will be sent 
+    Changes the username of the current user 
 
     Attributes:
         ID (:obj:`str`): ``SetUsername``

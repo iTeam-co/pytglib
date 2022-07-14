@@ -14,9 +14,9 @@ class SetGameScore(Object):
         chat_id (:obj:`int`):
             The chat to which the message with the game belongs 
         message_id (:obj:`int`):
-            Identifier of the message 
+            Identifier of the message
         edit_message (:obj:`bool`):
-            True, if the message should be edited 
+            Pass true to edit the game message to include the current scoreboard 
         user_id (:obj:`int`):
             User identifier 
         score (:obj:`int`):

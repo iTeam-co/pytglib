@@ -5,16 +5,16 @@ from ..utils import Object
 
 class GetPaymentForm(Object):
     """
-    Returns an invoice payment form. This method should be called when the user presses inlineKeyboardButtonBuy 
+    Returns an invoice payment form. This method must be called when the user presses inlineKeyboardButtonBuy
 
     Attributes:
         ID (:obj:`str`): ``GetPaymentForm``
 
     Args:
-        chat_id (:obj:`int`):
-            Chat identifier of the Invoice message 
-        message_id (:obj:`int`):
-            Message identifier
+        input_invoice (:class:`telegram.api.types.InputInvoice`):
+            The invoice
+        theme (:class:`telegram.api.types.themeParameters`):
+            Preferred payment form theme; pass null to use the default theme
 
     Returns:
         PaymentForm
@@ -24,13 +24,13 @@ class GetPaymentForm(Object):
     """
     ID = "getPaymentForm"
 
-    def __init__(self, chat_id, message_id, extra=None, **kwargs):
+    def __init__(self, input_invoice, theme, extra=None, **kwargs):
         self.extra = extra
-        self.chat_id = chat_id  # int
-        self.message_id = message_id  # int
+        self.input_invoice = input_invoice  # InputInvoice
+        self.theme = theme  # ThemeParameters
 
     @staticmethod
     def read(q: dict, *args) -> "GetPaymentForm":
-        chat_id = q.get('chat_id')
-        message_id = q.get('message_id')
-        return GetPaymentForm(chat_id, message_id)
+        input_invoice = Object.read(q.get('input_invoice'))
+        theme = Object.read(q.get('theme'))
+        return GetPaymentForm(input_invoice, theme)

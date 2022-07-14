@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetChatHistory(Object):
     """
-    Returns messages in a chat. The messages are returned in a reverse chronological order (i.e., in order of decreasing message_id).For optimal performance the number of returned messages is chosen by the library. This is an offline request if only_local is true
+    Returns messages in a chat. The messages are returned in a reverse chronological order (i.e., in order of decreasing message_id).For optimal performance, the number of returned messages is chosen by TDLib. This is an offline request if only_local is true
 
     Attributes:
         ID (:obj:`str`): ``GetChatHistory``
@@ -18,9 +18,9 @@ class GetChatHistory(Object):
         offset (:obj:`int`):
             Specify 0 to get results from exactly the from_message_id or a negative offset up to 99 to get additionally some newer messages
         limit (:obj:`int`):
-            The maximum number of messages to be returned; must be positive and can't be greater than 100If the offset is negative, the limit must be greater or equal to -offsetFewer messages may be returned than specified by the limit, even if the end of the message history has not been reached
+            The maximum number of messages to be returned; must be positive and can't be greater than 100If the offset is negative, the limit must be greater than or equal to -offsetFor optimal performance, the number of returned messages is chosen by TDLib and can be smaller than the specified limit
         only_local (:obj:`bool`):
-            If true, returns only messages that are available locally without sending network requests
+            Pass true to get only messages that are available without sending network requests
 
     Returns:
         Messages

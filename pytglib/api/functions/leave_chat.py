@@ -5,7 +5,7 @@ from ..utils import Object
 
 class LeaveChat(Object):
     """
-    Removes current user from chat members. Private and secret chats can't be left using this method 
+    Removes the current user from chat members. Private and secret chats can't be left using this method 
 
     Attributes:
         ID (:obj:`str`): ``LeaveChat``

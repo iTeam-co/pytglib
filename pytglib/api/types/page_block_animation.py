@@ -16,7 +16,7 @@ class PageBlockAnimation(Object):
         caption (:class:`telegram.api.types.pageBlockCaption`):
             Animation caption 
         need_autoplay (:obj:`bool`):
-            True, if the animation should be played automatically
+            True, if the animation must be played automatically
 
     Returns:
         PageBlock

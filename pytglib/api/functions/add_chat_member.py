@@ -5,7 +5,7 @@ from ..utils import Object
 
 class AddChatMember(Object):
     """
-    Adds a new member to a chat. Members can't be added to private or secret chats. Members will not be added until the chat state has been synchronized with the server
+    Adds a new member to a chat. Members can't be added to private or secret chats
 
     Attributes:
         ID (:obj:`str`): ``AddChatMember``
@@ -16,7 +16,7 @@ class AddChatMember(Object):
         user_id (:obj:`int`):
             Identifier of the user 
         forward_limit (:obj:`int`):
-            The number of earlier messages from the chat to be forwarded to the new member; up to 100Ignored for supergroups and channels
+            The number of earlier messages from the chat to be forwarded to the new member; up to 100Ignored for supergroups and channels, or if the added user is a bot
 
     Returns:
         Ok

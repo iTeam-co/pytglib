@@ -22,7 +22,7 @@ class GetMapThumbnailFile(Object):
         scale (:obj:`int`):
             Map scale; 1-3 
         chat_id (:obj:`int`):
-            Identifier of a chat, in which the thumbnail will be shownUse 0 if unknown
+            Identifier of a chat in which the thumbnail will be shownUse 0 if unknown
 
     Returns:
         File

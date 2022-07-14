@@ -14,7 +14,7 @@ class LanguagePackString(Object):
         key (:obj:`str`):
             String key 
         value (:class:`telegram.api.types.LanguagePackStringValue`):
-            String value
+            String value; pass null if the string needs to be taken from the built-in English language pack
 
     Returns:
         LanguagePackString

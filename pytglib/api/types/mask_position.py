@@ -5,14 +5,14 @@ from ..utils import Object
 
 class MaskPosition(Object):
     """
-    Position on a photo where a mask should be placed 
+    Position on a photo where a mask is placed 
 
     Attributes:
         ID (:obj:`str`): ``MaskPosition``
 
     Args:
         point (:class:`telegram.api.types.MaskPoint`):
-            Part of the face, relative to which the mask should be placed
+            Part of the face, relative to which the mask is placed
         x_shift (:obj:`float`):
             Shift by X-axis measured in widths of the mask scaled to the face size, from left to right(For example, -10 will place the mask just to the left of the default mask position)
         y_shift (:obj:`float`):

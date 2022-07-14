@@ -5,7 +5,7 @@ from ..utils import Object
 
 class MessagePassportDataSent(Object):
     """
-    Telegram Passport data has been sent 
+    Telegram Passport data has been sent to a bot 
 
     Attributes:
         ID (:obj:`str`): ``MessagePassportDataSent``

@@ -5,7 +5,7 @@ from ..utils import Object
 
 class ReadFilePart(Object):
     """
-    Reads a part of a file from the TDLib file cache and returns read bytes. This method is intended to be used only if the client has no direct access to TDLib's file system, because it is usually slower than a direct read from the file
+    Reads a part of a file from the TDLib file cache and returns read bytes. This method is intended to be used only if the application has no direct access to TDLib's file system, because it is usually slower than a direct read from the file
 
     Attributes:
         ID (:obj:`str`): ``ReadFilePart``

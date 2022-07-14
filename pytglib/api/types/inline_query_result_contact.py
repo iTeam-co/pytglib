@@ -15,8 +15,8 @@ class InlineQueryResultContact(Object):
             Unique identifier of the query result 
         contact (:class:`telegram.api.types.contact`):
             A user contact 
-        thumbnail (:class:`telegram.api.types.photoSize`):
-            Result thumbnail; may be null
+        thumbnail (:class:`telegram.api.types.thumbnail`):
+            Result thumbnail in JPEG format; may be null
 
     Returns:
         InlineQueryResult
@@ -30,7 +30,7 @@ class InlineQueryResultContact(Object):
         
         self.id = id  # str
         self.contact = contact  # Contact
-        self.thumbnail = thumbnail  # PhotoSize
+        self.thumbnail = thumbnail  # Thumbnail
 
     @staticmethod
     def read(q: dict, *args) -> "InlineQueryResultContact":

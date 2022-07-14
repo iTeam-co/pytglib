@@ -22,9 +22,9 @@ class Audio(Object):
         mime_type (:obj:`str`):
             The MIME type of the file; as defined by the sender 
         album_cover_minithumbnail (:class:`telegram.api.types.minithumbnail`):
-            The minithumbnail of the album cover; may be null 
-        album_cover_thumbnail (:class:`telegram.api.types.photoSize`):
-            The thumbnail of the album cover; as defined by the senderThe full size thumbnail should be extracted from the downloaded file; may be null 
+            The minithumbnail of the album cover; may be null
+        album_cover_thumbnail (:class:`telegram.api.types.thumbnail`):
+            The thumbnail of the album cover in JPEG format; as defined by the senderThe full size thumbnail is supposed to be extracted from the downloaded file; may be null 
         audio (:class:`telegram.api.types.file`):
             File containing the audio
 
@@ -44,7 +44,7 @@ class Audio(Object):
         self.file_name = file_name  # str
         self.mime_type = mime_type  # str
         self.album_cover_minithumbnail = album_cover_minithumbnail  # Minithumbnail
-        self.album_cover_thumbnail = album_cover_thumbnail  # PhotoSize
+        self.album_cover_thumbnail = album_cover_thumbnail  # Thumbnail
         self.audio = audio  # File
 
     @staticmethod

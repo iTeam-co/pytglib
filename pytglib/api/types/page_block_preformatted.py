@@ -14,7 +14,7 @@ class PageBlockPreformatted(Object):
         text (:class:`telegram.api.types.RichText`):
             Paragraph text 
         language (:obj:`str`):
-            Programming language for which the text should be formatted
+            Programming language for which the text needs to be formatted
 
     Returns:
         PageBlock

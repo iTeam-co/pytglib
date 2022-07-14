@@ -5,7 +5,7 @@ from ..utils import Object
 
 class DeepLinkInfo(Object):
     """
-    Contains information about a tg:// deep link 
+    Contains information about a tg: deep link 
 
     Attributes:
         ID (:obj:`str`): ``DeepLinkInfo``
@@ -14,7 +14,7 @@ class DeepLinkInfo(Object):
         text (:class:`telegram.api.types.formattedText`):
             Text to be shown to the user 
         need_update_application (:obj:`bool`):
-            True, if user should be asked to update the application
+            True, if the user must be asked to update the application
 
     Returns:
         DeepLinkInfo

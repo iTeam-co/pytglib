@@ -16,7 +16,7 @@ class NetworkType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "NetworkTypeOther or NetworkTypeMobileRoaming or NetworkTypeMobile or NetworkTypeWiFi or NetworkTypeNone":
+    def read(q: dict, *args) -> "NetworkTypeWiFi or NetworkTypeMobile or NetworkTypeNone or NetworkTypeOther or NetworkTypeMobileRoaming":
         if q.get("@type"):
             return Object.read(q)
         return NetworkType()

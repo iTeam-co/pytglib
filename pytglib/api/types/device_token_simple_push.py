@@ -12,7 +12,7 @@ class DeviceTokenSimplePush(Object):
 
     Args:
         endpoint (:obj:`str`):
-            Absolute URL exposed by the push service where the application server can send push messages; may be empty to de-register a device
+            Absolute URL exposed by the push service where the application server can send push messages; may be empty to deregister a device
 
     Returns:
         DeviceToken

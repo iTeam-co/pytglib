@@ -19,7 +19,7 @@ class GetUserProfilePhotos(Object):
             The maximum number of photos to be returned; up to 100
 
     Returns:
-        UserProfilePhotos
+        ChatPhotos
 
     Raises:
         :class:`telegram.Error`

@@ -13,10 +13,10 @@ class PageBlockChatLink(Object):
     Args:
         title (:obj:`str`):
             Chat title 
-        photo (:class:`telegram.api.types.chatPhoto`):
+        photo (:class:`telegram.api.types.chatPhotoInfo`):
             Chat photo; may be null 
         username (:obj:`str`):
-            Chat username, by which all other information about the chat should be resolved
+            Chat username by which all other information about the chat can be resolved
 
     Returns:
         PageBlock
@@ -29,7 +29,7 @@ class PageBlockChatLink(Object):
     def __init__(self, title, photo, username, **kwargs):
         
         self.title = title  # str
-        self.photo = photo  # ChatPhoto
+        self.photo = photo  # ChatPhotoInfo
         self.username = username  # str
 
     @staticmethod

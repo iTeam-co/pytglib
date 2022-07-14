@@ -5,7 +5,7 @@ from ..utils import Object
 
 class TextEntityTypeBotCommand(Object):
     """
-    A bot command, beginning with "/". This shouldn't be highlighted if there are no bots in the chat
+    A bot command, beginning with "/"
 
     Attributes:
         ID (:obj:`str`): ``TextEntityTypeBotCommand``

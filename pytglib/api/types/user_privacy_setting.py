@@ -16,7 +16,7 @@ class UserPrivacySetting(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "UserPrivacySettingAllowCalls or UserPrivacySettingShowPhoneNumber or UserPrivacySettingAllowPeerToPeerCalls or UserPrivacySettingShowLinkInForwardedMessages or UserPrivacySettingShowStatus or UserPrivacySettingShowProfilePhoto or UserPrivacySettingAllowChatInvites or UserPrivacySettingAllowFindingByPhoneNumber":
+    def read(q: dict, *args) -> "UserPrivacySettingAllowPeerToPeerCalls or UserPrivacySettingShowStatus or UserPrivacySettingShowLinkInForwardedMessages or UserPrivacySettingAllowFindingByPhoneNumber or UserPrivacySettingAllowChatInvites or UserPrivacySettingShowPhoneNumber or UserPrivacySettingShowProfilePhoto or UserPrivacySettingAllowCalls":
         if q.get("@type"):
             return Object.read(q)
         return UserPrivacySetting()

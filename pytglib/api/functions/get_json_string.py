@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetJsonString(Object):
     """
-    Converts a JsonValue object to corresponding JSON-serialized string. This is an offline method. Can be called before authorization. Can be called synchronously 
+    Converts a JsonValue object to corresponding JSON-serialized string. Can be called synchronously 
 
     Attributes:
         ID (:obj:`str`): ``GetJsonString``

@@ -5,7 +5,7 @@ from ..utils import Object
 
 class PageBlockVerticalAlignmentBottom(Object):
     """
-    The content should be bottom-aligned
+    The content must be bottom-aligned
 
     Attributes:
         ID (:obj:`str`): ``PageBlockVerticalAlignmentBottom``

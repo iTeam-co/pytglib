@@ -5,18 +5,18 @@ from ..utils import Object
 
 class EditInlineMessageCaption(Object):
     """
-    Edits the caption of an inline message sent via a bot; for bots only 
+    Edits the caption of an inline message sent via a bot; for bots only
 
     Attributes:
         ID (:obj:`str`): ``EditInlineMessageCaption``
 
     Args:
         inline_message_id (:obj:`str`):
-            Inline message identifier 
+            Inline message identifier
         reply_markup (:class:`telegram.api.types.ReplyMarkup`):
-            The new message reply markup 
+            The new message reply markup; pass null if none
         caption (:class:`telegram.api.types.formattedText`):
-            New message content caption; 0-GetOption("message_caption_length_max") characters
+            New message content caption; pass null to remove caption; 0-GetOption("message_caption_length_max") characters
 
     Returns:
         Ok

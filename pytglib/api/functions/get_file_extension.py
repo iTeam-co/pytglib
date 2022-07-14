@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetFileExtension(Object):
     """
-    Returns the extension of a file, guessed by its MIME type. Returns an empty string on failure. This is an offline method. Can be called before authorization. Can be called synchronously 
+    Returns the extension of a file, guessed by its MIME type. Returns an empty string on failure. Can be called synchronously 
 
     Attributes:
         ID (:obj:`str`): ``GetFileExtension``

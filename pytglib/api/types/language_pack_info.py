@@ -14,13 +14,13 @@ class LanguagePackInfo(Object):
         id (:obj:`str`):
             Unique language pack identifier
         base_language_pack_id (:obj:`str`):
-            Identifier of a base language pack; may be emptyIf a string is missed in the language pack, then it should be fetched from base language packUnsupported in custom language packs
+            Identifier of a base language pack; may be emptyIf a string is missed in the language pack, then it must be fetched from base language packUnsupported in custom language packs
         name (:obj:`str`):
             Language name 
         native_name (:obj:`str`):
             Name of the language in that language
         plural_code (:obj:`str`):
-            A language code to be used to apply plural formsSee https://wwwunicodeorg/cldr/charts/latest/supplemental/language_plural_ruleshtml for more info
+            A language code to be used to apply plural formsSee https://wwwunicodeorg/cldr/charts/latest/supplemental/language_plural_ruleshtml for more information
         is_official (:obj:`bool`):
             True, if the language pack is official 
         is_rtl (:obj:`bool`):

@@ -12,7 +12,7 @@ class PaymentResult(Object):
 
     Args:
         success (:obj:`bool`):
-            True, if the payment request was successful; otherwise the verification_url will be not empty 
+            True, if the payment request was successful; otherwise the verification_url will be non-empty 
         verification_url (:obj:`str`):
             URL for additional payment credentials verification
 

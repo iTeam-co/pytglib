@@ -21,6 +21,8 @@ class PasswordState(Object):
             True, if some Telegram Passport elements were saved
         recovery_email_address_code_info (:class:`telegram.api.types.emailAddressAuthenticationCodeInfo`):
             Information about the recovery email address to which the confirmation email was sent; may be null
+        pending_reset_date (:obj:`int`):
+            If not 0, point in time (Unix timestamp) after which the password can be reset immediately using resetPassword
 
     Returns:
         PasswordState
@@ -30,13 +32,14 @@ class PasswordState(Object):
     """
     ID = "passwordState"
 
-    def __init__(self, has_password, password_hint, has_recovery_email_address, has_passport_data, recovery_email_address_code_info, **kwargs):
+    def __init__(self, has_password, password_hint, has_recovery_email_address, has_passport_data, recovery_email_address_code_info, pending_reset_date, **kwargs):
         
         self.has_password = has_password  # bool
         self.password_hint = password_hint  # str
         self.has_recovery_email_address = has_recovery_email_address  # bool
         self.has_passport_data = has_passport_data  # bool
         self.recovery_email_address_code_info = recovery_email_address_code_info  # EmailAddressAuthenticationCodeInfo
+        self.pending_reset_date = pending_reset_date  # int
 
     @staticmethod
     def read(q: dict, *args) -> "PasswordState":
@@ -45,4 +48,5 @@ class PasswordState(Object):
         has_recovery_email_address = q.get('has_recovery_email_address')
         has_passport_data = q.get('has_passport_data')
         recovery_email_address_code_info = Object.read(q.get('recovery_email_address_code_info'))
-        return PasswordState(has_password, password_hint, has_recovery_email_address, has_passport_data, recovery_email_address_code_info)
+        pending_reset_date = q.get('pending_reset_date')
+        return PasswordState(has_password, password_hint, has_recovery_email_address, has_passport_data, recovery_email_address_code_info, pending_reset_date)

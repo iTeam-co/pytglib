@@ -42,7 +42,7 @@ class WebPage(Object):
         audio (:class:`telegram.api.types.audio`):
             Preview of the content as an audio file, if available; may be null
         document (:class:`telegram.api.types.document`):
-            Preview of the content as a document, if available (currently only available for small PDF files and ZIP archives); may be null
+            Preview of the content as a document, if available; may be null
         sticker (:class:`telegram.api.types.sticker`):
             Preview of the content as a sticker for small WEBP files, if available; may be null
         video (:class:`telegram.api.types.video`):
@@ -52,7 +52,7 @@ class WebPage(Object):
         voice_note (:class:`telegram.api.types.voiceNote`):
             Preview of the content as a voice note, if available; may be null
         instant_view_version (:obj:`int`):
-            Version of instant view, available for the web page (currently can be 1 or 2), 0 if none
+            Version of instant view, available for the web page (currently, can be 1 or 2), 0 if none
 
     Returns:
         WebPage

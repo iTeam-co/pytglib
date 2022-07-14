@@ -5,7 +5,7 @@ from ..utils import Object
 
 class MaskPointMouth(Object):
     """
-    A mask should be placed relatively to the mouth
+    The mask is placed relatively to the mouth
 
     Attributes:
         ID (:obj:`str`): ``MaskPointMouth``

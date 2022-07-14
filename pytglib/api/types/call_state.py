@@ -16,7 +16,7 @@ class CallState(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "CallStateError or CallStateDiscarded or CallStateReady or CallStateHangingUp or CallStatePending or CallStateExchangingKeys":
+    def read(q: dict, *args) -> "CallStateDiscarded or CallStateExchangingKeys or CallStateError or CallStatePending or CallStateHangingUp or CallStateReady":
         if q.get("@type"):
             return Object.read(q)
         return CallState()

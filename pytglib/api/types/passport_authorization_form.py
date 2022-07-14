@@ -14,7 +14,7 @@ class PassportAuthorizationForm(Object):
         id (:obj:`int`):
             Unique identifier of the authorization form
         required_elements (List of :class:`telegram.api.types.passportRequiredElement`):
-            Information about the Telegram Passport elements that need to be provided to complete the form
+            Telegram Passport elements that must be provided to complete the form
         privacy_policy_url (:obj:`str`):
             URL for the privacy policy of the service; may be empty
 

@@ -12,7 +12,7 @@ class DeviceTokenTizenPush(Object):
 
     Args:
         reg_id (:obj:`str`):
-            Push service registration identifier; may be empty to de-register a device
+            Push service registration identifier; may be empty to deregister a device
 
     Returns:
         DeviceToken

@@ -14,7 +14,7 @@ class ChatNearby(Object):
         chat_id (:obj:`int`):
             Chat identifier 
         distance (:obj:`int`):
-            Distance to the chat location in meters
+            Distance to the chat location, in meters
 
     Returns:
         ChatNearby

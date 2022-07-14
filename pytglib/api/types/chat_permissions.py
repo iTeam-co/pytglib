@@ -18,7 +18,7 @@ class ChatPermissions(Object):
         can_send_polls (:obj:`bool`):
             True, if the user can send pollsImplies can_send_messages permissions
         can_send_other_messages (:obj:`bool`):
-            True, if the user can send animations, games, and stickers and use inline botsImplies can_send_messages permissions
+            True, if the user can send animations, games, stickers, and dice and use inline botsImplies can_send_messages permissions
         can_add_web_page_previews (:obj:`bool`):
             True, if the user may add a web page preview to their messagesImplies can_send_messages permissions
         can_change_info (:obj:`bool`):

@@ -5,7 +5,7 @@ from ..utils import Object
 
 class UpdateBasicGroup(Object):
     """
-    Some data of a basic group has changed. This update is guaranteed to come before the basic group identifier is returned to the client 
+    Some data of a basic group has changed. This update is guaranteed to come before the basic group identifier is returned to the application 
 
     Attributes:
         ID (:obj:`str`): ``UpdateBasicGroup``

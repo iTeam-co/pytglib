@@ -5,7 +5,7 @@ from ..utils import Object
 
 class NetworkStatisticsEntryCall(Object):
     """
-    Contains information about the total amount of data that was used for calls 
+    Contains information about the total amount of data that was used for calls
 
     Attributes:
         ID (:obj:`str`): ``NetworkStatisticsEntryCall``
@@ -14,9 +14,9 @@ class NetworkStatisticsEntryCall(Object):
         network_type (:class:`telegram.api.types.NetworkType`):
             Type of the network the data was sent throughCall setNetworkType to maintain the actual network type
         sent_bytes (:obj:`int`):
-            Total number of bytes sent 
+            Total number of bytes sent
         received_bytes (:obj:`int`):
-            Total number of bytes received 
+            Total number of bytes received
         duration (:obj:`float`):
             Total call duration, in seconds
 

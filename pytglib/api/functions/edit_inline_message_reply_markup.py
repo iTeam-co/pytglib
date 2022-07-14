@@ -5,16 +5,16 @@ from ..utils import Object
 
 class EditInlineMessageReplyMarkup(Object):
     """
-    Edits the reply markup of an inline message sent via a bot; for bots only 
+    Edits the reply markup of an inline message sent via a bot; for bots only
 
     Attributes:
         ID (:obj:`str`): ``EditInlineMessageReplyMarkup``
 
     Args:
         inline_message_id (:obj:`str`):
-            Inline message identifier 
+            Inline message identifier
         reply_markup (:class:`telegram.api.types.ReplyMarkup`):
-            The new message reply markup
+            The new message reply markup; pass null if none
 
     Returns:
         Ok

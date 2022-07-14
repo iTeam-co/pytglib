@@ -17,7 +17,7 @@ class Document(Object):
             MIME type of the file; as defined by the sender
         minithumbnail (:class:`telegram.api.types.minithumbnail`):
             Document minithumbnail; may be null 
-        thumbnail (:class:`telegram.api.types.photoSize`):
+        thumbnail (:class:`telegram.api.types.thumbnail`):
             Document thumbnail in JPEG or PNG format (PNG will be used only for background patterns); as defined by the sender; may be null 
         document (:class:`telegram.api.types.file`):
             File containing the document
@@ -35,7 +35,7 @@ class Document(Object):
         self.file_name = file_name  # str
         self.mime_type = mime_type  # str
         self.minithumbnail = minithumbnail  # Minithumbnail
-        self.thumbnail = thumbnail  # PhotoSize
+        self.thumbnail = thumbnail  # Thumbnail
         self.document = document  # File
 
     @staticmethod

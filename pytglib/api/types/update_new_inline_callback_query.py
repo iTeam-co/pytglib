@@ -16,7 +16,7 @@ class UpdateNewInlineCallbackQuery(Object):
         sender_user_id (:obj:`int`):
             Identifier of the user who sent the query 
         inline_message_id (:obj:`str`):
-            Identifier of the inline message, from which the query originated
+            Identifier of the inline message from which the query originated
         chat_instance (:obj:`int`):
             An identifier uniquely corresponding to the chat a message was sent to 
         payload (:class:`telegram.api.types.CallbackQueryPayload`):

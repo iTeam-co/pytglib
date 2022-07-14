@@ -14,7 +14,7 @@ class FinishFileGeneration(Object):
         generation_id (:obj:`int`):
             The identifier of the generation process
         error (:class:`telegram.api.types.error`):
-            If set, means that file generation has failed and should be terminated
+            If passed, the file generation has failed and must be terminated; pass null if the file generation succeeded
 
     Returns:
         Ok

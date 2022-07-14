@@ -16,7 +16,7 @@ class PollType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "PollTypeRegular or PollTypeQuiz":
+    def read(q: dict, *args) -> "PollTypeQuiz or PollTypeRegular":
         if q.get("@type"):
             return Object.read(q)
         return PollType()

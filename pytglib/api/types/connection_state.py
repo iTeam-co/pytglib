@@ -16,7 +16,7 @@ class ConnectionState(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "ConnectionStateWaitingForNetwork or ConnectionStateConnecting or ConnectionStateUpdating or ConnectionStateReady or ConnectionStateConnectingToProxy":
+    def read(q: dict, *args) -> "ConnectionStateWaitingForNetwork or ConnectionStateUpdating or ConnectionStateReady or ConnectionStateConnecting or ConnectionStateConnectingToProxy":
         if q.get("@type"):
             return Object.read(q)
         return ConnectionState()

@@ -5,7 +5,7 @@ from ..utils import Object
 
 class MaskPoint(Object):
     """
-    Part of the face, relative to which a mask should be placed
+    Part of the face, relative to which a mask is placed
 
     No parameters required.
     """
@@ -16,7 +16,7 @@ class MaskPoint(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "MaskPointEyes or MaskPointForehead or MaskPointChin or MaskPointMouth":
+    def read(q: dict, *args) -> "MaskPointMouth or MaskPointChin or MaskPointForehead or MaskPointEyes":
         if q.get("@type"):
             return Object.read(q)
         return MaskPoint()

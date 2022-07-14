@@ -16,7 +16,7 @@ class PassportElement(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "PassportElementIdentityCard or PassportElementPersonalDetails or PassportElementPassport or PassportElementBankStatement or PassportElementPassportRegistration or PassportElementPhoneNumber or PassportElementEmailAddress or PassportElementTemporaryRegistration or PassportElementUtilityBill or PassportElementInternalPassport or PassportElementDriverLicense or PassportElementAddress or PassportElementRentalAgreement":
+    def read(q: dict, *args) -> "PassportElementUtilityBill or PassportElementRentalAgreement or PassportElementAddress or PassportElementBankStatement or PassportElementTemporaryRegistration or PassportElementPersonalDetails or PassportElementPassport or PassportElementDriverLicense or PassportElementEmailAddress or PassportElementIdentityCard or PassportElementPassportRegistration or PassportElementPhoneNumber or PassportElementInternalPassport":
         if q.get("@type"):
             return Object.read(q)
         return PassportElement()

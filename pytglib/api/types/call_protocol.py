@@ -20,7 +20,7 @@ class CallProtocol(Object):
         max_layer (:obj:`int`):
             The maximum supported API layer; use 65
         library_versions (List of :obj:`str`):
-            List of supported libtgvoip versions
+            List of supported tgcalls versions
 
     Returns:
         CallProtocol

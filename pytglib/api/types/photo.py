@@ -12,7 +12,7 @@ class Photo(Object):
 
     Args:
         has_stickers (:obj:`bool`):
-            True, if stickers were added to the photo 
+            True, if stickers were added to the photoThe list of corresponding sticker sets can be received using getAttachedStickerSets
         minithumbnail (:class:`telegram.api.types.minithumbnail`):
             Photo minithumbnail; may be null 
         sizes (List of :class:`telegram.api.types.photoSize`):

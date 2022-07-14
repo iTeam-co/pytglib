@@ -16,7 +16,7 @@ class CallProblem(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "CallProblemDistortedSpeech or CallProblemNoise or CallProblemDropped or CallProblemSilentRemote or CallProblemEcho or CallProblemInterruptions or CallProblemSilentLocal":
+    def read(q: dict, *args) -> "CallProblemDropped or CallProblemPixelatedVideo or CallProblemEcho or CallProblemSilentLocal or CallProblemDistortedSpeech or CallProblemInterruptions or CallProblemSilentRemote or CallProblemDistortedVideo or CallProblemNoise":
         if q.get("@type"):
             return Object.read(q)
         return CallProblem()

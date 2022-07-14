@@ -12,7 +12,9 @@ class NotificationTypeNewMessage(Object):
 
     Args:
         message (:class:`telegram.api.types.message`):
-            The message
+            The message 
+        show_preview (:obj:`bool`):
+            True, if message content must be displayed in notifications
 
     Returns:
         NotificationType
@@ -22,11 +24,13 @@ class NotificationTypeNewMessage(Object):
     """
     ID = "notificationTypeNewMessage"
 
-    def __init__(self, message, **kwargs):
+    def __init__(self, message, show_preview, **kwargs):
         
         self.message = message  # Message
+        self.show_preview = show_preview  # bool
 
     @staticmethod
     def read(q: dict, *args) -> "NotificationTypeNewMessage":
         message = Object.read(q.get('message'))
-        return NotificationTypeNewMessage(message)
+        show_preview = q.get('show_preview')
+        return NotificationTypeNewMessage(message, show_preview)

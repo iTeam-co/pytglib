@@ -12,9 +12,9 @@ class InputMessagePhoto(Object):
 
     Args:
         photo (:class:`telegram.api.types.InputFile`):
-            Photo to send 
+            Photo to sendThe photo must be at most 10 MB in sizeThe photo's width and height must not exceed 10000 in totalWidth and height ratio must be at most 20 
         thumbnail (:class:`telegram.api.types.inputThumbnail`):
-            Photo thumbnail to be sent, this is sent to the other party in secret chats only 
+            Photo thumbnail to be sent; pass null to skip thumbnail uploadingThe thumbnail is sent to the other party only in secret chats 
         added_sticker_file_ids (List of :obj:`int`):
             File identifiers of the stickers added to the photo, if applicable 
         width (:obj:`int`):
@@ -22,7 +22,7 @@ class InputMessagePhoto(Object):
         height (:obj:`int`):
             Photo height 
         caption (:class:`telegram.api.types.formattedText`):
-            Photo caption; 0-GetOption("message_caption_length_max") characters
+            Photo caption; pass null to use an empty caption; 0-GetOption("message_caption_length_max") characters
         ttl (:obj:`int`):
             Photo TTL (Time To Live), in seconds (0-60)A non-zero TTL can be specified only in private chats
 

@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetAuthorizationState(Object):
     """
-    Returns the current authorization state; this is an offline request. For informational purposes only. Use updateAuthorizationState instead to maintain the current authorization state
+    Returns the current authorization state; this is an offline request. For informational purposes only. Use updateAuthorizationState instead to maintain the current authorization state. Can be called before initialization
 
     Attributes:
         ID (:obj:`str`): ``GetAuthorizationState``

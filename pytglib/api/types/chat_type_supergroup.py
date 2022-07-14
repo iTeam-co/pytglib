@@ -5,7 +5,7 @@ from ..utils import Object
 
 class ChatTypeSupergroup(Object):
     """
-    A supergroup (i.e. a chat with up to GetOption("supergroup_max_size") other users), or channel (with unlimited members) 
+    A supergroup or channel (with unlimited members) 
 
     Attributes:
         ID (:obj:`str`): ``ChatTypeSupergroup``

@@ -12,7 +12,7 @@ class DeviceTokenWebPush(Object):
 
     Args:
         endpoint (:obj:`str`):
-            Absolute URL exposed by the push service where the application server can send push messages; may be empty to de-register a device
+            Absolute URL exposed by the push service where the application server can send push messages; may be empty to deregister a device
         p256dh_base64url (:obj:`str`):
             Base64url-encoded P-256 elliptic curve Diffie-Hellman public key 
         auth_base64url (:obj:`str`):

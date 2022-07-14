@@ -5,7 +5,7 @@ from ..utils import Object
 
 class InlineKeyboardButtonTypeCallback(Object):
     """
-    A button that sends a special callback query to a bot 
+    A button that sends a callback query to a bot 
 
     Attributes:
         ID (:obj:`str`): ``InlineKeyboardButtonTypeCallback``

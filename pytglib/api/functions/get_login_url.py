@@ -18,7 +18,7 @@ class GetLoginUrl(Object):
         button_id (:obj:`int`):
             Button identifier
         allow_write_access (:obj:`bool`):
-            True, if the user allowed the bot to send them messages
+            Pass true to allow the bot to send messages to the current user
 
     Returns:
         HttpUrl

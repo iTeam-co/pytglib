@@ -5,14 +5,14 @@ from ..utils import Object
 
 class RequestQrCodeAuthentication(Object):
     """
-    Requests QR code authentication by scanning a QR code on another logged in device. Works only when the current authorization state is authorizationStateWaitPhoneNumber 
+    Requests QR code authentication by scanning a QR code on another logged in device. Works only when the current authorization state is authorizationStateWaitPhoneNumber,or if there is no pending authentication query and the current authorization state is authorizationStateWaitCode, authorizationStateWaitRegistration, or authorizationStateWaitPassword
 
     Attributes:
         ID (:obj:`str`): ``RequestQrCodeAuthentication``
 
     Args:
         other_user_ids (List of :obj:`int`):
-            List of user identifiers of other users currently using the client
+            List of user identifiers of other users currently using the application
 
     Returns:
         Ok

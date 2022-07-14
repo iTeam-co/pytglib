@@ -14,15 +14,15 @@ class AutoDownloadSettings(Object):
         is_auto_download_enabled (:obj:`bool`):
             True, if the auto-download is enabled
         max_photo_file_size (:obj:`int`):
-            The maximum size of a photo file to be auto-downloaded
+            The maximum size of a photo file to be auto-downloaded, in bytes
         max_video_file_size (:obj:`int`):
-            The maximum size of a video file to be auto-downloaded
+            The maximum size of a video file to be auto-downloaded, in bytes
         max_other_file_size (:obj:`int`):
-            The maximum size of other file types to be auto-downloaded
+            The maximum size of other file types to be auto-downloaded, in bytes
         video_upload_bitrate (:obj:`int`):
-            The maximum suggested bitrate for uploaded videos
+            The maximum suggested bitrate for uploaded videos, in kbit/s
         preload_large_videos (:obj:`bool`):
-            True, if the beginning of videos needs to be preloaded for instant playback
+            True, if the beginning of video files needs to be preloaded for instant playback
         preload_next_audio (:obj:`bool`):
             True, if the next audio track needs to be preloaded while the user is listening to an audio file
         use_less_data_for_calls (:obj:`bool`):

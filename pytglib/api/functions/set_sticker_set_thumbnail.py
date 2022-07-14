@@ -16,7 +16,7 @@ class SetStickerSetThumbnail(Object):
         name (:obj:`str`):
             Sticker set name
         thumbnail (:class:`telegram.api.types.InputFile`):
-            Thumbnail to set in PNG or TGS formatAnimated thumbnail must be set for animated sticker sets and only for themYou can use a zero InputFileId to delete the thumbnail
+            Thumbnail to set in PNG, TGS, or WEBM format; pass null to remove the sticker set thumbnailThumbnail format must match the format of stickers in the set
 
     Returns:
         StickerSet

@@ -18,7 +18,7 @@ class UpdateNewPreCheckoutQuery(Object):
         currency (:obj:`str`):
             Currency for the product price 
         total_amount (:obj:`int`):
-            Total price for the product, in the minimal quantity of the currency
+            Total price for the product, in the smallest units of the currency
         invoice_payload (:obj:`bytes`):
             Invoice payload 
         shipping_option_id (:obj:`str`):

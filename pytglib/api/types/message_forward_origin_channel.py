@@ -14,7 +14,7 @@ class MessageForwardOriginChannel(Object):
         chat_id (:obj:`int`):
             Identifier of the chat from which the message was originally forwarded
         message_id (:obj:`int`):
-            Message identifier of the original message; 0 if unknown
+            Message identifier of the original message
         author_signature (:obj:`str`):
             Original post author signature
 

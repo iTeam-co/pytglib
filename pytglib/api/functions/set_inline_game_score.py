@@ -14,7 +14,7 @@ class SetInlineGameScore(Object):
         inline_message_id (:obj:`str`):
             Inline message identifier 
         edit_message (:obj:`bool`):
-            True, if the message should be edited 
+            Pass true to edit the game message to include the current scoreboard 
         user_id (:obj:`int`):
             User identifier 
         score (:obj:`int`):

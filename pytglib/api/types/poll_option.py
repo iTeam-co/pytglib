@@ -12,11 +12,11 @@ class PollOption(Object):
 
     Args:
         text (:obj:`str`):
-            Option text, 1-100 characters 
+            Option text; 1-100 characters 
         voter_count (:obj:`int`):
             Number of voters for this option, available only for closed or voted polls 
         vote_percentage (:obj:`int`):
-            The percentage of votes for this option, 0-100
+            The percentage of votes for this option; 0-100
         is_chosen (:obj:`bool`):
             True, if the option was chosen by the user 
         is_being_chosen (:obj:`bool`):

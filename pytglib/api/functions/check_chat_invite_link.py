@@ -12,7 +12,7 @@ class CheckChatInviteLink(Object):
 
     Args:
         invite_link (:obj:`str`):
-            Invite link to be checked; should begin with "https://tme/joinchat/", "https://telegramme/joinchat/", or "https://telegramdog/joinchat/"
+            Invite link to be checked
 
     Returns:
         ChatInviteLinkInfo

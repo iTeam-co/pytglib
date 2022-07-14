@@ -14,11 +14,11 @@ class IdentityDocument(Object):
         number (:obj:`str`):
             Document number; 1-24 characters 
         expiry_date (:class:`telegram.api.types.date`):
-            Document expiry date; may be null 
+            Document expiry date; may be null if not applicable 
         front_side (:class:`telegram.api.types.datedFile`):
             Front side of the document
         reverse_side (:class:`telegram.api.types.datedFile`):
-            Reverse side of the document; only for driver license and identity card 
+            Reverse side of the document; only for driver license and identity card; may be null 
         selfie (:class:`telegram.api.types.datedFile`):
             Selfie with the document; may be null 
         translation (List of :class:`telegram.api.types.datedFile`):

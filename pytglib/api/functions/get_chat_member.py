@@ -13,8 +13,8 @@ class GetChatMember(Object):
     Args:
         chat_id (:obj:`int`):
             Chat identifier 
-        user_id (:obj:`int`):
-            User identifier
+        member_id (:class:`telegram.api.types.MessageSender`):
+            Member identifier
 
     Returns:
         ChatMember
@@ -24,13 +24,13 @@ class GetChatMember(Object):
     """
     ID = "getChatMember"
 
-    def __init__(self, chat_id, user_id, extra=None, **kwargs):
+    def __init__(self, chat_id, member_id, extra=None, **kwargs):
         self.extra = extra
         self.chat_id = chat_id  # int
-        self.user_id = user_id  # int
+        self.member_id = member_id  # MessageSender
 
     @staticmethod
     def read(q: dict, *args) -> "GetChatMember":
         chat_id = q.get('chat_id')
-        user_id = q.get('user_id')
-        return GetChatMember(chat_id, user_id)
+        member_id = Object.read(q.get('member_id'))
+        return GetChatMember(chat_id, member_id)

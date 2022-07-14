@@ -5,7 +5,7 @@ from ..utils import Object
 
 class DeleteSavedOrderInfo(Object):
     """
-    Deletes saved order info
+    Deletes saved order information
 
     Attributes:
         ID (:obj:`str`): ``DeleteSavedOrderInfo``

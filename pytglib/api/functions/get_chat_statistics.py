@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetChatStatistics(Object):
     """
-    Returns detailed statistics about a chat. Currently this method can be used only for channels. Requires administrator rights in the channel 
+    Returns detailed statistics about a chat. Currently, this method can be used only for supergroups and channels. Can be used only if supergroupFullInfo.can_get_statistics == true 
 
     Attributes:
         ID (:obj:`str`): ``GetChatStatistics``
@@ -14,7 +14,7 @@ class GetChatStatistics(Object):
         chat_id (:obj:`int`):
             Chat identifier 
         is_dark (:obj:`bool`):
-            Pass true if a dark theme is used by the app
+            Pass true if a dark theme is used by the application
 
     Returns:
         ChatStatistics

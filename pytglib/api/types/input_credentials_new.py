@@ -12,7 +12,7 @@ class InputCredentialsNew(Object):
 
     Args:
         data (:obj:`str`):
-            Contains JSON-encoded data with a credential identifier from the payment provider 
+            JSON-encoded data with the credential identifier from the payment provider 
         allow_save (:obj:`bool`):
             True, if the credential identifier can be saved on the server side
 

@@ -12,11 +12,11 @@ class SetBackground(Object):
 
     Args:
         background (:class:`telegram.api.types.InputBackground`):
-            The input background to use, null for filled backgrounds
+            The input background to use; pass null to create a new filled backgrounds or to remove the current background
         type (:class:`telegram.api.types.BackgroundType`):
-            Background type; null for default backgroundThe method will return error 404 if type is null
+            Background type; pass null to use the default type of the remote background or to remove the current background
         for_dark_theme (:obj:`bool`):
-            True, if the background is chosen for dark theme
+            Pass true if the background is changed for a dark theme
 
     Returns:
         Background

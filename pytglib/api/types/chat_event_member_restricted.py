@@ -11,8 +11,8 @@ class ChatEventMemberRestricted(Object):
         ID (:obj:`str`): ``ChatEventMemberRestricted``
 
     Args:
-        user_id (:obj:`int`):
-            Chat member user identifier 
+        member_id (:class:`telegram.api.types.MessageSender`):
+            Affected chat member identifier 
         old_status (:class:`telegram.api.types.ChatMemberStatus`):
             Previous status of the chat member 
         new_status (:class:`telegram.api.types.ChatMemberStatus`):
@@ -26,15 +26,15 @@ class ChatEventMemberRestricted(Object):
     """
     ID = "chatEventMemberRestricted"
 
-    def __init__(self, user_id, old_status, new_status, **kwargs):
+    def __init__(self, member_id, old_status, new_status, **kwargs):
         
-        self.user_id = user_id  # int
+        self.member_id = member_id  # MessageSender
         self.old_status = old_status  # ChatMemberStatus
         self.new_status = new_status  # ChatMemberStatus
 
     @staticmethod
     def read(q: dict, *args) -> "ChatEventMemberRestricted":
-        user_id = q.get('user_id')
+        member_id = Object.read(q.get('member_id'))
         old_status = Object.read(q.get('old_status'))
         new_status = Object.read(q.get('new_status'))
-        return ChatEventMemberRestricted(user_id, old_status, new_status)
+        return ChatEventMemberRestricted(member_id, old_status, new_status)

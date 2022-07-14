@@ -14,7 +14,7 @@ class LabeledPricePart(Object):
         label (:obj:`str`):
             Label for this portion of the product price 
         amount (:obj:`int`):
-            Currency amount in minimal quantity of the currency
+            Currency amount in the smallest units of the currency
 
     Returns:
         LabeledPricePart

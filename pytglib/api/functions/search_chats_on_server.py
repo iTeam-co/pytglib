@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SearchChatsOnServer(Object):
     """
-    Searches for the specified query in the title and username of already known chats via request to the server. Returns chats in the order seen in the chat list 
+    Searches for the specified query in the title and username of already known chats via request to the server. Returns chats in the order seen in the main chat list 
 
     Attributes:
         ID (:obj:`str`): ``SearchChatsOnServer``

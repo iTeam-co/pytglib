@@ -12,7 +12,7 @@ class StorageStatistics(Object):
 
     Args:
         size (:obj:`int`):
-            Total size of files 
+            Total size of files, in bytes 
         count (:obj:`int`):
             Total number of files 
         by_chat (List of :class:`telegram.api.types.storageStatisticsByChat`):

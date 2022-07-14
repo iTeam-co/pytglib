@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetChatPinnedMessage(Object):
     """
-    Returns information about a pinned chat message 
+    Returns information about a newest pinned message in the chat 
 
     Attributes:
         ID (:obj:`str`): ``GetChatPinnedMessage``

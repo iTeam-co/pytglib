@@ -14,7 +14,7 @@ class LocalFile(Object):
         path (:obj:`str`):
             Local path to the locally available file part; may be empty
         can_be_downloaded (:obj:`bool`):
-            True, if it is possible to try to download or generate the file
+            True, if it is possible to download or generate the file
         can_be_deleted (:obj:`bool`):
             True, if the file can be deleted
         is_downloading_active (:obj:`bool`):
@@ -24,9 +24,9 @@ class LocalFile(Object):
         download_offset (:obj:`int`):
             Download will be started from this offsetdownloaded_prefix_size is calculated from this offset
         downloaded_prefix_size (:obj:`int`):
-            If is_downloading_completed is false, then only some prefix of the file starting from download_offset is ready to be readdownloaded_prefix_size is the size of that prefix
+            If is_downloading_completed is false, then only some prefix of the file starting from download_offset is ready to be readdownloaded_prefix_size is the size of that prefix in bytes
         downloaded_size (:obj:`int`):
-            Total downloaded file bytesShould be used only for calculating download progressThe actual file size may be bigger, and some parts of it may contain garbage
+            Total downloaded file size, in bytesCan be used only for calculating download progressThe actual file size may be bigger, and some parts of it may contain garbage
 
     Returns:
         LocalFile

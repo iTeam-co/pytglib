@@ -12,7 +12,7 @@ class GetBackgrounds(Object):
 
     Args:
         for_dark_theme (:obj:`bool`):
-            True, if the backgrounds needs to be ordered for dark theme
+            Pass true to order returned backgrounds for a dark theme
 
     Returns:
         Backgrounds

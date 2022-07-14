@@ -16,7 +16,7 @@ class AnswerCallbackQuery(Object):
         text (:obj:`str`):
             Text of the answer 
         show_alert (:obj:`bool`):
-            If true, an alert should be shown to the user instead of a toast notification 
+            Pass true to show an alert to the user instead of a toast notification 
         url (:obj:`str`):
             URL to be opened 
         cache_time (:obj:`int`):

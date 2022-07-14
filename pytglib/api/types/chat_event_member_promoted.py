@@ -12,7 +12,7 @@ class ChatEventMemberPromoted(Object):
 
     Args:
         user_id (:obj:`int`):
-            Chat member user identifier 
+            Affected chat member user identifier 
         old_status (:class:`telegram.api.types.ChatMemberStatus`):
             Previous status of the chat member 
         new_status (:class:`telegram.api.types.ChatMemberStatus`):

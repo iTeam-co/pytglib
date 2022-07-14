@@ -12,7 +12,7 @@ class CheckAuthenticationCode(Object):
 
     Args:
         code (:obj:`str`):
-            The verification code received via SMS, Telegram message, phone call, or flash call
+            Authentication code to check
 
     Returns:
         Ok

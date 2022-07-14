@@ -5,7 +5,7 @@ from ..utils import Object
 
 class PageBlockVerticalAlignmentMiddle(Object):
     """
-    The content should be middle-aligned
+    The content must be middle-aligned
 
     Attributes:
         ID (:obj:`str`): ``PageBlockVerticalAlignmentMiddle``

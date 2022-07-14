@@ -14,7 +14,7 @@ class SetAutoDownloadSettings(Object):
         settings (:class:`telegram.api.types.autoDownloadSettings`):
             New user auto-download settings 
         type (:class:`telegram.api.types.NetworkType`):
-            Type of the network for which the new settings are applied
+            Type of the network for which the new settings are relevant
 
     Returns:
         Ok

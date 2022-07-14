@@ -5,14 +5,14 @@ from ..utils import Object
 
 class ClearAllDraftMessages(Object):
     """
-    Clears draft messages in all chats 
+    Clears message drafts in all chats 
 
     Attributes:
         ID (:obj:`str`): ``ClearAllDraftMessages``
 
     Args:
         exclude_secret_chats (:obj:`bool`):
-            If true, local draft messages in secret chats will not be cleared
+            Pass true to keep local message drafts in secret chats
 
     Returns:
         Ok

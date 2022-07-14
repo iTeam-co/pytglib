@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetInlineQueryResults(Object):
     """
-    Sends an inline query to a bot and returns its results. Returns an error with code 502 if the bot fails to answer the query before the query timeout expires 
+    Sends an inline query to a bot and returns its results. Returns an error with code 502 if the bot fails to answer the query before the query timeout expires
 
     Attributes:
         ID (:obj:`str`): ``GetInlineQueryResults``
@@ -14,11 +14,11 @@ class GetInlineQueryResults(Object):
         bot_user_id (:obj:`int`):
             The identifier of the target bot
         chat_id (:obj:`int`):
-            Identifier of the chat where the query was sent 
+            Identifier of the chat where the query was sent
         user_location (:class:`telegram.api.types.location`):
-            Location of the user, only if needed 
+            Location of the user; pass null if unknown or the bot doesn't need user's location
         query (:obj:`str`):
-            Text of the query 
+            Text of the query
         offset (:obj:`str`):
             Offset of the first entry to return
 

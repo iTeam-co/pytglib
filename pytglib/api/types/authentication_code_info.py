@@ -14,11 +14,11 @@ class AuthenticationCodeInfo(Object):
         phone_number (:obj:`str`):
             A phone number that is being authenticated 
         type (:class:`telegram.api.types.AuthenticationCodeType`):
-            Describes the way the code was sent to the user 
+            The way the code was sent to the user 
         next_type (:class:`telegram.api.types.AuthenticationCodeType`):
-            Describes the way the next code will be sent to the user; may be null 
+            The way the next code will be sent to the user; may be null 
         timeout (:obj:`int`):
-            Timeout before the code should be re-sent, in seconds
+            Timeout before the code can be re-sent, in seconds
 
     Returns:
         AuthenticationCodeInfo

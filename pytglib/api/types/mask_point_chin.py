@@ -5,7 +5,7 @@ from ..utils import Object
 
 class MaskPointChin(Object):
     """
-    A mask should be placed relatively to the chin
+    The mask is placed relatively to the chin
 
     Attributes:
         ID (:obj:`str`): ``MaskPointChin``

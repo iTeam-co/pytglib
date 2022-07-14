@@ -5,7 +5,7 @@ from ..utils import Object
 
 class EditInlineMessageMedia(Object):
     """
-    Edits the content of a message with an animation, an audio, a document, a photo or a video in an inline message sent via a bot; for bots only 
+    Edits the content of a message with an animation, an audio, a document, a photo or a video in an inline message sent via a bot; for bots only
 
     Attributes:
         ID (:obj:`str`): ``EditInlineMessageMedia``
@@ -14,9 +14,9 @@ class EditInlineMessageMedia(Object):
         inline_message_id (:obj:`str`):
             Inline message identifier
         reply_markup (:class:`telegram.api.types.ReplyMarkup`):
-            The new message reply markup; for bots only 
+            The new message reply markup; pass null if none; for bots only
         input_message_content (:class:`telegram.api.types.InputMessageContent`):
-            New content of the messageMust be one of the following types: InputMessageAnimation, InputMessageAudio, InputMessageDocument, InputMessagePhoto or InputMessageVideo
+            New content of the messageMust be one of the following types: inputMessageAnimation, inputMessageAudio, inputMessageDocument, inputMessagePhoto or inputMessageVideo
 
     Returns:
         Ok

@@ -19,8 +19,8 @@ class UpdateNotificationGroup(Object):
             Identifier of a chat to which all notifications in the group belong
         notification_settings_chat_id (:obj:`int`):
             Chat identifier, which notification settings must be applied to the added notifications
-        is_silent (:obj:`bool`):
-            True, if the notifications should be shown without sound
+        notification_sound_id (:obj:`int`):
+            Identifier of the notification sound to be played; 0 if sound is disabled
         total_count (:obj:`int`):
             Total number of unread notifications in the group, can be bigger than number of active notifications
         added_notifications (List of :class:`telegram.api.types.notification`):
@@ -36,13 +36,13 @@ class UpdateNotificationGroup(Object):
     """
     ID = "updateNotificationGroup"
 
-    def __init__(self, notification_group_id, type, chat_id, notification_settings_chat_id, is_silent, total_count, added_notifications, removed_notification_ids, **kwargs):
+    def __init__(self, notification_group_id, type, chat_id, notification_settings_chat_id, notification_sound_id, total_count, added_notifications, removed_notification_ids, **kwargs):
         
         self.notification_group_id = notification_group_id  # int
         self.type = type  # NotificationGroupType
         self.chat_id = chat_id  # int
         self.notification_settings_chat_id = notification_settings_chat_id  # int
-        self.is_silent = is_silent  # bool
+        self.notification_sound_id = notification_sound_id  # int
         self.total_count = total_count  # int
         self.added_notifications = added_notifications  # list of notification
         self.removed_notification_ids = removed_notification_ids  # list of int
@@ -53,8 +53,8 @@ class UpdateNotificationGroup(Object):
         type = Object.read(q.get('type'))
         chat_id = q.get('chat_id')
         notification_settings_chat_id = q.get('notification_settings_chat_id')
-        is_silent = q.get('is_silent')
+        notification_sound_id = q.get('notification_sound_id')
         total_count = q.get('total_count')
         added_notifications = [Object.read(i) for i in q.get('added_notifications', [])]
         removed_notification_ids = q.get('removed_notification_ids')
-        return UpdateNotificationGroup(notification_group_id, type, chat_id, notification_settings_chat_id, is_silent, total_count, added_notifications, removed_notification_ids)
+        return UpdateNotificationGroup(notification_group_id, type, chat_id, notification_settings_chat_id, notification_sound_id, total_count, added_notifications, removed_notification_ids)

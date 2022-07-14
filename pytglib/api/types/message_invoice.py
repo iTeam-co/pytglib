@@ -13,20 +13,20 @@ class MessageInvoice(Object):
     Args:
         title (:obj:`str`):
             Product title 
-        description (:obj:`str`):
+        description (:class:`telegram.api.types.formattedText`):
             Product description 
         photo (:class:`telegram.api.types.photo`):
             Product photo; may be null 
         currency (:obj:`str`):
             Currency for the product price 
         total_amount (:obj:`int`):
-            Product total price in the minimal quantity of the currency
+            Product total price in the smallest units of the currency
         start_parameter (:obj:`str`):
             Unique invoice bot start_parameterTo share an invoice use the URL https://tme/{bot_username}?start={start_parameter} 
         is_test (:obj:`bool`):
             True, if the invoice is a test invoice
         need_shipping_address (:obj:`bool`):
-            True, if the shipping address should be specified 
+            True, if the shipping address must be specified 
         receipt_message_id (:obj:`int`):
             The identifier of the message with the receipt, after the product has been purchased
 
@@ -41,7 +41,7 @@ class MessageInvoice(Object):
     def __init__(self, title, description, photo, currency, total_amount, start_parameter, is_test, need_shipping_address, receipt_message_id, **kwargs):
         
         self.title = title  # str
-        self.description = description  # str
+        self.description = description  # FormattedText
         self.photo = photo  # Photo
         self.currency = currency  # str
         self.total_amount = total_amount  # int
@@ -53,7 +53,7 @@ class MessageInvoice(Object):
     @staticmethod
     def read(q: dict, *args) -> "MessageInvoice":
         title = q.get('title')
-        description = q.get('description')
+        description = Object.read(q.get('description'))
         photo = Object.read(q.get('photo'))
         currency = q.get('currency')
         total_amount = q.get('total_amount')

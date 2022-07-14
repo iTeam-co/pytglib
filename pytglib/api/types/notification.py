@@ -16,7 +16,7 @@ class Notification(Object):
         date (:obj:`int`):
             Notification date
         is_silent (:obj:`bool`):
-            True, if the notification was initially silent 
+            True, if the notification was explicitly sent without sound 
         type (:class:`telegram.api.types.NotificationType`):
             Notification type
 

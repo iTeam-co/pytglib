@@ -5,7 +5,7 @@ from ..utils import Object
 
 class RequestPasswordRecovery(Object):
     """
-    Requests to send a password recovery code to an email address that was previously set up
+    Requests to send a 2-step verification password recovery code to an email address that was previously set up
 
     Attributes:
         ID (:obj:`str`): ``RequestPasswordRecovery``

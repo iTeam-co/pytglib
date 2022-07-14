@@ -5,7 +5,7 @@ from ..utils import Object
 
 class TextEntityTypeCashtag(Object):
     """
-    A cashtag text, beginning with "$" and consisting of capital english letters (i.e. "$USD")
+    A cashtag text, beginning with "$" and consisting of capital English letters (e.g., "$USD")
 
     Attributes:
         ID (:obj:`str`): ``TextEntityTypeCashtag``

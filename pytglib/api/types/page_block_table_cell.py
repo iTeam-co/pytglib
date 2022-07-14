@@ -12,13 +12,13 @@ class PageBlockTableCell(Object):
 
     Args:
         text (:class:`telegram.api.types.RichText`):
-            Cell text; may be nullIf the text is null, then the cell should be invisible 
+            Cell text; may be nullIf the text is null, then the cell must be invisible 
         is_header (:obj:`bool`):
             True, if it is a header cell
         colspan (:obj:`int`):
-            The number of columns the cell should span 
+            The number of columns the cell spans 
         rowspan (:obj:`int`):
-            The number of rows the cell should span
+            The number of rows the cell spans
         align (:class:`telegram.api.types.PageBlockHorizontalAlignment`):
             Horizontal cell content alignment 
         valign (:class:`telegram.api.types.PageBlockVerticalAlignment`):

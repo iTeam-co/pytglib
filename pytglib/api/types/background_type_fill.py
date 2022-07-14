@@ -12,7 +12,7 @@ class BackgroundTypeFill(Object):
 
     Args:
         fill (:class:`telegram.api.types.BackgroundFill`):
-            Description of the background fill
+            The background fill
 
     Returns:
         BackgroundType

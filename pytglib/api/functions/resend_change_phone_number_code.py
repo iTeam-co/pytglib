@@ -5,7 +5,7 @@ from ..utils import Object
 
 class ResendChangePhoneNumberCode(Object):
     """
-    Re-sends the authentication code sent to confirm a new phone number for the user. Works only if the previously received authenticationCodeInfo next_code_type was not null
+    Re-sends the authentication code sent to confirm a new phone number for the current user. Works only if the previously received authenticationCodeInfo next_code_type was not null and the server-specified timeout has passed
 
     Attributes:
         ID (:obj:`str`): ``ResendChangePhoneNumberCode``

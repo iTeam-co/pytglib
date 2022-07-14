@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetStickers(Object):
     """
-    Returns stickers from the installed sticker sets that correspond to a given emoji. If the emoji is not empty, favorite and recently used stickers may also be returned 
+    Returns stickers from the installed sticker sets that correspond to a given emoji. If the emoji is non-empty, favorite and recently used stickers may also be returned 
 
     Attributes:
         ID (:obj:`str`): ``GetStickers``

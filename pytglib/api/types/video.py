@@ -20,15 +20,15 @@ class Video(Object):
         file_name (:obj:`str`):
             Original name of the file; as defined by the sender 
         mime_type (:obj:`str`):
-            MIME type of the file; as defined by the sender 
+            MIME type of the file; as defined by the sender
         has_stickers (:obj:`bool`):
-            True, if stickers were added to the video
+            True, if stickers were added to the videoThe list of corresponding sticker sets can be received using getAttachedStickerSets
         supports_streaming (:obj:`bool`):
-            True, if the video should be tried to be streamed 
+            True, if the video is supposed to be streamed 
         minithumbnail (:class:`telegram.api.types.minithumbnail`):
-            Video minithumbnail; may be null 
-        thumbnail (:class:`telegram.api.types.photoSize`):
-            Video thumbnail; as defined by the sender; may be null 
+            Video minithumbnail; may be null
+        thumbnail (:class:`telegram.api.types.thumbnail`):
+            Video thumbnail in JPEG or MPEG4 format; as defined by the sender; may be null 
         video (:class:`telegram.api.types.file`):
             File containing the video
 
@@ -50,7 +50,7 @@ class Video(Object):
         self.has_stickers = has_stickers  # bool
         self.supports_streaming = supports_streaming  # bool
         self.minithumbnail = minithumbnail  # Minithumbnail
-        self.thumbnail = thumbnail  # PhotoSize
+        self.thumbnail = thumbnail  # Thumbnail
         self.video = video  # File
 
     @staticmethod

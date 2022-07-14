@@ -5,7 +5,7 @@ from ..utils import Object
 
 class ResetAllNotificationSettings(Object):
     """
-    Resets all notification settings to their default values. By default, all chats are unmuted, the sound is set to "default" and message previews are shown
+    Resets all notification settings to their default values. By default, all chats are unmuted and message previews are shown
 
     Attributes:
         ID (:obj:`str`): ``ResetAllNotificationSettings``

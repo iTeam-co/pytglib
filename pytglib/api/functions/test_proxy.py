@@ -18,7 +18,7 @@ class TestProxy(Object):
         type (:class:`telegram.api.types.ProxyType`):
             Proxy type
         dc_id (:obj:`int`):
-            Identifier of a datacenter, with which to test connection 
+            Identifier of a datacenter with which to test connection 
         timeout (:obj:`float`):
             The maximum overall timeout for the request
 

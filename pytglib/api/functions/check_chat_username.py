@@ -12,7 +12,7 @@ class CheckChatUsername(Object):
 
     Args:
         chat_id (:obj:`int`):
-            Chat identifier; should be identifier of a supergroup chat, or a channel chat, or a private chat with self, or zero if chat is being created 
+            Chat identifier; must be identifier of a supergroup chat, or a channel chat, or a private chat with self, or zero if the chat is being created 
         username (:obj:`str`):
             Username to be checked
 

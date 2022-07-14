@@ -5,18 +5,18 @@ from ..utils import Object
 
 class SendPhoneNumberConfirmationCode(Object):
     """
-    Sends phone number confirmation code. Should be called when user presses "https://t.me/confirmphone?phone=*******&hash=**********" or "tg://confirmphone?phone=*******&hash=**********" link 
+    Sends phone number confirmation code to handle links of the type internalLinkTypePhoneNumberConfirmation 
 
     Attributes:
         ID (:obj:`str`): ``SendPhoneNumberConfirmationCode``
 
     Args:
         hash (:obj:`str`):
-            Value of the "hash" parameter from the link
+            Hash value from the link 
         phone_number (:obj:`str`):
-            Value of the "phone" parameter from the link 
+            Phone number value from the link 
         settings (:class:`telegram.api.types.phoneNumberAuthenticationSettings`):
-            Settings for the authentication of the user's phone number
+            Settings for the authentication of the user's phone number; pass null to use default settings
 
     Returns:
         AuthenticationCodeInfo

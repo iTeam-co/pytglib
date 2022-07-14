@@ -14,7 +14,7 @@ class CreateBasicGroupChat(Object):
         basic_group_id (:obj:`int`):
             Basic group identifier 
         force (:obj:`bool`):
-            If true, the chat will be created without network requestIn this case all information about the chat except its type, title and photo can be incorrect
+            Pass true to create the chat without a network requestIn this case all information about the chat except its type, title and photo can be incorrect
 
     Returns:
         Chat

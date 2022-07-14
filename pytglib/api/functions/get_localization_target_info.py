@@ -12,7 +12,7 @@ class GetLocalizationTargetInfo(Object):
 
     Args:
         only_local (:obj:`bool`):
-            If true, returns only locally available information without sending network requests
+            Pass true to get only locally available information without sending network requests
 
     Returns:
         LocalizationTargetInfo

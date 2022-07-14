@@ -5,7 +5,7 @@ from ..utils import Object
 
 class AuthenticationCodeTypeFlashCall(Object):
     """
-    An authentication code is delivered by an immediately cancelled call to the specified phone number. The number from which the call was made is the code 
+    An authentication code is delivered by an immediately canceled call to the specified phone number. The phone number that calls is the code that must be entered automatically 
 
     Attributes:
         ID (:obj:`str`): ``AuthenticationCodeTypeFlashCall``

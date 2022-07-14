@@ -14,7 +14,7 @@ class InputMessageAudio(Object):
         audio (:class:`telegram.api.types.InputFile`):
             Audio file to be sent 
         album_cover_thumbnail (:class:`telegram.api.types.inputThumbnail`):
-            Thumbnail of the cover for the album, if available 
+            Thumbnail of the cover for the album; pass null to skip thumbnail uploading 
         duration (:obj:`int`):
             Duration of the audio, in seconds; may be replaced by the server 
         title (:obj:`str`):
@@ -22,7 +22,7 @@ class InputMessageAudio(Object):
         performer (:obj:`str`):
             Performer of the audio; 0-64 characters, may be replaced by the server 
         caption (:class:`telegram.api.types.formattedText`):
-            Audio caption; 0-GetOption("message_caption_length_max") characters
+            Audio caption; pass null to use an empty caption; 0-GetOption("message_caption_length_max") characters
 
     Returns:
         InputMessageContent

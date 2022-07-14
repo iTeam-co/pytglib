@@ -5,7 +5,7 @@ from ..utils import Object
 
 class MessageUnsupported(Object):
     """
-    Message content that is not supported by the client
+    Message content that is not supported in the current TDLib version
 
     Attributes:
         ID (:obj:`str`): ``MessageUnsupported``

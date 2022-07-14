@@ -5,7 +5,7 @@ from ..utils import Object
 
 class UpdateFileGenerationStart(Object):
     """
-    The file generation process needs to be started by the client
+    The file generation process needs to be started by the application
 
     Attributes:
         ID (:obj:`str`): ``UpdateFileGenerationStart``
@@ -16,9 +16,9 @@ class UpdateFileGenerationStart(Object):
         original_path (:obj:`str`):
             The path to a file from which a new file is generated; may be empty
         destination_path (:obj:`str`):
-            The path to a file that should be created and where the new file should be generated
+            The path to a file that must be created and where the new file is generated
         conversion (:obj:`str`):
-            String specifying the conversion applied to the original fileIf conversion is "#url#" than original_path contains an HTTP/HTTPS URL of a file, which should be downloaded by the client
+            String specifying the conversion applied to the original fileIf conversion is "#url#" than original_path contains an HTTP/HTTPS URL of a file, which must be downloaded by the application
 
     Returns:
         Update

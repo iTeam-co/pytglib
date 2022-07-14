@@ -5,7 +5,7 @@ from ..utils import Object
 
 class ToggleSupergroupIsAllHistoryAvailable(Object):
     """
-    Toggles whether the message history of a supergroup is available to new members; requires can_change_info rights 
+    Toggles whether the message history of a supergroup is available to new members; requires can_change_info administrator right 
 
     Attributes:
         ID (:obj:`str`): ``ToggleSupergroupIsAllHistoryAvailable``

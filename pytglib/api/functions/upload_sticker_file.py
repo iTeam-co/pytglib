@@ -5,16 +5,16 @@ from ..utils import Object
 
 class UploadStickerFile(Object):
     """
-    Uploads a PNG image with a sticker; for bots only; returns the uploaded file
+    Uploads a file with a sticker; returns the uploaded file 
 
     Attributes:
         ID (:obj:`str`): ``UploadStickerFile``
 
     Args:
         user_id (:obj:`int`):
-            Sticker file owner 
-        png_sticker (:class:`telegram.api.types.InputFile`):
-            PNG image with the sticker; must be up to 512 KB in size and fit in 512x512 square
+            Sticker file owner; ignored for regular users 
+        sticker (:class:`telegram.api.types.inputSticker`):
+            Sticker file to upload
 
     Returns:
         File
@@ -24,13 +24,13 @@ class UploadStickerFile(Object):
     """
     ID = "uploadStickerFile"
 
-    def __init__(self, user_id, png_sticker, extra=None, **kwargs):
+    def __init__(self, user_id, sticker, extra=None, **kwargs):
         self.extra = extra
         self.user_id = user_id  # int
-        self.png_sticker = png_sticker  # InputFile
+        self.sticker = sticker  # InputSticker
 
     @staticmethod
     def read(q: dict, *args) -> "UploadStickerFile":
         user_id = q.get('user_id')
-        png_sticker = Object.read(q.get('png_sticker'))
-        return UploadStickerFile(user_id, png_sticker)
+        sticker = Object.read(q.get('sticker'))
+        return UploadStickerFile(user_id, sticker)

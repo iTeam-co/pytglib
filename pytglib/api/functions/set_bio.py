@@ -12,7 +12,7 @@ class SetBio(Object):
 
     Args:
         bio (:obj:`str`):
-            The new value of the user bio; 0-70 characters without line feeds
+            The new value of the user bio; 0-GetOption("bio_length_max") characters without line feeds
 
     Returns:
         Ok

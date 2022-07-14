@@ -5,20 +5,20 @@ from ..utils import Object
 
 class SearchChatMembers(Object):
     """
-    Searches for a specified query in the first name, last name and username of the members of a specified chat. Requires administrator rights in channels 
+    Searches for a specified query in the first name, last name and username of the members of a specified chat. Requires administrator rights in channels
 
     Attributes:
         ID (:obj:`str`): ``SearchChatMembers``
 
     Args:
         chat_id (:obj:`int`):
-            Chat identifier 
+            Chat identifier
         query (:obj:`str`):
-            Query to search for 
+            Query to search for
         limit (:obj:`int`):
-            The maximum number of users to be returned 
+            The maximum number of users to be returned; up to 200
         filter (:class:`telegram.api.types.ChatMembersFilter`):
-            The type of users to returnBy default, chatMembersFilterMembers
+            The type of users to search for; pass null to search among all chat members
 
     Returns:
         ChatMembers

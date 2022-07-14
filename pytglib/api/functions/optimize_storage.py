@@ -12,21 +12,21 @@ class OptimizeStorage(Object):
 
     Args:
         size (:obj:`int`):
-            Limit on the total size of files after deletionPass -1 to use the default limit
+            Limit on the total size of files after deletion, in bytesPass -1 to use the default limit
         ttl (:obj:`int`):
             Limit on the time that has passed since the last time a file was accessed (or creation time for some filesystems)Pass -1 to use the default limit
         count (:obj:`int`):
-            Limit on the total count of files after deletionPass -1 to use the default limit
+            Limit on the total number of files after deletionPass -1 to use the default limit
         immunity_delay (:obj:`int`):
             The amount of time after the creation of a file during which it can't be deleted, in secondsPass -1 to use the default value
         file_types (List of :class:`telegram.api.types.FileType`):
-            If not empty, only files with the given type(s) are consideredBy default, all types except thumbnails, profile photos, stickers and wallpapers are deleted
+            If non-empty, only files with the given types are consideredBy default, all types except thumbnails, profile photos, stickers and wallpapers are deleted
         chat_ids (List of :obj:`int`):
-            If not empty, only files from the given chats are consideredUse 0 as chat identifier to delete files not belonging to any chat (eg, profile photos)
+            If non-empty, only files from the given chats are consideredUse 0 as chat identifier to delete files not belonging to any chat (eg, profile photos)
         exclude_chat_ids (List of :obj:`int`):
-            If not empty, files from the given chats are excludedUse 0 as chat identifier to exclude all files not belonging to any chat (eg, profile photos)
+            If non-empty, files from the given chats are excludedUse 0 as chat identifier to exclude all files not belonging to any chat (eg, profile photos)
         return_deleted_file_statistics (:obj:`bool`):
-            Pass true if deleted file statistics needs to be returned instead of the whole storage usage statisticsAffects only returned statistics
+            Pass true if statistics about the files that were deleted must be returned instead of the whole storage usage statisticsAffects only returned statistics
         chat_limit (:obj:`int`):
             Same as in getStorageStatisticsAffects only returned statistics
 

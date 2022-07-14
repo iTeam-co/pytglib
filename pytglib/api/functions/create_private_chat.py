@@ -14,7 +14,7 @@ class CreatePrivateChat(Object):
         user_id (:obj:`int`):
             User identifier 
         force (:obj:`bool`):
-            If true, the chat will be created without network requestIn this case all information about the chat except its type, title and photo can be incorrect
+            Pass true to create the chat without a network requestIn this case all information about the chat except its type, title and photo can be incorrect
 
     Returns:
         Chat

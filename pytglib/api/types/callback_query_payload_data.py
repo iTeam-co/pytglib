@@ -5,7 +5,7 @@ from ..utils import Object
 
 class CallbackQueryPayloadData(Object):
     """
-    The payload from a general callback button 
+    The payload for a general callback button 
 
     Attributes:
         ID (:obj:`str`): ``CallbackQueryPayloadData``

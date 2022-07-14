@@ -14,7 +14,7 @@ class AcceptCall(Object):
         call_id (:obj:`int`):
             Call identifier 
         protocol (:class:`telegram.api.types.callProtocol`):
-            Description of the call protocols supported by the client
+            The call protocols supported by the application
 
     Returns:
         Ok

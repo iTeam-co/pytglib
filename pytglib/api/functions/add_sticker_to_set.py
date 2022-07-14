@@ -15,7 +15,7 @@ class AddStickerToSet(Object):
             Sticker set owner 
         name (:obj:`str`):
             Sticker set name 
-        sticker (:class:`telegram.api.types.InputSticker`):
+        sticker (:class:`telegram.api.types.inputSticker`):
             Sticker to add to the set
 
     Returns:

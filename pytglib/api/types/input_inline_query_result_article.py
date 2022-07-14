@@ -28,9 +28,9 @@ class InputInlineQueryResultArticle(Object):
         thumbnail_height (:obj:`int`):
             Thumbnail height, if known
         reply_markup (:class:`telegram.api.types.ReplyMarkup`):
-            The message reply markupMust be of type replyMarkupInlineKeyboard or null
+            The message reply markup; pass null if noneMust be of type replyMarkupInlineKeyboard or null
         input_message_content (:class:`telegram.api.types.InputMessageContent`):
-            The content of the message to be sentMust be one of the following types: InputMessageText, InputMessageLocation, InputMessageVenue or InputMessageContact
+            The content of the message to be sentMust be one of the following types: inputMessageText, inputMessageInvoice, inputMessageLocation, inputMessageVenue or inputMessageContact
 
     Returns:
         InputInlineQueryResult

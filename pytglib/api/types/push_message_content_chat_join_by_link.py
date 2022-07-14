@@ -5,7 +5,7 @@ from ..utils import Object
 
 class PushMessageContentChatJoinByLink(Object):
     """
-    A new member joined the chat by invite link
+    A new member joined the chat via an invite link
 
     Attributes:
         ID (:obj:`str`): ``PushMessageContentChatJoinByLink``

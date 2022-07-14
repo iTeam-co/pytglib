@@ -5,14 +5,14 @@ from ..utils import Object
 
 class GetPollVoters(Object):
     """
-    Returns users voted for the specified option in a non-anonymous polls. For the optimal performance the number of returned users is chosen by the library
+    Returns users voted for the specified option in a non-anonymous polls. For optimal performance, the number of returned users is chosen by TDLib
 
     Attributes:
         ID (:obj:`str`): ``GetPollVoters``
 
     Args:
         chat_id (:obj:`int`):
-            Identifier of the chat to which the poll belongs 
+            Identifier of the chat to which the poll belongs
         message_id (:obj:`int`):
             Identifier of the message containing the poll
         option_id (:obj:`int`):
@@ -20,7 +20,7 @@ class GetPollVoters(Object):
         offset (:obj:`int`):
             Number of users to skip in the result; must be non-negative
         limit (:obj:`int`):
-            The maximum number of users to be returned; must be positive and can't be greater than 50Fewer users may be returned than specified by the limit, even if the end of the voter list has not been reached
+            The maximum number of users to be returned; must be positive and can't be greater than 50For optimal performance, the number of returned users is chosen by TDLib and can be smaller than the specified limit, even if the end of the voter list has not been reached
 
     Returns:
         Users

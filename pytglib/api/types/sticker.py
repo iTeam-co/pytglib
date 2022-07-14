@@ -19,14 +19,14 @@ class Sticker(Object):
             Sticker height; as defined by the sender
         emoji (:obj:`str`):
             Emoji corresponding to the sticker 
-        is_animated (:obj:`bool`):
-            True, if the sticker is an animated sticker in TGS format 
-        is_mask (:obj:`bool`):
-            True, if the sticker is a mask 
-        mask_position (:class:`telegram.api.types.maskPosition`):
-            Position where the mask should be placed; may be null 
-        thumbnail (:class:`telegram.api.types.photoSize`):
+        type (:class:`telegram.api.types.StickerType`):
+            Sticker type 
+        outline (List of :class:`telegram.api.types.closedVectorPath`):
+            Sticker's outline represented as a list of closed vector paths; may be emptyThe coordinate system origin is in the upper-left corner
+        thumbnail (:class:`telegram.api.types.thumbnail`):
             Sticker thumbnail in WEBP or JPEG format; may be null 
+        premium_animation (:class:`telegram.api.types.file`):
+            Premium animation of the sticker; may be nullIf present, only Premium users can send the sticker 
         sticker (:class:`telegram.api.types.file`):
             File containing the sticker
 
@@ -38,16 +38,16 @@ class Sticker(Object):
     """
     ID = "sticker"
 
-    def __init__(self, set_id, width, height, emoji, is_animated, is_mask, mask_position, thumbnail, sticker, **kwargs):
+    def __init__(self, set_id, width, height, emoji, type, outline, thumbnail, premium_animation, sticker, **kwargs):
         
         self.set_id = set_id  # int
         self.width = width  # int
         self.height = height  # int
         self.emoji = emoji  # str
-        self.is_animated = is_animated  # bool
-        self.is_mask = is_mask  # bool
-        self.mask_position = mask_position  # MaskPosition
-        self.thumbnail = thumbnail  # PhotoSize
+        self.type = type  # StickerType
+        self.outline = outline  # list of closedVectorPath
+        self.thumbnail = thumbnail  # Thumbnail
+        self.premium_animation = premium_animation  # File
         self.sticker = sticker  # File
 
     @staticmethod
@@ -56,9 +56,9 @@ class Sticker(Object):
         width = q.get('width')
         height = q.get('height')
         emoji = q.get('emoji')
-        is_animated = q.get('is_animated')
-        is_mask = q.get('is_mask')
-        mask_position = Object.read(q.get('mask_position'))
+        type = Object.read(q.get('type'))
+        outline = [Object.read(i) for i in q.get('outline', [])]
         thumbnail = Object.read(q.get('thumbnail'))
+        premium_animation = Object.read(q.get('premium_animation'))
         sticker = Object.read(q.get('sticker'))
-        return Sticker(set_id, width, height, emoji, is_animated, is_mask, mask_position, thumbnail, sticker)
+        return Sticker(set_id, width, height, emoji, type, outline, thumbnail, premium_animation, sticker)

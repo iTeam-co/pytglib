@@ -5,7 +5,7 @@ from ..utils import Object
 
 class PageBlockHorizontalAlignmentCenter(Object):
     """
-    The content should be center-aligned
+    The content must be center-aligned
 
     Attributes:
         ID (:obj:`str`): ``PageBlockHorizontalAlignmentCenter``

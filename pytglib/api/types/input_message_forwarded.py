@@ -16,11 +16,9 @@ class InputMessageForwarded(Object):
         message_id (:obj:`int`):
             Identifier of the message to forward
         in_game_share (:obj:`bool`):
-            True, if a game message should be shared within a launched game; applies only to game messages
-        send_copy (:obj:`bool`):
-            True, if content of the message needs to be copied without a link to the original messageAlways true if the message is forwarded to a secret chat
-        remove_caption (:obj:`bool`):
-            True, if media caption of the message copy needs to be removedIgnored if send_copy is false
+            True, if a game message is being shared from a launched game; applies only to game messages
+        copy_options (:class:`telegram.api.types.messageCopyOptions`):
+            Options to be used to copy content of the message without reference to the original sender; pass null to forward the message as usual
 
     Returns:
         InputMessageContent
@@ -30,19 +28,17 @@ class InputMessageForwarded(Object):
     """
     ID = "inputMessageForwarded"
 
-    def __init__(self, from_chat_id, message_id, in_game_share, send_copy, remove_caption, **kwargs):
+    def __init__(self, from_chat_id, message_id, in_game_share, copy_options, **kwargs):
         
         self.from_chat_id = from_chat_id  # int
         self.message_id = message_id  # int
         self.in_game_share = in_game_share  # bool
-        self.send_copy = send_copy  # bool
-        self.remove_caption = remove_caption  # bool
+        self.copy_options = copy_options  # MessageCopyOptions
 
     @staticmethod
     def read(q: dict, *args) -> "InputMessageForwarded":
         from_chat_id = q.get('from_chat_id')
         message_id = q.get('message_id')
         in_game_share = q.get('in_game_share')
-        send_copy = q.get('send_copy')
-        remove_caption = q.get('remove_caption')
-        return InputMessageForwarded(from_chat_id, message_id, in_game_share, send_copy, remove_caption)
+        copy_options = Object.read(q.get('copy_options'))
+        return InputMessageForwarded(from_chat_id, message_id, in_game_share, copy_options)

@@ -12,11 +12,11 @@ class EditMessageReplyMarkup(Object):
 
     Args:
         chat_id (:obj:`int`):
-            The chat the message belongs to 
+            The chat the message belongs to
         message_id (:obj:`int`):
-            Identifier of the message 
+            Identifier of the message
         reply_markup (:class:`telegram.api.types.ReplyMarkup`):
-            The new message reply markup
+            The new message reply markup; pass null if none
 
     Returns:
         Message

@@ -12,9 +12,9 @@ class AddContact(Object):
 
     Args:
         contact (:class:`telegram.api.types.contact`):
-            The contact to add or edit; phone number can be empty and needs to be specified only if known, vCard is ignored
+            The contact to add or edit; phone number may be empty and needs to be specified only if known, vCard is ignored
         share_phone_number (:obj:`bool`):
-            True, if the new contact needs to be allowed to see current user's phone numberA corresponding rule to userPrivacySettingShowPhoneNumber will be added if neededUse the field UserFullInfoneed_phone_number_privacy_exception to check whether the current user needs to be asked to share their phone number
+            Pass true to share the current user's phone number with the new contactA corresponding rule to userPrivacySettingShowPhoneNumber will be added if neededUse the field userFullInfoneed_phone_number_privacy_exception to check whether the current user needs to be asked to share their phone number
 
     Returns:
         Ok

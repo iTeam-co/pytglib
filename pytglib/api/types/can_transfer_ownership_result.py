@@ -16,7 +16,7 @@ class CanTransferOwnershipResult(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "CanTransferOwnershipResultPasswordNeeded or CanTransferOwnershipResultPasswordTooFresh or CanTransferOwnershipResultOk or CanTransferOwnershipResultSessionTooFresh":
+    def read(q: dict, *args) -> "CanTransferOwnershipResultSessionTooFresh or CanTransferOwnershipResultOk or CanTransferOwnershipResultPasswordNeeded or CanTransferOwnershipResultPasswordTooFresh":
         if q.get("@type"):
             return Object.read(q)
         return CanTransferOwnershipResult()

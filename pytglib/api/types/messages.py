@@ -12,7 +12,7 @@ class Messages(Object):
 
     Args:
         total_count (:obj:`int`):
-            Approximate total count of messages found 
+            Approximate total number of messages found 
         messages (List of :class:`telegram.api.types.message`):
             List of messages; messages may be null
 

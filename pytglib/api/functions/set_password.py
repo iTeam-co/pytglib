@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SetPassword(Object):
     """
-    Changes the password for the user. If a new recovery email address is specified, then the change will not be applied until the new recovery email address is confirmed
+    Changes the password for the current user. If a new recovery email address is specified, then the change will not be applied until the new recovery email address is confirmed
 
     Attributes:
         ID (:obj:`str`): ``SetPassword``
@@ -18,7 +18,7 @@ class SetPassword(Object):
         new_hint (:obj:`str`):
             New password hint; may be empty 
         set_recovery_email_address (:obj:`bool`):
-            Pass true if the recovery email address should be changed 
+            Pass true to change also the recovery email address 
         new_recovery_email_address (:obj:`str`):
             New recovery email address; may be empty
 

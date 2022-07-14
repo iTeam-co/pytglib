@@ -18,7 +18,7 @@ class UpdateNewCallbackQuery(Object):
         chat_id (:obj:`int`):
             Identifier of the chat where the query was sent 
         message_id (:obj:`int`):
-            Identifier of the message, from which the query originated
+            Identifier of the message from which the query originated
         chat_instance (:obj:`int`):
             Identifier that uniquely corresponds to the chat to which the message was sent 
         payload (:class:`telegram.api.types.CallbackQueryPayload`):

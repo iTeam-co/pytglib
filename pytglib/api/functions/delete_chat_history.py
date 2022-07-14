@@ -5,7 +5,7 @@ from ..utils import Object
 
 class DeleteChatHistory(Object):
     """
-    Deletes all messages in the chat. Use Chat.can_be_deleted_only_for_self and Chat.can_be_deleted_for_all_users fields to find whether and how the method can be applied to the chat
+    Deletes all messages in the chat. Use chat.can_be_deleted_only_for_self and chat.can_be_deleted_for_all_users fields to find whether and how the method can be applied to the chat
 
     Attributes:
         ID (:obj:`str`): ``DeleteChatHistory``
@@ -14,9 +14,9 @@ class DeleteChatHistory(Object):
         chat_id (:obj:`int`):
             Chat identifier 
         remove_from_chat_list (:obj:`bool`):
-            Pass true if the chat should be removed from the chat list 
+            Pass true to remove the chat from all chat lists 
         revoke (:obj:`bool`):
-            Pass true to try to delete chat history for all users
+            Pass true to delete chat history for all users
 
     Returns:
         Ok

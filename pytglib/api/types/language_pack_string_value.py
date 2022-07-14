@@ -16,7 +16,7 @@ class LanguagePackStringValue(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "LanguagePackStringValueDeleted or LanguagePackStringValuePluralized or LanguagePackStringValueOrdinary":
+    def read(q: dict, *args) -> "LanguagePackStringValueOrdinary or LanguagePackStringValueDeleted or LanguagePackStringValuePluralized":
         if q.get("@type"):
             return Object.read(q)
         return LanguagePackStringValue()

@@ -15,7 +15,7 @@ class GetProxyLink(Object):
             Proxy identifier
 
     Returns:
-        Text
+        HttpUrl
 
     Raises:
         :class:`telegram.Error`

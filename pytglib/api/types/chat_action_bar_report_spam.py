@@ -10,7 +10,9 @@ class ChatActionBarReportSpam(Object):
     Attributes:
         ID (:obj:`str`): ``ChatActionBarReportSpam``
 
-    No parameters required.
+    Args:
+        can_unarchive (:obj:`bool`):
+            If true, the chat was automatically archived and can be moved back to the main chat list using addChatToList simultaneously with setting chat notification settings to default using setChatNotificationSettings
 
     Returns:
         ChatActionBar
@@ -20,11 +22,11 @@ class ChatActionBarReportSpam(Object):
     """
     ID = "chatActionBarReportSpam"
 
-    def __init__(self, **kwargs):
+    def __init__(self, can_unarchive, **kwargs):
         
-        pass
+        self.can_unarchive = can_unarchive  # bool
 
     @staticmethod
     def read(q: dict, *args) -> "ChatActionBarReportSpam":
-        
-        return ChatActionBarReportSpam()
+        can_unarchive = q.get('can_unarchive')
+        return ChatActionBarReportSpam(can_unarchive)

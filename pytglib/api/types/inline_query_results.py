@@ -18,7 +18,7 @@ class InlineQueryResults(Object):
         results (List of :class:`telegram.api.types.InlineQueryResult`):
             Results of the query
         switch_pm_text (:obj:`str`):
-            If non-empty, this text should be shown on the button, which opens a private chat with the bot and sends the bot a start message with the switch_pm_parameter 
+            If non-empty, this text must be shown on the button, which opens a private chat with the bot and sends the bot a start message with the switch_pm_parameter 
         switch_pm_parameter (:obj:`str`):
             Parameter for the bot start message
 

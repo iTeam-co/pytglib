@@ -11,10 +11,12 @@ class FoundMessages(Object):
         ID (:obj:`str`): ``FoundMessages``
 
     Args:
+        total_count (:obj:`int`):
+            Approximate total number of messages found; -1 if unknown 
         messages (List of :class:`telegram.api.types.message`):
             List of messages 
-        next_from_search_id (:obj:`int`):
-            Value to pass as from_search_id to get more results
+        next_offset (:obj:`str`):
+            The offset for the next requestIf empty, there are no more results
 
     Returns:
         FoundMessages
@@ -24,13 +26,15 @@ class FoundMessages(Object):
     """
     ID = "foundMessages"
 
-    def __init__(self, messages, next_from_search_id, **kwargs):
+    def __init__(self, total_count, messages, next_offset, **kwargs):
         
+        self.total_count = total_count  # int
         self.messages = messages  # list of message
-        self.next_from_search_id = next_from_search_id  # int
+        self.next_offset = next_offset  # str
 
     @staticmethod
     def read(q: dict, *args) -> "FoundMessages":
+        total_count = q.get('total_count')
         messages = [Object.read(i) for i in q.get('messages', [])]
-        next_from_search_id = q.get('next_from_search_id')
-        return FoundMessages(messages, next_from_search_id)
+        next_offset = q.get('next_offset')
+        return FoundMessages(total_count, messages, next_offset)

@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetLogTags(Object):
     """
-    Returns list of available TDLib internal log tags, for example, ["actor", "binlog", "connections", "notifications", "proxy"]. This is an offline method. Can be called before authorization. Can be called synchronously
+    Returns list of available TDLib internal log tags, for example, ["actor", "binlog", "connections", "notifications", "proxy"]. Can be called synchronously
 
     Attributes:
         ID (:obj:`str`): ``GetLogTags``

@@ -12,13 +12,13 @@ class EditMessageText(Object):
 
     Args:
         chat_id (:obj:`int`):
-            The chat the message belongs to 
+            The chat the message belongs to
         message_id (:obj:`int`):
-            Identifier of the message 
+            Identifier of the message
         reply_markup (:class:`telegram.api.types.ReplyMarkup`):
-            The new message reply markup; for bots only 
+            The new message reply markup; pass null if none; for bots only
         input_message_content (:class:`telegram.api.types.InputMessageContent`):
-            New text content of the messageShould be of type InputMessageText
+            New text content of the messageMust be of type inputMessageText
 
     Returns:
         Message

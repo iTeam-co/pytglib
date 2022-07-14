@@ -5,14 +5,14 @@ from ..utils import Object
 
 class GetMessageLinkInfo(Object):
     """
-    Returns information about a public or private message link 
+    Returns information about a public or private message link. Can be called for any internal link of the type internalLinkTypeMessage 
 
     Attributes:
         ID (:obj:`str`): ``GetMessageLinkInfo``
 
     Args:
         url (:obj:`str`):
-            The message link in the format "https://tme/c/", or "tg://privatepost?", or "https://tme/username/", or "tg://resolve?"
+            The message link
 
     Returns:
         MessageLinkInfo

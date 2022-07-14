@@ -5,24 +5,24 @@ from ..utils import Object
 
 class AnswerInlineQuery(Object):
     """
-    Sets the result of an inline query; for bots only 
+    Sets the result of an inline query; for bots only
 
     Attributes:
         ID (:obj:`str`): ``AnswerInlineQuery``
 
     Args:
         inline_query_id (:obj:`int`):
-            Identifier of the inline query 
+            Identifier of the inline query
         is_personal (:obj:`bool`):
-            True, if the result of the query can be cached for the specified user
+            Pass true if results may be cached and returned only for the user that sent the queryBy default, results may be returned to any user who sends the same query
         results (List of :class:`telegram.api.types.InputInlineQueryResult`):
-            The results of the query 
+            The results of the query
         cache_time (:obj:`int`):
-            Allowed time to cache the results of the query, in seconds 
+            Allowed time to cache the results of the query, in seconds
         next_offset (:obj:`str`):
             Offset for the next inline query; pass an empty string if there are no more results
         switch_pm_text (:obj:`str`):
-            If non-empty, this text should be shown on the button that opens a private chat with the bot and sends a start message to the bot with the parameter switch_pm_parameter 
+            If non-empty, this text must be shown on the button that opens a private chat with the bot and sends a start message to the bot with the parameter switch_pm_parameter
         switch_pm_parameter (:obj:`str`):
             The parameter for the bot start message
 

@@ -16,7 +16,7 @@ class PageBlockVerticalAlignment(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "PageBlockVerticalAlignmentMiddle or PageBlockVerticalAlignmentTop or PageBlockVerticalAlignmentBottom":
+    def read(q: dict, *args) -> "PageBlockVerticalAlignmentMiddle or PageBlockVerticalAlignmentBottom or PageBlockVerticalAlignmentTop":
         if q.get("@type"):
             return Object.read(q)
         return PageBlockVerticalAlignment()

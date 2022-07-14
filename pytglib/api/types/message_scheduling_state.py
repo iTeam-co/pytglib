@@ -16,7 +16,7 @@ class MessageSchedulingState(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "MessageSchedulingStateSendAtDate or MessageSchedulingStateSendWhenOnline":
+    def read(q: dict, *args) -> "MessageSchedulingStateSendWhenOnline or MessageSchedulingStateSendAtDate":
         if q.get("@type"):
             return Object.read(q)
         return MessageSchedulingState()

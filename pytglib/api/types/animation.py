@@ -21,10 +21,12 @@ class Animation(Object):
             Original name of the file; as defined by the sender 
         mime_type (:obj:`str`):
             MIME type of the file, usually "image/gif" or "video/mp4"
+        has_stickers (:obj:`bool`):
+            True, if stickers were added to the animationThe list of corresponding sticker set can be received using getAttachedStickerSets
         minithumbnail (:class:`telegram.api.types.minithumbnail`):
             Animation minithumbnail; may be null 
-        thumbnail (:class:`telegram.api.types.photoSize`):
-            Animation thumbnail; may be null 
+        thumbnail (:class:`telegram.api.types.thumbnail`):
+            Animation thumbnail in JPEG or MPEG4 format; may be null 
         animation (:class:`telegram.api.types.file`):
             File containing the animation
 
@@ -36,15 +38,16 @@ class Animation(Object):
     """
     ID = "animation"
 
-    def __init__(self, duration, width, height, file_name, mime_type, minithumbnail, thumbnail, animation, **kwargs):
+    def __init__(self, duration, width, height, file_name, mime_type, has_stickers, minithumbnail, thumbnail, animation, **kwargs):
         
         self.duration = duration  # int
         self.width = width  # int
         self.height = height  # int
         self.file_name = file_name  # str
         self.mime_type = mime_type  # str
+        self.has_stickers = has_stickers  # bool
         self.minithumbnail = minithumbnail  # Minithumbnail
-        self.thumbnail = thumbnail  # PhotoSize
+        self.thumbnail = thumbnail  # Thumbnail
         self.animation = animation  # File
 
     @staticmethod
@@ -54,7 +57,8 @@ class Animation(Object):
         height = q.get('height')
         file_name = q.get('file_name')
         mime_type = q.get('mime_type')
+        has_stickers = q.get('has_stickers')
         minithumbnail = Object.read(q.get('minithumbnail'))
         thumbnail = Object.read(q.get('thumbnail'))
         animation = Object.read(q.get('animation'))
-        return Animation(duration, width, height, file_name, mime_type, minithumbnail, thumbnail, animation)
+        return Animation(duration, width, height, file_name, mime_type, has_stickers, minithumbnail, thumbnail, animation)

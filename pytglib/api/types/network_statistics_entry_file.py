@@ -5,14 +5,14 @@ from ..utils import Object
 
 class NetworkStatisticsEntryFile(Object):
     """
-    Contains information about the total amount of data that was used to send and receive files 
+    Contains information about the total amount of data that was used to send and receive files
 
     Attributes:
         ID (:obj:`str`): ``NetworkStatisticsEntryFile``
 
     Args:
         file_type (:class:`telegram.api.types.FileType`):
-            Type of the file the data is part of 
+            Type of the file the data is part of; pass null if the data isn't related to files
         network_type (:class:`telegram.api.types.NetworkType`):
             Type of the network the data was sent throughCall setNetworkType to maintain the actual network type
         sent_bytes (:obj:`int`):

@@ -12,9 +12,9 @@ class DeviceTokenFirebaseCloudMessaging(Object):
 
     Args:
         token (:obj:`str`):
-            Device registration token; may be empty to de-register a device 
+            Device registration token; may be empty to deregister a device 
         encrypt (:obj:`bool`):
-            True, if push notifications should be additionally encrypted
+            True, if push notifications must be additionally encrypted
 
     Returns:
         DeviceToken

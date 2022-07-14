@@ -12,11 +12,11 @@ class Date(Object):
 
     Args:
         day (:obj:`int`):
-            Day of the month, 1-31 
+            Day of the month; 1-31 
         month (:obj:`int`):
-            Month, 1-12 
+            Month; 1-12 
         year (:obj:`int`):
-            Year, 1-9999
+            Year; 1-9999
 
     Returns:
         Date

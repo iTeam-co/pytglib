@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SetAlarm(Object):
     """
-    Succeeds after a specified amount of time has passed. Can be called before authorization. Can be called before initialization 
+    Succeeds after a specified amount of time has passed. Can be called before initialization 
 
     Attributes:
         ID (:obj:`str`): ``SetAlarm``

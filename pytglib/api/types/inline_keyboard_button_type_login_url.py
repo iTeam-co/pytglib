@@ -5,14 +5,14 @@ from ..utils import Object
 
 class InlineKeyboardButtonTypeLoginUrl(Object):
     """
-    A button that opens a specified URL and automatically logs in in current user if they allowed to do that 
+    A button that opens a specified URL and automatically authorize the current user by calling getLoginUrlInfo 
 
     Attributes:
         ID (:obj:`str`): ``InlineKeyboardButtonTypeLoginUrl``
 
     Args:
         url (:obj:`str`):
-            An HTTP URL to open 
+            An HTTP URL to pass to getLoginUrlInfo 
         id (:obj:`int`):
             Unique button identifier 
         forward_text (:obj:`str`):

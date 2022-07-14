@@ -5,7 +5,7 @@ from ..utils import Object
 
 class InputInlineQueryResultSticker(Object):
     """
-    Represents a link to a WEBP or TGS sticker 
+    Represents a link to a WEBP, TGS, or WEBM sticker 
 
     Attributes:
         ID (:obj:`str`): ``InputInlineQueryResultSticker``
@@ -16,15 +16,15 @@ class InputInlineQueryResultSticker(Object):
         thumbnail_url (:obj:`str`):
             URL of the sticker thumbnail, if it exists
         sticker_url (:obj:`str`):
-            The URL of the WEBP or TGS sticker (sticker file size must not exceed 5MB) 
+            The URL of the WEBP, TGS, or WEBM sticker (sticker file size must not exceed 5MB) 
         sticker_width (:obj:`int`):
             Width of the sticker 
         sticker_height (:obj:`int`):
             Height of the sticker
         reply_markup (:class:`telegram.api.types.ReplyMarkup`):
-            The message reply markupMust be of type replyMarkupInlineKeyboard or null
+            The message reply markup; pass null if noneMust be of type replyMarkupInlineKeyboard or null
         input_message_content (:class:`telegram.api.types.InputMessageContent`):
-            The content of the message to be sentMust be one of the following types: InputMessageText, inputMessageSticker, InputMessageLocation, InputMessageVenue or InputMessageContact
+            The content of the message to be sentMust be one of the following types: inputMessageText, inputMessageSticker, inputMessageInvoice, inputMessageLocation, inputMessageVenue or inputMessageContact
 
     Returns:
         InputInlineQueryResult

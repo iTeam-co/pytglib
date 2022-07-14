@@ -5,18 +5,18 @@ from ..utils import Object
 
 class EditMessageSchedulingState(Object):
     """
-    Edits the time when a scheduled message will be sent. Scheduling state of all messages in the same album or forwarded together with the message will be also changed 
+    Edits the time when a scheduled message will be sent. Scheduling state of all messages in the same album or forwarded together with the message will be also changed
 
     Attributes:
         ID (:obj:`str`): ``EditMessageSchedulingState``
 
     Args:
         chat_id (:obj:`int`):
-            The chat the message belongs to 
+            The chat the message belongs to
         message_id (:obj:`int`):
-            Identifier of the message 
+            Identifier of the message
         scheduling_state (:class:`telegram.api.types.MessageSchedulingState`):
-            The new message scheduling statePass null to send the message immediately
+            The new message scheduling state; pass null to send the message immediately
 
     Returns:
         Ok

@@ -16,9 +16,9 @@ class PageBlockVideo(Object):
         caption (:class:`telegram.api.types.pageBlockCaption`):
             Video caption 
         need_autoplay (:obj:`bool`):
-            True, if the video should be played automatically 
+            True, if the video must be played automatically 
         is_looped (:obj:`bool`):
-            True, if the video should be looped
+            True, if the video must be looped
 
     Returns:
         PageBlock

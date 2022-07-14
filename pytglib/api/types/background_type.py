@@ -16,7 +16,7 @@ class BackgroundType(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "BackgroundTypePattern or BackgroundTypeWallpaper or BackgroundTypeFill":
+    def read(q: dict, *args) -> "BackgroundTypePattern or BackgroundTypeFill or BackgroundTypeWallpaper":
         if q.get("@type"):
             return Object.read(q)
         return BackgroundType()

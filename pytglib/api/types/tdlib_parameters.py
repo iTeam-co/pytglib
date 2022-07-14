@@ -34,7 +34,7 @@ class TdlibParameters(Object):
         device_model (:obj:`str`):
             Model of the device the application is being run on; must be non-empty
         system_version (:obj:`str`):
-            Version of the operating system the application is being run on; must be non-empty
+            Version of the operating system the application is being run onIf empty, the version is automatically detected by TDLib
         application_version (:obj:`str`):
             Application version; must be non-empty
         enable_storage_optimizer (:obj:`bool`):

@@ -5,7 +5,7 @@ from ..utils import Object
 
 class SetChatDiscussionGroup(Object):
     """
-    Changes the discussion group of a channel chat; requires can_change_info rights in the channel if it is specified 
+    Changes the discussion group of a channel chat; requires can_change_info administrator right in the channel if it is specified 
 
     Attributes:
         ID (:obj:`str`): ``SetChatDiscussionGroup``
@@ -14,7 +14,7 @@ class SetChatDiscussionGroup(Object):
         chat_id (:obj:`int`):
             Identifier of the channel chatPass 0 to remove a link from the supergroup passed in the second argument to a linked channel chat (requires can_pin_messages rights in the supergroup) 
         discussion_chat_id (:obj:`int`):
-            Identifier of a new channel's discussion groupUse 0 to remove the discussion groupUse the method getSuitableDiscussionChats to find all suitable groupsBasic group chats needs to be first upgraded to supergroup chatsIf new chat members don't have access to old messages in the supergroup, then toggleSupergroupIsAllHistoryAvailable needs to be used first to change that
+            Identifier of a new channel's discussion groupUse 0 to remove the discussion groupUse the method getSuitableDiscussionChats to find all suitable groupsBasic group chats must be first upgraded to supergroup chatsIf new chat members don't have access to old messages in the supergroup, then toggleSupergroupIsAllHistoryAvailable must be used first to change that
 
     Returns:
         Ok

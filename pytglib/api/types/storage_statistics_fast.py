@@ -12,7 +12,7 @@ class StorageStatisticsFast(Object):
 
     Args:
         files_size (:obj:`int`):
-            Approximate total size of files 
+            Approximate total size of files, in bytes 
         file_count (:obj:`int`):
             Approximate number of files
         database_size (:obj:`int`):

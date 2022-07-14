@@ -5,7 +5,7 @@ from ..utils import Object
 
 class PageBlockHorizontalAlignmentRight(Object):
     """
-    The content should be right-aligned
+    The content must be right-aligned
 
     Attributes:
         ID (:obj:`str`): ``PageBlockHorizontalAlignmentRight``

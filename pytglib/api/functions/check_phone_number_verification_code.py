@@ -12,7 +12,7 @@ class CheckPhoneNumberVerificationCode(Object):
 
     Args:
         code (:obj:`str`):
-            Verification code
+            Verification code to check
 
     Returns:
         Ok

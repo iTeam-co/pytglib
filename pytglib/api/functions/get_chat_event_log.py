@@ -20,7 +20,7 @@ class GetChatEventLog(Object):
         limit (:obj:`int`):
             The maximum number of events to return; up to 100
         filters (:class:`telegram.api.types.chatEventLogFilters`):
-            The types of events to returnBy default, all types will be returned 
+            The types of events to return; pass null to get chat events of all types 
         user_ids (List of :obj:`int`):
             User identifiers by which to filter eventsBy default, events relating to all users will be returned
 

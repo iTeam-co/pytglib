@@ -18,7 +18,7 @@ class Venue(Object):
         address (:obj:`str`):
             Venue address; as defined by the sender 
         provider (:obj:`str`):
-            Provider of the venue database; as defined by the senderCurrently only "foursquare" needs to be supported
+            Provider of the venue database; as defined by the senderCurrently, only "foursquare" and "gplaces" (Google Places) need to be supported
         id (:obj:`str`):
             Identifier of the venue in the provider database; as defined by the sender 
         type (:obj:`str`):

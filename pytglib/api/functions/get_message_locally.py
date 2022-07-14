@@ -5,7 +5,7 @@ from ..utils import Object
 
 class GetMessageLocally(Object):
     """
-    Returns information about a message, if it is available locally without sending network request. This is an offline request 
+    Returns information about a message, if it is available without sending network request. This is an offline request 
 
     Attributes:
         ID (:obj:`str`): ``GetMessageLocally``

@@ -12,7 +12,7 @@ class AddSavedAnimation(Object):
 
     Args:
         animation (:class:`telegram.api.types.InputFile`):
-            The animation file to be addedOnly animations known to the server (iesuccessfully sent via a message) can be added to the list
+            The animation file to be addedOnly animations known to the server (ie, successfully sent via a message) can be added to the list
 
     Returns:
         Ok

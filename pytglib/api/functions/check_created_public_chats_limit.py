@@ -5,7 +5,7 @@ from ..utils import Object
 
 class CheckCreatedPublicChatsLimit(Object):
     """
-    Checks whether the maximum number of owned public chats has been reached. Returns corresponding error if the limit was reached 
+    Checks whether the maximum number of owned public chats has been reached. Returns corresponding error if the limit was reached. The limit can be increased with Telegram Premium 
 
     Attributes:
         ID (:obj:`str`): ``CheckCreatedPublicChatsLimit``

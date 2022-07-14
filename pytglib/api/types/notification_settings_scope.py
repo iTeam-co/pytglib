@@ -5,7 +5,7 @@ from ..utils import Object
 
 class NotificationSettingsScope(Object):
     """
-    Describes the types of chats to which notification settings are applied
+    Describes the types of chats to which notification settings are relevant
 
     No parameters required.
     """
@@ -16,7 +16,7 @@ class NotificationSettingsScope(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "NotificationSettingsScopeChannelChats or NotificationSettingsScopePrivateChats or NotificationSettingsScopeGroupChats":
+    def read(q: dict, *args) -> "NotificationSettingsScopeGroupChats or NotificationSettingsScopePrivateChats or NotificationSettingsScopeChannelChats":
         if q.get("@type"):
             return Object.read(q)
         return NotificationSettingsScope()

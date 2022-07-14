@@ -12,7 +12,7 @@ class CheckChangePhoneNumberCode(Object):
 
     Args:
         code (:obj:`str`):
-            Verification code received by SMS, phone call or flash call
+            Authentication code to check
 
     Returns:
         Ok

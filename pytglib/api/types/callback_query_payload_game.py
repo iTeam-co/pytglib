@@ -5,7 +5,7 @@ from ..utils import Object
 
 class CallbackQueryPayloadGame(Object):
     """
-    The payload from a game callback button 
+    The payload for a game callback button 
 
     Attributes:
         ID (:obj:`str`): ``CallbackQueryPayloadGame``

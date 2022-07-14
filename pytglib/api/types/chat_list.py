@@ -16,7 +16,7 @@ class ChatList(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "ChatListMain or ChatListArchive":
+    def read(q: dict, *args) -> "ChatListArchive or ChatListFilter or ChatListMain":
         if q.get("@type"):
             return Object.read(q)
         return ChatList()

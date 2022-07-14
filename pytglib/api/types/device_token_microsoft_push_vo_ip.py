@@ -12,7 +12,7 @@ class DeviceTokenMicrosoftPushVoIP(Object):
 
     Args:
         channel_uri (:obj:`str`):
-            Push notification channel URI; may be empty to de-register a device
+            Push notification channel URI; may be empty to deregister a device
 
     Returns:
         DeviceToken

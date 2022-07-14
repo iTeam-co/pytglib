@@ -16,7 +16,7 @@ class LogStream(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "LogStreamEmpty or LogStreamDefault or LogStreamFile":
+    def read(q: dict, *args) -> "LogStreamDefault or LogStreamEmpty or LogStreamFile":
         if q.get("@type"):
             return Object.read(q)
         return LogStream()

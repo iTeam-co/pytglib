@@ -5,26 +5,36 @@ from ..utils import Object
 
 class PaymentForm(Object):
     """
-    Contains information about an invoice payment form 
+    Contains information about an invoice payment form
 
     Attributes:
         ID (:obj:`str`): ``PaymentForm``
 
     Args:
+        id (:obj:`int`):
+            The payment form identifier
         invoice (:class:`telegram.api.types.invoice`):
-            Full information of the invoice 
-        url (:obj:`str`):
-            Payment form URL 
-        payments_provider (:class:`telegram.api.types.paymentsProviderStripe`):
-            Contains information about the payment provider, if available, to support it natively without the need for opening the URL; may be null
+            Full information about the invoice
+        seller_bot_user_id (:obj:`int`):
+            User identifier of the seller bot
+        payment_provider_user_id (:obj:`int`):
+            User identifier of the payment provider bot
+        payment_provider (:class:`telegram.api.types.PaymentProvider`):
+            Information about the payment provider
         saved_order_info (:class:`telegram.api.types.orderInfo`):
-            Saved server-side order information; may be null 
+            Saved server-side order information; may be null
         saved_credentials (:class:`telegram.api.types.savedCredentials`):
-            Contains information about saved card credentials; may be null 
+            Information about saved card credentials; may be null
         can_save_credentials (:obj:`bool`):
-            True, if the user can choose to save credentials 
+            True, if the user can choose to save credentials
         need_password (:obj:`bool`):
             True, if the user will be able to save credentials protected by a password they set up
+        product_title (:obj:`str`):
+            Product title
+        product_description (:class:`telegram.api.types.formattedText`):
+            Product description
+        product_photo (:class:`telegram.api.types.photo`):
+            Product photo; may be null
 
     Returns:
         PaymentForm
@@ -34,23 +44,33 @@ class PaymentForm(Object):
     """
     ID = "paymentForm"
 
-    def __init__(self, invoice, url, payments_provider, saved_order_info, saved_credentials, can_save_credentials, need_password, **kwargs):
+    def __init__(self, id, invoice, seller_bot_user_id, payment_provider_user_id, payment_provider, saved_order_info, saved_credentials, can_save_credentials, need_password, product_title, product_description, product_photo, **kwargs):
         
+        self.id = id  # int
         self.invoice = invoice  # Invoice
-        self.url = url  # str
-        self.payments_provider = payments_provider  # PaymentsProviderStripe
+        self.seller_bot_user_id = seller_bot_user_id  # int
+        self.payment_provider_user_id = payment_provider_user_id  # int
+        self.payment_provider = payment_provider  # PaymentProvider
         self.saved_order_info = saved_order_info  # OrderInfo
         self.saved_credentials = saved_credentials  # SavedCredentials
         self.can_save_credentials = can_save_credentials  # bool
         self.need_password = need_password  # bool
+        self.product_title = product_title  # str
+        self.product_description = product_description  # FormattedText
+        self.product_photo = product_photo  # Photo
 
     @staticmethod
     def read(q: dict, *args) -> "PaymentForm":
+        id = q.get('id')
         invoice = Object.read(q.get('invoice'))
-        url = q.get('url')
-        payments_provider = Object.read(q.get('payments_provider'))
+        seller_bot_user_id = q.get('seller_bot_user_id')
+        payment_provider_user_id = q.get('payment_provider_user_id')
+        payment_provider = Object.read(q.get('payment_provider'))
         saved_order_info = Object.read(q.get('saved_order_info'))
         saved_credentials = Object.read(q.get('saved_credentials'))
         can_save_credentials = q.get('can_save_credentials')
         need_password = q.get('need_password')
-        return PaymentForm(invoice, url, payments_provider, saved_order_info, saved_credentials, can_save_credentials, need_password)
+        product_title = q.get('product_title')
+        product_description = Object.read(q.get('product_description'))
+        product_photo = Object.read(q.get('product_photo'))
+        return PaymentForm(id, invoice, seller_bot_user_id, payment_provider_user_id, payment_provider, saved_order_info, saved_credentials, can_save_credentials, need_password, product_title, product_description, product_photo)

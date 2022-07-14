@@ -13,7 +13,7 @@ class UpdateChatPhoto(Object):
     Args:
         chat_id (:obj:`int`):
             Chat identifier 
-        photo (:class:`telegram.api.types.chatPhoto`):
+        photo (:class:`telegram.api.types.chatPhotoInfo`):
             The new chat photo; may be null
 
     Returns:
@@ -27,7 +27,7 @@ class UpdateChatPhoto(Object):
     def __init__(self, chat_id, photo, **kwargs):
         
         self.chat_id = chat_id  # int
-        self.photo = photo  # ChatPhoto
+        self.photo = photo  # ChatPhotoInfo
 
     @staticmethod
     def read(q: dict, *args) -> "UpdateChatPhoto":

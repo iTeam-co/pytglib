@@ -12,7 +12,7 @@ class SetPollAnswer(Object):
 
     Args:
         chat_id (:obj:`int`):
-            Identifier of the chat to which the poll belongs 
+            Identifier of the chat to which the poll belongs
         message_id (:obj:`int`):
             Identifier of the message containing the poll
         option_ids (List of :obj:`int`):

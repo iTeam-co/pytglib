@@ -16,7 +16,7 @@ class BackgroundFill(Object):
         pass
 
     @staticmethod
-    def read(q: dict, *args) -> "BackgroundFillGradient or BackgroundFillSolid":
+    def read(q: dict, *args) -> "BackgroundFillSolid or BackgroundFillFreeformGradient or BackgroundFillGradient":
         if q.get("@type"):
             return Object.read(q)
         return BackgroundFill()

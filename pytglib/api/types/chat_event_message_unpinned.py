@@ -5,12 +5,14 @@ from ..utils import Object
 
 class ChatEventMessageUnpinned(Object):
     """
-    A message was unpinned
+    A message was unpinned 
 
     Attributes:
         ID (:obj:`str`): ``ChatEventMessageUnpinned``
 
-    No parameters required.
+    Args:
+        message (:class:`telegram.api.types.message`):
+            Unpinned message
 
     Returns:
         ChatEventAction
@@ -20,11 +22,11 @@ class ChatEventMessageUnpinned(Object):
     """
     ID = "chatEventMessageUnpinned"
 
-    def __init__(self, **kwargs):
+    def __init__(self, message, **kwargs):
         
-        pass
+        self.message = message  # Message
 
     @staticmethod
     def read(q: dict, *args) -> "ChatEventMessageUnpinned":
-        
-        return ChatEventMessageUnpinned()
+        message = Object.read(q.get('message'))
+        return ChatEventMessageUnpinned(message)

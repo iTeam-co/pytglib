@@ -5,7 +5,7 @@ from ..utils import Object
 
 class UpdateMessageLiveLocationViewed(Object):
     """
-    A message with a live location was viewed. When the update is received, the client is supposed to update the live location
+    A message with a live location was viewed. When the update is received, the application is supposed to update the live location
 
     Attributes:
         ID (:obj:`str`): ``UpdateMessageLiveLocationViewed``

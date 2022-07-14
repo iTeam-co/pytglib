@@ -21,8 +21,8 @@ class InlineQueryResultArticle(Object):
             Title of the result
         description (:obj:`str`):
             A short description of the result 
-        thumbnail (:class:`telegram.api.types.photoSize`):
-            Result thumbnail; may be null
+        thumbnail (:class:`telegram.api.types.thumbnail`):
+            Result thumbnail in JPEG format; may be null
 
     Returns:
         InlineQueryResult
@@ -39,7 +39,7 @@ class InlineQueryResultArticle(Object):
         self.hide_url = hide_url  # bool
         self.title = title  # str
         self.description = description  # str
-        self.thumbnail = thumbnail  # PhotoSize
+        self.thumbnail = thumbnail  # Thumbnail
 
     @staticmethod
     def read(q: dict, *args) -> "InlineQueryResultArticle":
