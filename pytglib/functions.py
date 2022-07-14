@@ -172,7 +172,7 @@ class Function:
             Returns:
                 AsyncResult
         """
-        return self.send(GetChats(chat_list, offset_order, offset_chat_id, limit))
+        return self.send(GetChats(chat_list, limit))
 
     def get_chat_history(
             self,
@@ -210,28 +210,6 @@ class Function:
         """
         return self.send(
             GetChatHistory(chat_id, limit=limit, from_message_id=from_message_id, offset=offset, only_local=only_local))
-
-    def get_inline_query_results(self, bot_user_id, chat_id, query, offset, user_location=Location(0, 0)):
-        """
-        Sends an inline query to a bot and returns its results.
-         Returns an error with code 502 if the bot fails to answer the query before the query timeout expires
-
-        Args:
-            bot_user_id (:obj:`int`):
-                The identifier of the target bot
-            chat_id (:obj:`int`):
-                Identifier of the chat, where the query was sent
-            query (:obj:`str`):
-                Text of the query
-            offset (:obj:`str`):
-                Offset of the first entry to return
-            user_location (:class:`pytglib.api.types.location`):
-                Location of the user, only if needed
-
-        Returns:
-            AsyncResult
-        """
-        return self.send(GetInlineQueryResults(bot_user_id, chat_id, user_location, query, offset))
 
     def send_inline_query_result(self, chat_id, query_id, result_id, reply_to_message_id=0, disable_notification=False,
                                  from_background=False):
